@@ -7,6 +7,7 @@ RUN apt update && apt install -y \
 
 WORKDIR /root
 COPY package.json .
+COPY yarn.lock .
 RUN yarn install
 COPY tsconfig.json .
 COPY src/ ./src

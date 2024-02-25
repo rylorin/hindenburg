@@ -1,17 +1,11 @@
 {
   "name": "hindenburg",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "Hindenburg alerts processing bot",
   "repository": "https://github.com/rylorin/hindenburg.git",
   "license": "Licensed",
   "author": "Ronan-Yann Lorin <ryl@free.fr>",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "./dist/",
-    "LICENSE"
-  ],
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "clean": "rm -rf build",
@@ -25,12 +19,13 @@
   "dependencies": {
     "@stoqey/ib": "^1.3.16",
     "dotenv": "^16.3.1",
+    "mailparser": "^3.6.7",
     "nodemailer": "^6.9.10",
     "smtp-server": "^3.13.2",
     "winston": "^3.11.0"
   },
   "devDependencies": {
-    "@types/node": "^18.18.5",
+    "@types/node": "^20.0.0",
     "@types/smtp-server": "^3.5.10",
     "@types/validator": "^13.11.8",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
@@ -51,6 +46,6 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": ">=18.18.0"
+    "node": ">=20"
   }
 }
