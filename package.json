@@ -1,0 +1,56 @@
+{
+  "name": "hindenburg",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hindenburg alerts processing bot",
+  "repository": "https://github.com/rylorin/hindenburg.git",
+  "license": "Licensed",
+  "author": "Ronan-Yann Lorin <ryl@free.fr>",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist/",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "clean": "rm -rf build",
+    "lint": "eslint . --ext .ts,.tsx",
+    "prepare": "husky install",
+    "prepublishOnly": "yarn build",
+    "qc": "yarn lint && tsc --noEmit && prettier --check . && stylelint \"**/*.css\"",
+    "start": "node build/index.js -server",
+    "start:dev": "ts-node-dev --project tsconfig.json src/index -watch -server -account"
+  },
+  "dependencies": {
+    "@stoqey/ib": "^1.3.16",
+    "dotenv": "^16.3.1",
+    "nodemailer": "^6.9.10",
+    "smtp-server": "^3.13.2",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.18.5",
+    "@types/smtp-server": "^3.5.10",
+    "@types/validator": "^13.11.8",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-rxjs": "^5.0.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.0",
+    "patch-package": "^8.0.0",
+    "prettier": "^3.1.1",
+    "rxjs": "^7.8.1",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

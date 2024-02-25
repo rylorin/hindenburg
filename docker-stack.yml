@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  bot:
+    image: rylorin/hindenburg:dev
+    environment:
+      RCPT_TO: ${RCPT_TO}
+      SMTP_RELAY: ${SMTP_RELAY:-localhost}
+      RELAY_USERNAME: ${RELAY_USERNAME}
+      RELAY_PASSWORD: ${RELAY_PASSWORD}
+      IBGW_HOST: ${IBGW_HOST:-localhost}
+      IBGW_PORT: ${IBGW_PORT}
+    restart: unless-stopped
+    networks:
+      - default
+    ports:
+      - target: 25
+        published: 25
+        protocol: tcp
+        mode: ingress
+    deploy:
+      placement:
+        constraints:
+          - node.platform.os == linux
+          - node.role == manager
+      replicas: 1
+
+networks:
+  default:
+  system_dmz_network:
+    external: true
