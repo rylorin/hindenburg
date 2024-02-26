@@ -11,6 +11,8 @@ export class SmtpServer {
   constructor() {
     this.server = new SMTPServer({
       authOptional: true,
+      size: 10 * 1024 * 1024, // 10 Mb
+      disableReverseLookup: true,
       onData: (stream, session, callback) =>
         this.onData(stream, session, callback),
       logger: true,

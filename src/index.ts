@@ -24,8 +24,18 @@ export class MyTradingBotApp extends SmtpServer {
     _session: SMTPServerSession,
     email: Record<string, any>
   ): void {
-    console.log("processMail", email);
-    this.smtpClient.forwardEmail(email);
+    if (
+      email.from.text == '"Hindenburg Research" <info@hindenburgresearch.com>'
+    ) {
+      const disclosureStart = email.text.indexOf("Initial Disclosure:");
+      const disclosureEnd = email.text.indexOf("\n", disclosureStart);
+      const disclosure = email.text.slice(disclosureStart, disclosureEnd);
+      console.log("Hindenburg disclosure", disclosure);
+    } else {
+      console.log("MyTradingBotApp.processMail", email);
+      // Forward email
+      this.smtpClient.forwardEmail(email);
+    }
   }
 }
 

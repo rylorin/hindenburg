@@ -19,9 +19,12 @@ export class SmtpClient {
 
   public async forwardEmail(emailIn: Record<string, any>) {
     const emailOut = {
-      from:
-        emailIn.headers.get("from").text || '"Fred Foo 👻" <foo@example.com>', // sender address
-      to: process.env.RCPT_TO || emailIn.to || "<foo@bar.com>", // list of receivers
+      from: process.env.RELAY_USERNAME || emailIn.headers.get("from").text, // sender address
+      to:
+        process.env.RCPT_TO ||
+        emailIn.to ||
+        process.env.RELAY_USERNAME ||
+        "<foo@bar.com>", // list of receivers
       subject: emailIn.subject, // Subject line
       text: emailIn.text, // plain text body
       html: emailIn.html, // html body

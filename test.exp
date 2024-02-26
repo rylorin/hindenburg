@@ -33,6 +33,20 @@ send -- "* Temenos AG is a ~\$7.5B market cap Swiss-listed banking software deve
 send -- "r and services company that serves 3=2C000 customers globally and reported=\r"
 send -- " \$1 billion in preliminary 2023 revenue.\r"
 send -- "\r"
+send -- "Initial Disclosure: After extensive research=2C we have taken a short posi=
+tion in shares of Temenos AG (SWX:TEMN). This report represents our opinio=
+n=2C and we encourage every reader to do their own due diligence. Please s=
+ee our full disclaimer at the bottom of the report.
+Read The Full Report Here (https://hindenburgresearch.com/temenos/)
+https://twitter.com/HindenburgRes
+Follow Us On Twitter (https://twitter.com/HindenburgRes)
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Copyright =C2=A9 2022 *Hindenburg Research=2C All rights reserved.
+
+\r"
 send -- "\n.\n"
 expect "250 OK: message queued"
 send -- "QUIT\n"
