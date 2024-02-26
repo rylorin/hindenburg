@@ -16,4 +16,4 @@ RUN yarn build
 EXPOSE ${SMTPD_PORT}
 ENTRYPOINT [ "yarn", "start" ]
 
-HEALTHCHECK CMD nc -z 127.0.0.1 ${SMTPD_PORT} || exit 1
+HEALTHCHECK --interval=1m CMD nc -z 127.0.0.1 ${SMTPD_PORT} || exit 1

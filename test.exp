@@ -10,30 +10,30 @@ send -- "RCPT TO: <foo@bar.com>\r"
 expect "250 Accepted"
 send -- "DATA\r"
 expect "354 End data with <CR><LF>.<CR><LF>"
-send -- "From: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>\r"
-send -- "To: <ryl@free.fr>\r"
-send -- "Subject: =?utf-8?Q?Temenos=3A=20Major=20Accounting=20Irregularities=2C=20Failed=20Products=20And=20An=20Illusive=20Turnaround=20=28SWX=3ATEMN=29?=\r"
-send -- "Content-Type: multipart/alternative; boundary=\"_----------=_MCPart_2068068051\"\r"
-send -- "MIME-Version: 1.0\r"
-send -- "\r"
-send -- "This is a multi-part message in MIME format\r"
-send -- "\r"
-send -- "--_----------=_MCPart_2068068051\r"
-send -- "Content-Type: text/plain; charset=\"utf-8\"; format=\"fixed\"\r"
-send -- "Content-Transfer-Encoding: quoted-printable\r"
-send -- "\r"
-send -- "\r"
-send -- "\r"
-send -- "\r"
-send -- "** Temenos: Major Accounting Irregularities=2C Failed Products And An Illu=\r"
-send -- "sive Turnaround\r"
-send -- "------------------------------------------------------------\r"
-send -- "(SWX:TEMN)\r"
-send -- "* Temenos AG is a ~\$7.5B market cap Swiss-listed banking software develope=\r"
-send -- "r and services company that serves 3=2C000 customers globally and reported=\r"
-send -- " \$1 billion in preliminary 2023 revenue.\r"
-send -- "\r"
-send -- "Initial Disclosure: After extensive research=2C we have taken a short posi=
+send -- "From: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+To: <ryl@free.fr>
+Subject: =?utf-8?Q?Temenos=3A=20Major=20Accounting=20Irregularities=2C=20Failed=20Products=20And=20An=20Illusive=20Turnaround=20=28SWX=3ATEMN=29?=
+Content-Type: multipart/alternative; boundary=\"_----------=_MCPart_2068068051\"
+MIME-Version: 1.0
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_2068068051
+Content-Type: text/plain; charset=\"utf-8\"; format=\"fixed\"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+** Temenos: Major Accounting Irregularities=2C Failed Products And An Illu=
+sive Turnaround
+------------------------------------------------------------
+(SWX:TEMN)
+* Temenos AG is a ~\$7.5B market cap Swiss-listed banking software develope=
+r and services company that serves 3=2C000 customers globally and reported=
+ \$1 billion in preliminary 2023 revenue.
+
+Initial Disclosure: After extensive research=2C we have taken a short posi=
 tion in shares of Temenos AG (SWX:TEMN). This report represents our opinio=
 n=2C and we encourage every reader to do their own due diligence. Please s=
 ee our full disclaimer at the bottom of the report.
@@ -46,7 +46,7 @@ Follow Us On Twitter (https://twitter.com/HindenburgRes)
 =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
 Copyright =C2=A9 2022 *Hindenburg Research=2C All rights reserved.
 
-\r"
+"
 send -- "\n.\n"
 expect "250 OK: message queued"
 send -- "QUIT\n"

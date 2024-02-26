@@ -14,10 +14,7 @@ services:
     networks:
       - default
     ports:
-      - target: 25
-        published: 25
-        protocol: tcp
-        mode: ingress
+      - 25:25/tcp
     deploy:
       placement:
         constraints:

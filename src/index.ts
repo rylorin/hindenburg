@@ -32,21 +32,17 @@ export class MyTradingBotApp extends SmtpServer {
       email.from.text == '"Hindenburg Research" <info@hindenburgresearch.com>'
     ) {
       const disclosureStart = email.text.indexOf("Initial Disclosure:");
-      const disclosureEnd = email.text.indexOf("\n", disclosureStart);
-      const disclosure = email.text.slice(disclosureStart, disclosureEnd);
-      // const pattern = new RegExp(
-      //   "Initial Disclosure: After extensive research, we have taken a short position in shares of .* ([A-Z]*:[A-Z]*)",
-      //   "i"
-      // );
-      const pattern = new RegExp("\\([A-Z]+:[A-Z]+\\)", "g");
-      const result = disclosure.match(pattern);
-      console.log("Hindenburg disclosure", disclosure, result);
-      if (result.length) this.fireOrder(result[0].slice(1, -1));
-    } else {
-      console.log("MyTradingBotApp.processMail", email);
-      // Forward email
-      this.smtpClient.forwardEmail(email);
+      if (disclosureStart >= 0) {
+        const disclosureEnd = email.text.indexOf("\n", disclosureStart);
+        const disclosure = email.text.slice(disclosureStart, disclosureEnd);
+        const pattern = new RegExp("\\([A-Z]+:[A-Z]+\\)", "g");
+        const result = disclosure.match(pattern);
+        console.log("Hindenburg disclosure", disclosure, result);
+        if (result.length) this.fireOrder(result[0].slice(1, -1));
+      }
     }
+    // Forward email
+    this.smtpClient.forwardEmail(email);
   }
 }
 
