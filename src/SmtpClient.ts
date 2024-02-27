@@ -21,12 +21,24 @@ export class SmtpClient {
 
   public async forwardEmail(email: Record<string, any>) {
     // We need to change "from" to get mail accepted from gateway
-    if (process.env.RELAY_USERNAME) email.from = process.env.RELAY_USERNAME;
+    // if (process.env.RELAY_USERNAME) {
+    //   email.from = process.env.RELAY_USERNAME;
+    //   email.headers.delete("from");
+    //   email.headerLines = email.headerLines.filter(
+    //     (item: { key: string; line: string }) => item.key != "from"
+    //   );
+    // }
     // We need to change "to" or mail will loop back
-    email.to =
-      process.env.RCPT_TO || process.env.RELAY_USERNAME || "<foo@bar.com>";
+    // email.to =
+    //   process.env.RCPT_TO || process.env.RELAY_USERNAME || "<foo@bar.com>";
     // console.log(email);
-    const info = await this.transporter.sendMail(email);
+    const info = await this.transporter.sendMail({
+      from: process.env.RELAY_USERNAME || email.from,
+      to: process.env.RCPT_TO || process.env.RELAY_USERNAME,
+      subject: email.subject,
+      text: email.text,
+      html: email.html,
+    });
 
     console.log("Message sent: %s", info.messageId);
   }
