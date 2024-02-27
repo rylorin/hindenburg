@@ -1,5 +1,6 @@
 #!/usr/bin/expect
-set PORT [lindex $argv 0]
+set PORT 25
+if { $argc > 0 } { set PORT [lindex $argv 0] }
 spawn telnet localhost $PORT
 expect "220"
 send -- "HELO host.example.com\r"
@@ -10,7 +11,12 @@ send -- "RCPT TO: <foo@bar.com>\r"
 expect "250 Accepted"
 send -- "DATA\r"
 expect "354 End data with <CR><LF>.<CR><LF>"
-send -- "From: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+if { $argc == 2 } {
+  set fh [open [lindex $argv 1] r]
+  send -- [read $fh]
+  close $fh
+} else {
+  send -- "From: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
 To: <ryl@free.fr>
 Subject: =?utf-8?Q?Temenos=3A=20Major=20Accounting=20Irregularities=2C=20Failed=20Products=20And=20An=20Illusive=20Turnaround=20=28SWX=3ATEMN=29?=
 Content-Type: multipart/alternative; boundary=\"_----------=_MCPart_2068068051\"
@@ -47,6 +53,7 @@ Follow Us On Twitter (https://twitter.com/HindenburgRes)
 Copyright =C2=A9 2022 *Hindenburg Research=2C All rights reserved.
 
 "
+}
 send -- "\n.\n"
 expect "250 OK: message queued"
 send -- "QUIT\n"
