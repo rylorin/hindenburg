@@ -1,0 +1,1669 @@
+Delivered-To: rylorin@gmail.com
+Received: by 2002:a05:7110:4bc8:b0:22a:d451:3e7e with SMTP id dg8csp375759geb;
+        Thu, 15 Feb 2024 03:31:41 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGt6tbZtjchSZ8HPF9st5SUnpMAyjL0dXOSDf8wQ3XTMR0nfcRvBVf29UmSaRcdXQucrael
+X-Received: by 2002:a81:a181:0:b0:607:e239:228e with SMTP id y123-20020a81a181000000b00607e239228emr254901ywg.25.1707996701174;
+        Thu, 15 Feb 2024 03:31:41 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1707996701; cv=none;
+        d=google.com; s=arc-20160816;
+        b=RQ4fXuzQb2mbo/ax1IpHD/SAorh6dqEDTGYzDzG/Tk7EtjVdHRleSsq4birQykHD/k
+         2pcT3SQvdLYA5oEJgKoynRsDICn0y2vb49q8N2bSoJtNqet4SnYdNh5i2IQyLFTdD7fQ
+         4bc7DDl57EIN2tps/Yv6FEaiRSZkNiRmJ4fL/+o/rlB3D7he1Y4+ZAvmXxSY2CXiTFDD
+         j8NMIcyBm3w1JuE4SQWoB60DQlYfu1FaOMupYBGmduntoyn/6qJC6yIm39NGeA33poLr
+         Sy85PCEX1ZzrwSRqXVx1qqKiV3QogZhS89t3m7cQXJL0noMN/mkhtg7OYOUeAyql6YSC
+         bysA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :dkim-signature;
+        bh=Xr+CcCvnRNcbQPLsTn5yoMBla8+8419UWcL5B6kdT3w=;
+        fh=Gl0xcCE2dclMB2Ryz6H+lWeG7Rn7rUJHLaSQLXr9WsA=;
+        b=GEBVGw17txaB+9UMjl8pPkMQy7EOtXWE35Mx4rBavQekLB1Z9UFo9mqawkR1hJc7Hk
+         MZVoENkPtokSaN8Z8a+ebW5GMJnaxiBwnKF6GlYB1JZZrNl204jZA4EoFcLwL9yU1/ud
+         APWcqii8VaUBXJgMhXen8HSnU1LtSGQc89QfyclBpQbeNifvqibxcUVzKJ00J4ZNU1Ac
+         raUEqegNh+YjaU70PtHw65noUa5P3Z3+D6zczM+b537Dq5N8EhKZ/Kb1JJiQvShvvMUf
+         3LTMv3upurUEFxeg0gCYmGEQRHZIO5ZjKqQ4n8kHLbrzt9z89Qop0Z1s8ib8RPP2jhWy
+         +oeA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=3TtG2k1L;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=oEoZ9njz;
+       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570018-04403ab0ff@mail54.suw15.mcsv.net designates 198.2.182.54 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570018-04403ab0ff@mail54.suw15.mcsv.net
+Return-Path: <bounce-mc.us19_104347118.6570018-04403ab0ff@mail54.suw15.mcsv.net>
+Received: from mail54.suw15.mcsv.net (mail54.suw15.mcsv.net. [198.2.182.54])
+        by mx.google.com with ESMTPS id r190-20020a0de8c7000000b006079e53d8fesi402644ywe.142.2024.02.15.03.31.41
+        for <rylorin@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 15 Feb 2024 03:31:41 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-mc.us19_104347118.6570018-04403ab0ff@mail54.suw15.mcsv.net designates 198.2.182.54 as permitted sender) client-ip=198.2.182.54;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=3TtG2k1L;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=oEoZ9njz;
+       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570018-04403ab0ff@mail54.suw15.mcsv.net designates 198.2.182.54 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570018-04403ab0ff@mail54.suw15.mcsv.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mcsv.net;
+	s=k1; t=1707996126; x=1708082526;
+	bh=Xr+CcCvnRNcbQPLsTn5yoMBla8+8419UWcL5B6kdT3w=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=3TtG2k1LRWtpyrVBqebMxOKPIggfqFN3IhTLXJP/2o1ksTYklWD6l/Tt9M9GzGNEd
+	 B73g2341goOjmSrpHdXJzcsZZxmLZt5NM7lIiF8LBa3AoeOUZ9SuHnFUcdDvT0KIKA
+	 AIJG6A1ueY5uSfgCWu9nFqzn8nlmK9gCf53CyV7eWXy0v1YGTfcs2KKjfdUlv490oL
+	 r9/mYfHN+ZqmVG6S93sbFJGqc9Y03dRaVL/VPtoc4S5KPRqyR/9M53CLBJfjhiI04w
+	 rVrYfjNzV9HmLeR3dGm9eWw04KDuRVFifGlyspx99/ca1UMLi/7RkZqXci8Pda+fc/
+	 jqtVv7a5t0ifg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimpapp.net;
+	s=k2; t=1707996126; x=1708256626;
+	i=info=3Dhindenburgresearch.com@mailchimpapp.net;
+	bh=Xr+CcCvnRNcbQPLsTn5yoMBla8+8419UWcL5B6kdT3w=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=oEoZ9njzQU9erAhjppvJnNdnRXdKJ55JaUuB2wKMCN2qgcYokrM6BQmfwNk2eKIlS
+	 KfvpTW7aqZvo6lOIb3pIomVoOfVL7nRODf7xkLw7DzZL8JV5Ohu6c+F2Ly8RKFOvvu
+	 jBLfoPhi6hd/cf4FO+3Wb3Fpbw0s4FqPG08L0ITfizQIJN6+C81hNsXbq7Zp1MkMcC
+	 /3d0EK4urQLjBYoKvzyrzPFKhhzvUfZMJGTIvPiyJvqOhq97meoCo5n0ky+hIPpvbu
+	 Si7T5irzeXRJsi1IXxa1i8JkEJS5Ovty2buw5IHG8lmjsZv9lEVtDB3nfxN/goI9l1
+	 m6HvOwlIRR3sg==
+Received: from localhost (localhost [127.0.0.1])
+	by mail54.suw15.mcsv.net (Mailchimp) with ESMTP id 4TbCML0D01zQYZDHw
+	for <rylorin@gmail.com>; Thu, 15 Feb 2024 11:22:06 +0000 (GMT)
+Subject: =?utf-8?Q?Temenos=3A=20Major=20Accounting=20Irregularities=2C=20Failed=20Products=20And=20An=20Illusive=20Turnaround=20=28SWX=3ATEMN=29?=
+From: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+Reply-To: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+To: <rylorin@gmail.com>
+Date: Thu, 15 Feb 2024 11:21:57 +0000
+Message-ID: <ffb3753afd4493d4fbd300492.04403ab0ff.20240215112147.4ac2586b3c.0ac995be@mail54.suw15.mcsv.net>
+X-Mailer: Mailchimp Mailer - **CID4ac2586b3c04403ab0ff**
+X-Campaign: mailchimpffb3753afd4493d4fbd300492.4ac2586b3c
+X-campaignid: mailchimpffb3753afd4493d4fbd300492.4ac2586b3c
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=ffb3753afd4493d4fbd300492&id=4ac2586b3c&e=04403ab0ff
+X-MC-User: ffb3753afd4493d4fbd300492
+Feedback-ID: 104347118:104347118.6570018:us19:mc
+List-ID: ffb3753afd4493d4fbd300492mc list <ffb3753afd4493d4fbd300492.63691.list-id.mcsv.net>
+X-Accounttype: pr
+List-Unsubscribe: <https://hindenburgresearch.us19.list-manage.com/unsubscribe?u=ffb3753afd4493d4fbd300492&id=5b17860351&t=h&e=04403ab0ff&c=4ac2586b3c>, <mailto:unsubscribe-mc.us19_ffb3753afd4493d4fbd300492.4ac2586b3c-04403ab0ff@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_2068068051"
+MIME-Version: 1.0
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_2068068051
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+** Temenos: Major Accounting Irregularities=2C Failed Products And An Illu=
+sive Turnaround
+------------------------------------------------------------
+(SWX:TEMN)
+* Temenos AG is a ~$7.5B market cap Swiss-listed banking software develope=
+r and services company that serves 3=2C000 customers globally and reported=
+ $1 billion in preliminary 2023 revenue.
+* Our 4-month investigation into Temenos=2C involving interviews with 25 f=
+ormer employees=2C including senior leaders at the company=2C uncovered ha=
+llmarks of manipulated earnings and major accounting irregularities. This=
+ includes evidence of roundtripped revenue=2C sham partnerships=2C rampant=
+ pulling forward of contract renewals=2C backdated contracts=2C excessive=
+ capitalization of seemingly non-existent R&D investments=2C and other cla=
+ssic accounting red flags.
+* These aggressive accounting practices seemed to be an open secret among=
+ many of the former employees we spoke with. Several indicated that CEO An=
+dreas Andreades encourages the practices=2C which help gloss over signific=
+ant customer product dissatisfaction and attrition.
+* In October 2021=2C Temenos announced a strategic partnership with fintec=
+h Mbanq to =E2=80=9Caccelerate banking-as-a-service adoption across the US=
+=2C=E2=80=9D its key strategic market. According to a former Temenos execu=
+tive=2C the deal involved Mbanq purchasing $20 million in software and ser=
+vices from Temenos.
+* Litigation records=2C financial statements=2C and former Temenos executi=
+ves evidence that Temenos secretly funded the purchase of its own software=
+- effectively engaging in a roundtripping scheme by making an undisclosed=
+ ~$20 million investment into Mbanq around the same time as the software p=
+urchase.
+* A former Temenos executive told us=2C =E2=80=9CThe convertible note was=
+ signed the same day=2C the same hour as the deal was signed for Mbanq =E2=
+=80=A6 because they [Mbanq] couldn=E2=80=99t have signed it if they didn=
+=E2=80=99t have the money.=E2=80=9D They added=2C =E2=80=9CIf that was in=
+ the US and that was with the SEC=2C everyone would be out.=E2=80=9D
+* In February 2021=2C Temenos announced a partnership with US-based bankin=
+g software company DXC Technology=2C which a former DXC executive told us=
+ entailed DXC buying approximately $8-10 million in software licenses from=
+ Temenos.
+* While Temenos repeatedly assured shareholders that the DXC partnership w=
+as =E2=80=9Cgame-changing=E2=80=9D and would =E2=80=9Caccelerate our penet=
+ration=E2=80=9D with large banks in North America=2C a former DXC executiv=
+e told us the deal was =E2=80=9Crushed through=E2=80=9D on the last day of=
+ the year to =E2=80=9Chelp Temenos make their yearly number=E2=80=9D. They=
+ said of the deal: =E2=80=9CThis isn=E2=80=99t a partnership. You used us=
+ for a license sale.=E2=80=9D
+* According to the executive=2C the deal was subsequently terminated due t=
+o inaction on Temenos=E2=80=99 part=2C leading to an eventual ~$8 million=
+ write-off for DXC=2C saying =E2=80=9Cthey [Temenos] left us at the altar=
+ =E2=80=A6 we gave them a bunch of money and then they literally walked aw=
+ay.=E2=80=9D
+* A former Temenos executive confirmed that the partnership failed=2C sayi=
+ng=2C =E2=80=9C[DXC] had to write that off [their] books=E2=80=A6=E2=80=
+=9D and told us the deal was =E2=80=9Ctypical Temenos=E2=80=9D and all abo=
+ut =E2=80=9Cselling and quick hits.=E2=80=9D
+* Throughout our research=2C 4 different former Temenos employees corrobor=
+ated the practice of pulling forward license renewals=2C often at discount=
+s=2C to boost short-term earnings while cannibalizing future renewal reven=
+ue. One former executive told us=2C =E2=80=9CIf there=E2=80=99s a renewal=
+ that they can pull forward=2C they=E2=80=99re going to go and be very agg=
+ressive about doing that=2C and that=E2=80=99s what happened.=E2=80=9D
+* Another executive described the effect of aggressive pull forwards by ci=
+ting Temenos=E2=80=99 record-breaking revenue in 2019=2C saying=2C =E2=80=
+=9CWhen outside investors were looking at this=2C they thought ah=2C the l=
+icensing is growing and we=E2=80=99re getting new customers. The reality i=
+s the new customer sales were coming down=E2=80=A6=E2=80=9D
+* When asked about pulling forward renewals=2C a former salesperson simply=
+ told us=2C =E2=80=9CI just thought=2C you know what... there=E2=80=99s go=
+ing to be some accounting scandal at some point=E2=80=A6=E2=80=9D
+* A former Temenos executive told us that the company also regularly backd=
+ated contracts to shift earnings to earlier quarters=2C saying=2C =E2=80=
+=9C=E2=80=A6 the standard practice=2C which was known completely and condo=
+ned by Andreas and Max [current and former CEOs]=2C but denied in public=
+=2C was that the legal teams would give power of attorney to the sales tea=
+ms to backdate a deal that had come in=2C you know=2C after the end of the=
+ quarter.=E2=80=9D
+* A former sales leader from Temenos corroborated the practice of backdati=
+ng=2C saying=2C =E2=80=9CDon=E2=80=99t trust any of the public information=
+ =E2=80=A6 including the analyst call=2C okay? =E2=80=A6 I=E2=80=99ve seen=
+ deals closed in January that they were pulled back to the previous quarte=
+r=2C okay? They do that.=E2=80=9D
+* Temenos states that it invests 20% of its revenue back into R&D=2C =E2=
+=80=9Cmore than twice the level=E2=80=9D of its closest competitors. Forme=
+r senior Temenos executives told us the advertised R&D spend was =E2=80=9C=
+non-existent=E2=80=9D and a =E2=80=9Cmystery.=E2=80=9D
+* One former Temenos executive told us the majority of Temenos reported R&=
+D investments were actually customer-specific implementation costs: =E2=80=
+=9CAll you=E2=80=99re doing is just taking something that was custom for a=
+ customer and saying it=E2=80=99s R&D. It=E2=80=99s not. That=E2=80=99s th=
+e majority of it.=E2=80=9D
+* In 2022=2C Temenos=E2=80=99 R&D capitalization rate was 62% higher than=
+ peers=2C resulting in an estimated $86 million of already questionable R&=
+D costs being shifted to the balance sheet. Compared with the peer average=
+ capitalization rate=2C Temenos=E2=80=99 capitalization led to an estimate=
+d 29.5% artificial boost to its 2022 pre-tax profits.
+* In 2023=2C Temenos extended its allowable amortization period for =E2=80=
+=9Cinternally generated software development costs=E2=80=9D from 5 years t=
+o 7 years=2C allowing it to recognize these capitalized costs even more sl=
+owly than before=2C with zero disclosure about its impact on its financial=
+s. We estimate the change will allow Temenos to artificially boost 2023 pr=
+ofits by up to 8.7%.
+* Temenos also has almost double the Days Sales Outstanding (DSO) of its c=
+losest peers at 124 days=2C a classic sign of aggressive revenue recogniti=
+on policies and difficulty collecting on reported revenue.
+* Despite the Mbanq and DXC partnerships seemingly failing to yield new bu=
+siness in North America=2C Temenos continues to highlight the region as it=
+s key strategic market and driver of growth=2C projecting it will soon acc=
+ount for 45-50% of software licensing revenue due to Temenos=E2=80=99 =E2=
+=80=9Cleadership vision=E2=80=9D and =E2=80=9Csuperior technology.=E2=80=
+=9D
+* Our research uncovered a series of failed implementations and frustrated=
+ customers in North America. One former Temenos executive said=2C =E2=80=
+=9CClients were falling out the bottom of the funnel=2C so to speak=2C as=
+ fast as we could fill it at the top=E2=80=9D due to CEO Andreades refusin=
+g to look at =E2=80=9Cdeficiencies in the product=E2=80=A6=E2=80=9D
+* Another former Temenos employee said Andreades would often pitch non-exi=
+stent products to prospective customers=2C telling us =E2=80=9CAndreas or=
+ (former CEO) Max would be going into a meeting and they didn=E2=80=99t ha=
+ve a brochure for the feature that didn=E2=80=99t exist=E2=80=A6 and it ha=
+d to be on their desk by the time they got to the client. For a feature th=
+at hasn=E2=80=99t been thought of=2C not run by product=2C not run by anyb=
+ody sensible=E2=80=A6=E2=80=9D
+* US-based Unify Financial Credit Union signed on with Temenos in Septembe=
+r 2018. It sued Temenos for fraudulent inducement and negligent misreprese=
+ntation by December 2021=2C claiming that Temenos oversold its cloud capab=
+ilities and that its software was so unstable that Unify had to revert to=
+ its old system 2 months after going live.
+* US-based First Fidelity Bank signed on with Temenos in December 2019. It=
+ sued Temenos for breach of contract and fraudulent misrepresentation in 2=
+022=2C saying it was =E2=80=9Cfed up with Temenos=E2=80=99 excuses and del=
+ays.=E2=80=9D
+* US-based Grasshopper Bank went live with Temenos=E2=80=99 core software=
+ in 2019=2C only to abandon it 4 years later after numerous implementation=
+ issues. A former executive from Grasshopper told us that its entire new b=
+ank launch was put on hold =E2=80=9Clargely because of Temenos=E2=80=99 im=
+plementation strategy=E2=80=9D=2C which they described as =E2=80=9Cexcruci=
+ating=E2=80=9D.
+* US-based Varo Bank went live with Temenos=E2=80=99 core banking software=
+ in September 2020=2C and is currently highlighted as a =E2=80=9Csuccess s=
+tory=E2=80=9D on Temenos=E2=80=99 website. Former Varo employees described=
+ the implementation as a =E2=80=9Chorrible experience=E2=80=9D that left t=
+hem =E2=80=9Cforever scarred.=E2=80=9D
+* One former Varo executive told us=2C =E2=80=9CNothing was out of the box=
+=2C even though everything was sold as out of the box=E2=80=9D and that=
+ =E2=80=9Cliterally nothing worked.=E2=80=9D The executive claimed that Va=
+ro took millions in losses due to issues with the Temenos implementation.
+* In 2019=2C Temenos formally announced =E2=80=9CTemenos Infinity=2C=E2=80=
+=9D an attempt to diversify beyond core banking software by rolling $840 m=
+illion of acquisitions into a new division focused on =E2=80=9Cdigital ban=
+king=E2=80=9D products. As recently as its 2023 Capital Markets Day presen=
+tation=2C Temenos has continued to tout Infinity as a successful entry int=
+o digital banking that represents an addressable market as large as core b=
+anking.
+* Former Temenos executives=2C partners=2C and customers confirmed dozens=
+ of failed Infinity implementations=2C with one former Temenos executive c=
+alling the entire division =E2=80=9Ca huge destruction in value=E2=80=9D=
+=2C saying that =E2=80=9Ca whole Infinity team of 20 or 30 salespeople=E2=
+=80=9D got =E2=80=9Ccanned.=E2=80=9D A second former employee confirmed th=
+at Temenos =E2=80=9Caxed pretty much everybody in Infinity=E2=80=9D over t=
+he last year. A third said =E2=80=9Cthe top talent that supported that pro=
+duct [Infinity] left.=E2=80=9D
+* A former Temenos executive told us that the great majority of North Amer=
+ican Infinity implementations simply failed=2C saying=2C =E2=80=9CLet=E2=
+=80=99s see=2C in 2021=2C we had 19 clients in North America=E2=80=A6  tha=
+t were supposed to go live [on Infinity]=2C and 2 of those 19 went live=
+=E2=80=A6 tons of client cancellations=2C frustrated=2C angry clients.=E2=
+=80=9D
+* We also found evidence of failed Infinity projects in the Middle East=2C=
+ Asia=2C and Australia.  We spoke with a former manager from NDC Tech (now=
+ Systems Limited)=2C one of Temenos=E2=80=99 implementation partners in th=
+e MENA region. They also confirmed widespread Infinity failure=2C saying=
+=2C =E2=80=9C=E2=80=A6 around 20+ banks in 3 years onboarded with Infinity=
+ =E2=80=A6 but honestly=2C out of those 20+ banks=2C only 2 or 3 banks wer=
+e able to go live.=E2=80=9D
+* Finally=2C we were told by a former senior Temenos executive that CEO An=
+dreades admitted in a closed door meeting that Infinity had failed. The ex=
+ecutive said=2C =E2=80=9CHe [Andreades] literally said=E2=80=A6 we=E2=80=
+=99ve gotten nowhere with Infinity in 3 years=2C we need to just=2C you kn=
+ow=2C toss it overboard [and] be done with it.=E2=80=9D
+* Many of Temenos=E2=80=99 most highlighted deals in Europe and Australia=
+ have been plagued with delays=2C cost overruns=2C and regulatory issues=
+=2C despite Temenos=E2=80=99 posturing to the market that the deals have b=
+een major successes.
+* In 2015=2C Nordea signed on for what was supposed to be a 5-year core ba=
+nking transformation with Temenos=2C representing the largest deal in Teme=
+nos history to that point. Today=2C the deal is touted as a success story=
+ by Temenos.
+* However=2C Nordea reportedly experienced cost overruns=2C delays=2C and=
+ its Chief Banking Officer resigned in May 2021 amidst reports that the ba=
+nk=E2=80=99s core banking transformation had slowed. A former Temenos exec=
+utive called the implementation "absolutely terrible=E2=80=9D and confirme=
+d that the Nordea transformation was still ongoing nearly 9-years after ki=
+ck-off.
+* In 2016=2C the Bank of Ireland selected Temenos to be =E2=80=9Cat the he=
+art=E2=80=9D of its =E2=82=AC500 million technological transformation. The=
+ project budget reportedly tripled over 5 years=2C led to wide-ranging IT=
+ failures and a $139 million impairment for the bank.
+* A former IT manager from the Bank of Ireland told us Temenos over-promis=
+ed and under-delivered=2C saying Temenos=E2=80=99 software =E2=80=9Ccouldn=
+=E2=80=99t handle=E2=80=9D the bank=E2=80=99s needs. The former manager sa=
+id that the Temenos team was sometimes more focused on =E2=80=9Cjust tryin=
+g to sell more software=E2=80=A6=E2=80=9D
+* In May 2018=2C Australia-based BNK Banking announced it had gone live wi=
+th Temenos=E2=80=99 cloud banking software=2C but in July 2023=2C BNK was=
+ hit with 18 infringement notices from Australia=E2=80=99s banking regulat=
+or due to flaws in Temenos=E2=80=99 software=2C per a BNK spokesperson to=
+ the media.
+* BNK is now leaving Temenos mid-contract according to an Australian banki=
+ng consultant familiar with the company who told us=2C =E2=80=9CHonestly=
+=2C an Excel sheet would work better than Temenos=2C and that=E2=80=99s be=
+ing gentle. It is horrendous =E2=80=A6 they have cost [BNK] what we belie=
+ve to be over $100 million worth of lost opportunity.=E2=80=9D
+* An Australian banking consultant that worked on Temenos implementations=
+ summed up his view of Temenos as a =E2=80=9Cjust a fantastic sales compan=
+y and just a sales machine=2C but honestly can=E2=80=99t back it up with a=
+nything=E2=80=A6 the most difficult vendor I=E2=80=99ve ever come across.=
+ They promised us the world. It was all vaporware=2C basically=E2=80=A6=E2=
+=80=9D
+* While institutions like Baillie Gifford=2C Fidelity and Fundsmith=2C hav=
+e accumulated significant positions=2C Temenos executives have dumped $1.1=
+ billion in stock over the last 10 years=2C per Bloomberg.
+* Temenos trades at a fundamental premium to its peers=2C representing sig=
+nificant downside even if one were to ignore all the findings of our repor=
+t. Consensus estimates show it trades at a 76% earnings premium=2C a 41% E=
+V/revenue premium=2C and a 59% EV/EBITDA premium.
+* In its quest to seemingly do just about anything to prop up its earnings=
+ and boost its stock price=2C Temenos finds itself on the classic accelera=
+ting accounting treadmill. We expect it will soon run out of accounting tr=
+icks=2C new unwitting customers who believe its glossy sales pitches=2C an=
+d new investors willing to buy as executives continue to sell.
+* Temenos says it =E2=80=9Ctakes every step to be as open and forthcoming=
+ as possible with data=E2=80=9D and that it will fully investigate claims=
+ of =E2=80=9Cconcerns or improper conduct.=E2=80=9D With this commitment t=
+o transparency in mind=2C we have included 36 questions at the end of this=
+ report.
+
+Initial Disclosure: After extensive research=2C we have taken a short posi=
+tion in shares of Temenos AG (SWX:TEMN). This report represents our opinio=
+n=2C and we encourage every reader to do their own due diligence. Please s=
+ee our full disclaimer at the bottom of the report.
+Read The Full Report Here (https://hindenburgresearch.com/temenos/)
+https://twitter.com/HindenburgRes
+Follow Us On Twitter (https://twitter.com/HindenburgRes)
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Copyright =C2=A9 2022 *Hindenburg Research=2C All rights reserved.
+
+Want to change how you receive these emails?
+You can ** update your preferences (https://hindenburgresearch.us19.list-m=
+anage.com/profile?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3D4ac2586b3c)
+or ** unsubscribe from this list (https://hindenburgresearch.us19.list-man=
+age.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&t=3Db&e=
+=3D04403ab0ff&c=3D4ac2586b3c)
+=2E
+--_----------=_MCPart_2068068051
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-micros=
+oft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    <head>
+        <!-- NAME: FOLLOW UP -->
+        <!--[if gte mso 15]>
+        <xml>
+            <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]-->
+        <meta charset=3D"UTF-8">
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial=
+-scale=3D1">
+        <title>Temenos: Major Accounting Irregularities=2C Failed Products=
+ And An Illusive Turnaround (SWX:TEMN)</title>
+
+    <style type=3D"text/css">
+=09=09p{
+=09=09=09margin:10px 0;
+=09=09=09padding:0;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09h1=2Ch2=2Ch3=2Ch4=2Ch5=2Ch6{
+=09=09=09display:block;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img=2Ca img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body=2C#bodyTable=2C#bodyCell{
+=09=09=09height:100%;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09table{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cblockquote{
+=09=09=09mso-line-height-rule:exactly;
+=09=09}
+=09=09a[href^=3Dtel]=2Ca[href^=3Dsms]{
+=09=09=09color:inherit;
+=09=09=09cursor:default;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cbody=2Ctable=2Cblockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09.ExternalClass=2C.ExternalClass p=2C.ExternalClass td=2C.ExternalCla=
+ss div=2C.ExternalClass span=2C.ExternalClass font{
+=09=09=09line-height:100%;
+=09=09}
+=09=09a[x-apple-data-detectors]{
+=09=09=09color:inherit !important;
+=09=09=09text-decoration:none !important;
+=09=09=09font-size:inherit !important;
+=09=09=09font-family:inherit !important;
+=09=09=09font-weight:inherit !important;
+=09=09=09line-height:inherit !important;
+=09=09}
+=09=09.templateContainer{
+=09=09=09max-width:600px !important;
+=09=09}
+=09=09a.mcnButton{
+=09=09=09display:block;
+=09=09}
+=09=09.mcnImage=2C.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent{
+=09=09=09word-break:break-word;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09.mcnDividerBlock{
+=09=09=09table-layout:fixed !important;
+=09=09}
+=09=09h1{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:40px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h2{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:34px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h3{
+=09=09=09color:#444444;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:22px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h4{
+=09=09=09color:#949494;
+=09=09=09font-family:Georgia;
+=09=09=09font-size:20px;
+=09=09=09font-style:italic;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templateHeader{
+=09=09=09background-color:#f7f7f7;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0px;
+=09=09=09padding-bottom:0px;
+=09=09}
+=09=09.headerContainer{
+=09=09=09background-color:#transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.headerContainer .mcnTextContent a=2C.headerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateBody{
+=09=09=09background-color:#FFFFFF;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:27px;
+=09=09=09padding-bottom:54px;
+=09=09}
+=09=09.bodyContainer{
+=09=09=09background-color:transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.bodyContainer .mcnTextContent a=2C.bodyContainer .mcnTextContent p=
+ a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateFooter{
+=09=09=09background-color:#333333;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:45px;
+=09=09=09padding-bottom:63px;
+=09=09}
+=09=09.footerContainer{
+=09=09=09background-color:transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09color:#FFFFFF;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:12px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09.footerContainer .mcnTextContent a=2C.footerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#FFFFFF;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09@media only screen and (min-width:768px){
+=09=09.templateContainer{
+=09=09=09width:600px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body=2Ctable=2Ctd=2Cp=2Ca=2Cli=2Cblockquote{
+=09=09=09-webkit-text-size-adjust:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImage{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCartContainer=2C.mcnCaptionTopContent=2C.mcnRecContentContainer=
+=2C.mcnCaptionBottomContent=2C.mcnTextContentContainer=2C.mcnBoxedTextCont=
+entContainer=2C.mcnImageGroupContentContainer=2C.mcnCaptionLeftTextContent=
+Container=2C.mcnCaptionRightTextContentContainer=2C.mcnCaptionLeftImageCon=
+tentContainer=2C.mcnCaptionRightImageContentContainer=2C.mcnImageCardLeftT=
+extContentContainer=2C.mcnImageCardRightTextContentContainer=2C.mcnImageCa=
+rdLeftImageContentContainer=2C.mcnImageCardRightImageContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupContent{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCaptionLeftContentOuter .mcnTextContent=2C.mcnCaptionRightConten=
+tOuter .mcnTextContent{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardTopImageContent=2C.mcnCaptionBottomContent:last-child .=
+mcnCaptionBottomImageContent=2C.mcnCaptionBlockInner .mcnCaptionTopContent=
+:last-child .mcnTextContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardBottomImageContent{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockInner{
+=09=09=09padding-top:0 !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockOuter{
+=09=09=09padding-top:9px !important;
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnTextContent=2C.mcnBoxedTextContentColumn{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardLeftImageContent=2C.mcnImageCardRightImageContent{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcpreview-image-uploader{
+=09=09=09display:none !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h1{
+=09=09=09font-size:30px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h2{
+=09=09=09font-size:26px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h3{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h4{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer .mcnTextContent=2C.mcnBoxedTextContent=
+Container .mcnTextContent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}</style></head>
+    <body style=3D"height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-=
+size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+        <!--
+-->
+        <center>
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;pad=
+ding: 0;width: 100%;">
+                <tr>
+                    <td align=3D"center" valign=3D"top" id=3D"bodyCell" st=
+yle=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"border-collapse: collapse;mso-table-lspace:=
+ 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;">
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateHeader" data-template-container=3D"" style=3D"background:#f7f7f7 n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #f7f7f7;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padd=
+ing-bottom: 0px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"he=
+aderContainer" style=3D"background:#transparent none no-repeat center/cove=
+r;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;background-color: #transparent;background-image: none;back=
+ground-repeat: no-repeat;background-position: center;background-size: cove=
+r;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateBody" data-template-container=3D"" style=3D"background:#FFFFFF non=
+e no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;backgroun=
+d-image: none;background-repeat: no-repeat;background-position: center;bac=
+kground-size: cover;border-top: 0;border-bottom: 0;padding-top: 27px;paddi=
+ng-bottom: 54px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"bo=
+dyContainer" style=3D"background:transparent none no-repeat center/cover;m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;background-color: transparent;background-image: none;backgrou=
+nd-repeat: no-repeat;background-position: center;background-size: cover;bo=
+rder-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnT=
+extBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <h1 style=3D"display: block;margin: 0;padding:=
+ 0;color: #222222;font-family: Helvetica;font-size: 40px;font-style: norma=
+l;font-weight: bold;line-height: 150%;letter-spacing: normal;text-align: c=
+enter;">Temenos: Major Accounting Irregularities=2C Failed Products And An=
+ Illusive Turnaround</h1>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <!-- wp:list --><span style=3D"font-size:20px"=
+><strong>(SWX:TEMN)</strong></span>
+
+<ul>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Temenos AG is a ~$7.5B market cap Swiss-li=
+sted banking software developer and services company that serves 3=2C000 c=
+ustomers globally and reported $1 billion in preliminary 2023 revenue.</li=
+>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Our 4-month investigation into Temenos=2C=
+ involving interviews with 25 former employees=2C including senior leaders=
+ at the company=2C uncovered hallmarks of manipulated earnings and major a=
+ccounting irregularities. This includes evidence of roundtripped revenue=
+=2C sham partnerships=2C rampant pulling forward of contract renewals=2C b=
+ackdated contracts=2C excessive capitalization of seemingly non-existent R=
+&amp;D investments=2C and other classic accounting red flags.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">These aggressive accounting practices seem=
+ed to be an open secret among many of the former employees we spoke with.=
+ Several indicated that CEO Andreas Andreades encourages the practices=2C=
+ which help gloss over significant customer product dissatisfaction and at=
+trition.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In October 2021=2C Temenos announced a str=
+ategic partnership with fintech Mbanq to =E2=80=9Caccelerate banking-as-a-=
+service adoption across the US=2C=E2=80=9D its key strategic market. Accor=
+ding to a former Temenos executive=2C the deal involved Mbanq purchasing $=
+20 million in software and services from Temenos.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Litigation records=2C financial statements=
+=2C and former Temenos executives evidence that Temenos secretly funded th=
+e purchase of its own software- effectively engaging in a roundtripping sc=
+heme by making an undisclosed ~$20 million investment into Mbanq around th=
+e same time as the software purchase.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former Temenos executive told us=2C =E2=
+=80=9CThe convertible note was signed the same day=2C the same hour as the=
+ deal was signed for Mbanq =E2=80=A6 because they [Mbanq] couldn=E2=80=99=
+t have signed it if they didn=E2=80=99t have the money.=E2=80=9D They adde=
+d=2C =E2=80=9CIf that was in the US and that was with the SEC=2C everyone=
+ would be out.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In February 2021=2C Temenos announced a pa=
+rtnership with US-based banking software company DXC Technology=2C which a=
+ former DXC executive told us entailed DXC buying approximately $8-10 mill=
+ion in software licenses from Temenos.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">While Temenos repeatedly assured sharehold=
+ers that the DXC partnership was =E2=80=9Cgame-changing=E2=80=9D and would=
+ =E2=80=9Caccelerate our penetration=E2=80=9D with large banks in North Am=
+erica=2C a former DXC executive told us the deal was =E2=80=9Crushed throu=
+gh=E2=80=9D on the last day of the year to =E2=80=9Chelp Temenos make thei=
+r yearly number=E2=80=9D. They said of the deal: =E2=80=9CThis isn=E2=80=
+=99t a partnership. You used us for a license sale.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">According to the executive=2C the deal was=
+ subsequently terminated due to inaction on Temenos=E2=80=99 part=2C leadi=
+ng to an eventual ~$8 million write-off for DXC=2C saying =E2=80=9Cthey [=
+Temenos] left us at the altar =E2=80=A6 we gave them a bunch of money and=
+ then they literally walked away.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former Temenos executive confirmed that=
+ the partnership failed=2C saying=2C =E2=80=9C[DXC] had to write that off=
+ [their] books=E2=80=A6=E2=80=9D and told us the deal was =E2=80=9Ctypica=
+l Temenos=E2=80=9D and all about =E2=80=9Cselling and quick hits.=E2=80=9D=
+</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Throughout our research=2C 4 different for=
+mer Temenos employees corroborated the practice of pulling forward license=
+ renewals=2C often at discounts=2C to boost short-term earnings while cann=
+ibalizing future renewal revenue. One former executive told us=2C =E2=80=
+=9CIf there=E2=80=99s a renewal that they can pull forward=2C they=E2=80=
+=99re going to go and be very aggressive about doing that=2C and that=E2=
+=80=99s what happened.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Another executive described the effect of=
+ aggressive pull forwards by citing Temenos=E2=80=99 record-breaking reven=
+ue in 2019=2C saying=2C =E2=80=9CWhen outside investors were looking at th=
+is=2C they thought ah=2C the licensing is growing and we=E2=80=99re gettin=
+g new customers. The reality is the new customer sales were coming down=E2=
+=80=A6=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">When asked about pulling forward renewals=
+=2C a former salesperson simply told us=2C =E2=80=9CI just thought=2C you=
+ know what... there=E2=80=99s going to be some accounting scandal at some=
+ point=E2=80=A6=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former Temenos executive told us that th=
+e company also regularly backdated contracts to shift earnings to earlier=
+ quarters=2C saying=2C =E2=80=9C=E2=80=A6 the standard practice=2C which w=
+as known completely and condoned by Andreas and Max [current and former C=
+EOs]=2C but denied in public=2C was that the legal teams would give power=
+ of attorney to the sales teams to backdate a deal that had come in=2C you=
+ know=2C after the end of the quarter.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former sales leader from Temenos corrobo=
+rated the practice of backdating=2C saying=2C =E2=80=9CDon=E2=80=99t trust=
+ any of the public information =E2=80=A6 including the analyst call=2C oka=
+y? =E2=80=A6 I=E2=80=99ve seen deals closed in January that they were pull=
+ed back to the previous quarter=2C okay? They do that.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Temenos states that it invests 20% of its=
+ revenue back into R&amp;D=2C =E2=80=9Cmore than twice the level=E2=80=9D=
+ of its closest competitors. Former senior Temenos executives told us the=
+ advertised R&amp;D spend was =E2=80=9Cnon-existent=E2=80=9D and a =E2=80=
+=9Cmystery.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">One former Temenos executive told us the m=
+ajority of Temenos reported R&amp;D investments were actually customer-spe=
+cific implementation costs: =E2=80=9CAll you=E2=80=99re doing is just taki=
+ng something that was custom for a customer and saying it=E2=80=99s R&amp;=
+D. It=E2=80=99s not. That=E2=80=99s the majority of it.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In 2022=2C Temenos=E2=80=99 R&amp;D capita=
+lization rate was 62% higher than peers=2C resulting in an estimated $86 m=
+illion of already questionable R&amp;D costs being shifted to the balance=
+ sheet. Compared with the peer average capitalization rate=2C Temenos=E2=
+=80=99 capitalization led to an estimated 29.5% artificial boost to its 20=
+22 pre-tax profits.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In 2023=2C Temenos extended its allowable=
+ amortization period for =E2=80=9Cinternally generated software developmen=
+t costs=E2=80=9D from 5 years to 7 years=2C allowing it to recognize these=
+ capitalized costs even more slowly than before=2C with zero disclosure ab=
+out its impact on its financials. We estimate the change will allow Temeno=
+s to artificially boost 2023 profits by up to 8.7%.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Temenos also has almost double the Days Sa=
+les Outstanding (DSO) of its closest peers at 124 days=2C a classic sign o=
+f aggressive revenue recognition policies and difficulty collecting on rep=
+orted revenue.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Despite the Mbanq and DXC partnerships see=
+mingly failing to yield new business in North America=2C Temenos continues=
+ to highlight the region as its key strategic market and driver of growth=
+=2C projecting it will soon account for 45-50% of software licensing reven=
+ue due to Temenos=E2=80=99 =E2=80=9Cleadership vision=E2=80=9D and =E2=80=
+=9Csuperior technology.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Our research uncovered a series of failed=
+ implementations and frustrated customers in North America. One former Tem=
+enos executive said=2C =E2=80=9CClients were falling out the bottom of the=
+ funnel=2C so to speak=2C as fast as we could fill it at the top=E2=80=9D=
+ due to CEO Andreades refusing to look at =E2=80=9Cdeficiencies in the pro=
+duct=E2=80=A6=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Another former Temenos employee said Andre=
+ades would often pitch non-existent products to prospective customers=2C t=
+elling us =E2=80=9CAndreas or (former CEO) Max would be going into a meeti=
+ng and they didn=E2=80=99t have a brochure for the feature that didn=E2=80=
+=99t exist=E2=80=A6 and it had to be on their desk by the time they got to=
+ the client. For a feature that hasn=E2=80=99t been thought of=2C not run=
+ by product=2C not run by anybody sensible=E2=80=A6=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">US-based Unify Financial Credit Union sign=
+ed on with Temenos in September 2018. It sued Temenos for fraudulent induc=
+ement and negligent misrepresentation by December 2021=2C claiming that Te=
+menos oversold its cloud capabilities and that its software was so unstabl=
+e that Unify had to revert to its old system 2 months after going live.</l=
+i>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">US-based First Fidelity Bank signed on wit=
+h Temenos in December 2019. It sued Temenos for breach of contract and fra=
+udulent misrepresentation in 2022=2C saying it was =E2=80=9Cfed up with Te=
+menos=E2=80=99 excuses and delays.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">US-based Grasshopper Bank went live with T=
+emenos=E2=80=99 core software in 2019=2C only to abandon it 4 years later=
+ after numerous implementation issues. A former executive from Grasshopper=
+ told us that its entire new bank launch was put on hold =E2=80=9Clargely=
+ because of Temenos=E2=80=99 implementation strategy=E2=80=9D=2C which the=
+y described as =E2=80=9Cexcruciating=E2=80=9D.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">US-based Varo Bank went live with Temenos=
+=E2=80=99 core banking software in September 2020=2C and is currently high=
+lighted as a =E2=80=9Csuccess story=E2=80=9D on Temenos=E2=80=99 website.=
+ Former Varo employees described the implementation as a =E2=80=9Chorrible=
+ experience=E2=80=9D that left them =E2=80=9Cforever scarred.=E2=80=9D</li=
+>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">One former Varo executive told us=2C =E2=
+=80=9CNothing was out of the box=2C even though everything was sold as out=
+ of the box=E2=80=9D and that =E2=80=9Cliterally nothing worked.=E2=80=9D=
+ The executive claimed that Varo took millions in losses due to issues wit=
+h the Temenos implementation.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In 2019=2C Temenos formally announced =E2=
+=80=9CTemenos Infinity=2C=E2=80=9D an attempt to diversify beyond core ban=
+king software by rolling $840 million of acquisitions into a new division=
+ focused on =E2=80=9Cdigital banking=E2=80=9D products. As recently as its=
+ 2023 Capital Markets Day presentation=2C Temenos has continued to tout In=
+finity as a successful entry into digital banking that represents an addre=
+ssable market as large as core banking.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Former Temenos executives=2C partners=2C a=
+nd customers confirmed dozens of failed Infinity implementations=2C with o=
+ne former Temenos executive calling the entire division =E2=80=9Ca huge de=
+struction in value=E2=80=9D=2C saying that =E2=80=9Ca whole Infinity team=
+ of 20 or 30 salespeople=E2=80=9D got =E2=80=9Ccanned.=E2=80=9D A second f=
+ormer employee confirmed that Temenos =E2=80=9Caxed pretty much everybody=
+ in Infinity=E2=80=9D over the last year. A third said =E2=80=9Cthe top ta=
+lent that supported that product [Infinity] left.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former Temenos executive told us that th=
+e great majority of North American Infinity implementations simply failed=
+=2C saying=2C =E2=80=9CLet=E2=80=99s see=2C in 2021=2C we had 19 clients i=
+n North America=E2=80=A6 &nbsp;that were supposed to go live [on Infinity=
+]=2C and 2 of those 19 went live=E2=80=A6 tons of client cancellations=2C=
+ frustrated=2C angry clients.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">We also found evidence of failed Infinity=
+ projects in the Middle East=2C Asia=2C and Australia.&nbsp; We spoke with=
+ a former manager from NDC Tech (now Systems Limited)=2C one of Temenos=E2=
+=80=99 implementation partners in the MENA region. They also confirmed wid=
+espread Infinity failure=2C saying=2C =E2=80=9C=E2=80=A6 around 20+ banks=
+ in 3 years onboarded with Infinity =E2=80=A6 but honestly=2C out of those=
+ 20+ banks=2C only 2 or 3 banks were able to go live.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Finally=2C we were told by a former senior=
+ Temenos executive that CEO Andreades admitted in a closed door meeting th=
+at Infinity had failed. The executive said=2C =E2=80=9CHe [Andreades] lit=
+erally said=E2=80=A6 we=E2=80=99ve gotten nowhere with Infinity in 3 years=
+=2C we need to just=2C you know=2C toss it overboard [and] be done with i=
+t.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Many of Temenos=E2=80=99 most highlighted=
+ deals in Europe and Australia have been plagued with delays=2C cost overr=
+uns=2C and regulatory issues=2C despite Temenos=E2=80=99 posturing to the=
+ market that the deals have been major successes.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In 2015=2C Nordea signed on for what was s=
+upposed to be a 5-year core banking transformation with Temenos=2C represe=
+nting the largest deal in Temenos history to that point. Today=2C the deal=
+ is touted as a success story by Temenos.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">However=2C Nordea reportedly experienced c=
+ost overruns=2C delays=2C and its Chief Banking Officer resigned in May 20=
+21 amidst reports that the bank=E2=80=99s core banking transformation had=
+ slowed. A former Temenos executive called the implementation "absolutely=
+ terrible=E2=80=9D and confirmed that the Nordea transformation was <em>st=
+ill</em> ongoing nearly 9-years after kick-off.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In 2016=2C the Bank of Ireland selected Te=
+menos to be =E2=80=9Cat the heart=E2=80=9D of its =E2=82=AC500 million tec=
+hnological transformation. The project budget reportedly tripled over 5 ye=
+ars=2C led to wide-ranging IT failures and a $139 million impairment for t=
+he bank.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former IT manager from the Bank of Irela=
+nd told us Temenos over-promised and under-delivered=2C saying Temenos=E2=
+=80=99 software =E2=80=9Ccouldn=E2=80=99t handle=E2=80=9D the bank=E2=80=
+=99s needs. The former manager said that the Temenos team was sometimes mo=
+re focused on =E2=80=9Cjust trying to sell more software=E2=80=A6=E2=80=9D=
+</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In May 2018=2C Australia-based BNK Banking=
+ announced it had gone live with Temenos=E2=80=99 cloud banking software=
+=2C but in July 2023=2C BNK was hit with 18 infringement notices from Aust=
+ralia=E2=80=99s banking regulator due to flaws in Temenos=E2=80=99 softwar=
+e=2C per a BNK spokesperson to the media.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">BNK is now leaving Temenos mid-contract ac=
+cording to an Australian banking consultant familiar with the company who=
+ told us=2C =E2=80=9CHonestly=2C an Excel sheet would work better than Tem=
+enos=2C and that=E2=80=99s being gentle. It is horrendous =E2=80=A6 they h=
+ave cost [BNK] what we believe to be over $100 million worth of lost oppo=
+rtunity.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">An Australian banking consultant that work=
+ed on Temenos implementations summed up his view of Temenos as a =E2=80=9C=
+just a fantastic sales company and just a sales machine=2C but honestly ca=
+n=E2=80=99t back it up with anything=E2=80=A6 the most difficult vendor I=
+=E2=80=99ve ever come across. They promised us the world. It was all vapor=
+ware=2C basically=E2=80=A6=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">While institutions like Baillie Gifford=2C=
+ Fidelity and Fundsmith=2C have accumulated significant positions=2C Temen=
+os executives have dumped $1.1 billion in stock over the last 10 years=2C=
+ per Bloomberg.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Temenos trades at a fundamental premium to=
+ its peers=2C representing significant downside even if one were to ignore=
+ all the findings of our report. Consensus estimates show it trades at a 7=
+6% earnings premium=2C a 41% EV/revenue premium=2C and a 59% EV/EBITDA pre=
+mium.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In its quest to seemingly do just about an=
+ything to prop up its earnings and boost its stock price=2C Temenos finds=
+ itself on the classic accelerating accounting treadmill. We expect it wil=
+l soon run out of accounting tricks=2C new unwitting customers who believe=
+ its glossy sales pitches=2C and new investors willing to buy as executive=
+s continue to sell.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Temenos says it =E2=80=9Ctakes every step=
+ to be as open and forthcoming as possible with data=E2=80=9D and that it=
+ will fully investigate claims of =E2=80=9Cconcerns or improper conduct.=
+=E2=80=9D With this commitment to transparency in mind=2C we have included=
+ 36 questions at the end of this report.</li>
+</ul>
+<em>Initial Disclosure: After extensive research=2C we have taken a short=
+ position in shares of Temenos AG (SWX:TEMN). This report represents our o=
+pinion=2C and we encourage every reader to do their own due diligence. Ple=
+ase see our full disclaimer at the bottom of the report.</em><!-- /wp:list=
+-item --><!-- /wp:list --><br>
+<!-- /wp:paragraph -->
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 9px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" align=3D"center"=
+ class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mcnButtonContentContainer" style=3D"border-collapse: separate !impo=
+rtant;border-radius: 3px;background-color: #00ADD8;mso-table-lspace: 0pt;m=
+so-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
+ 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Helvetica;font-size: 18px;padd=
+ing: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"Read The=
+ Full Report Here" href=3D"https://hindenburgresearch.us19.list-manage.com=
+/track/click?u=3Dffb3753afd4493d4fbd300492&id=3D32b6017691&e=3D04403ab0ff=
+" target=3D"_blank" style=3D"font-weight: bold;letter-spacing: -0.5px;line=
+-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;display: block;">Read The Full Report Here</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnFollowBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnFollowBlockOuter">
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"padding: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" class=3D"mcnFollowBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnFollowContentContainer" style=3D"min-width: 100%;=
+border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td align=3D"center" style=3D"padding-left: 9px;padding-right: 9px=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;" class=3D"mcnFollowContent">
+                <tbody><tr>
+                    <td align=3D"center" valign=3D"top" style=3D"padding-t=
+op: 9px;padding-right: 9px;padding-left: 9px;mso-line-height-rule: exactly=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                        <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse;mso-table-lspa=
+ce: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;">
+                            <tbody><tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+                                    <!--[if mso]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0">
+                                    <tr>
+                                    <![endif]-->
+
+                                        <!--[if mso]>
+                                        <td align=3D"center" valign=3D"top=
+">
+                                        <![endif]-->
+
+                                            <table align=3D"left" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnFollowStacked" styl=
+e=3D"display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;">
+
+                                                <tbody><tr>
+                                                    <td align=3D"center" v=
+align=3D"top" class=3D"mcnFollowIconContent" style=3D"padding-right: 0;pad=
+ding-bottom: 5px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">
+                                                        <a href=3D"https:/=
+/hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
+bd300492&id=3D260ff86247&e=3D04403ab0ff" target=3D"_blank" style=3D"mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;"><img src=3D"https://cdn-images.mailchimp.com/icons/social-block=
+-v2/color-twitter-96.png" alt=3D"Follow Us On Twitter" class=3D"mcnFollowB=
+lockIcon" width=3D"48" style=3D"width: 48px;max-width: 48px;display: block=
+;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolat=
+ion-mode: bicubic;"></a>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td align=3D"center" v=
+align=3D"top" class=3D"mcnFollowTextContent" style=3D"padding-right: 0;pad=
+ding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">
+                                                        <a href=3D"https:/=
+/hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
+bd300492&id=3D57315fca81&e=3D04403ab0ff" target=3D"_blank" style=3D"color=
+: #202020;font-family: Arial;font-size: 18px;font-weight: bold;text-decora=
+tion: none;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">Follow Us On Twitter</a>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody></table>
+
+
+                                        <!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+                                    <!--[if mso]>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateFooter" data-template-container=3D"" style=3D"background:#333333 n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #333333;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 45px;pad=
+ding-bottom: 63px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"fo=
+oterContainer" style=3D"background:transparent none no-repeat center/cover=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;background-color: transparent;background-image: none;backgr=
+ound-repeat: no-repeat;background-position: center;background-size: cover;=
+border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mc=
+nDividerBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px solid #505050;border-collapse: collapse;mso-table-lspace: 0pt;mso-=
+table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #FFFFFF;font-family: Helve=
+tica;font-size: 12px;line-height: 150%;text-align: center;">
+
+                            <em>Copyright =C2=A9 2022 *Hindenburg Research=
+=2C All rights reserved.</em><br>
+<br>
+Want to change how you receive these emails?<br>
+You can <a href=3D"https://hindenburgresearch.us19.list-manage.com/profile=
+?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3D4ac2586b3c=
+" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;color: #FFFFFF;font-weight: normal;text-decoratio=
+n: underline;">update your preferences</a> or <a href=3D"https://hindenbur=
+gresearch.us19.list-manage.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&i=
+d=3D5b17860351&t=3Db&e=3D04403ab0ff&c=3D4ac2586b3c" style=3D"mso-line-height=
+-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;c=
+olor: #FFFFFF;font-weight: normal;text-decoration: underline;">unsubscribe=
+ from this list</a>.
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://hindenburgresearch.us19.list-manage.com/track/open=
+=2Ephp?u=3Dffb3753afd4493d4fbd300492&id=3D4ac2586b3c&e=3D04403ab0ff" height=
+=3D"1" width=3D"1" alt=3D""></body>
+</html>
+--_----------=_MCPart_2068068051--

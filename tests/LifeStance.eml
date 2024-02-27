@@ -1,0 +1,1386 @@
+Delivered-To: rylorin@gmail.com
+Received: by 2002:a05:7110:4018:b0:228:feb1:bbb6 with SMTP id w24csp270190gew;
+        Thu, 1 Feb 2024 06:20:28 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEUmZp3Axpy6nRWfyt6lke3V/LCKITuYNTSIhvVXi/MfCpcFrLNGr3jXaxsvVDF10V3c2fA
+X-Received: by 2002:a17:90a:a897:b0:296:12df:a93a with SMTP id h23-20020a17090aa89700b0029612dfa93amr1942697pjq.46.1706797227860;
+        Thu, 01 Feb 2024 06:20:27 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1706797227; cv=none;
+        d=google.com; s=arc-20160816;
+        b=bQKgPsAnUOK/X2xDX07Hkl6XF7TyFC7XrMPSLtQp+W4aoX2jhHCc2JEZTuG5XCvE6R
+         DNg9lrHIlR5SseoflQkAb4RcioVKKPKaezjm/4sEu7mOCDSTMMO6hy2akeXFPxh4YguN
+         Qjeb/CXNq2WvYCLt0+Q+wHYXXfNt365Aq0O17HOSczXWTsODMppRL59E96CCdPKn9cPO
+         xCk/w6sd8b1HszqDV8p/kSl9K0491WD3O5rYbCe6zuApsTFLCOVLkMLm2PswviV/ZOsd
+         i2pj7vjQOHkNYNgJhATZ5u8VfgzhDHzOZyLZqeQlBv7TcErVGKGbPjKr2tP3LUQL/aay
+         cIlQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :dkim-signature;
+        bh=mZKvIUINdVyFaHkcA4PVRd2RVqqj1KIYCtJBz40n0nY=;
+        fh=Gl0xcCE2dclMB2Ryz6H+lWeG7Rn7rUJHLaSQLXr9WsA=;
+        b=q5FgLh34oPxbX3a5d3JHLo16Eg9Z0l/0htRA2RN9I8pOBg78rm84nyq5X69BLdtN1s
+         qihIOv+TaNruMhvKYMyna6cXMMClH9Gtx0esDENdibP1q0CbGzuotvVjehThHgIo0DHm
+         9fO3MzTjMwlNEcEdKT2Fp25l+acysKeQhQLkYxR/8ymSrUJFtbqtja1L/xDrWTMcCL+r
+         ECRaL4WiTAFRHyXj4fyB0stf7KAn3OERp6RTn/mt0M9fa4/3QZW3tDojiIIf2bd6+ckI
+         rM17pSR/x/5rcuzz9SU29WmGatlIJ/ih2AWm7xtp7P+qcAwL9yEQkdcJrflNzkj55XHg
+         58+Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=FBvFe4XR;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=a4imJ8XT;
+       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570010-04403ab0ff@mail50.sea31.mcsv.net designates 148.105.11.50 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570010-04403ab0ff@mail50.sea31.mcsv.net
+Return-Path: <bounce-mc.us19_104347118.6570010-04403ab0ff@mail50.sea31.mcsv.net>
+Received: from mail50.sea31.mcsv.net (mail50.sea31.mcsv.net. [148.105.11.50])
+        by mx.google.com with ESMTPS id p8-20020a17090a868800b00295b8032114si3792223pjn.75.2024.02.01.06.20.27
+        for <rylorin@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 01 Feb 2024 06:20:27 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-mc.us19_104347118.6570010-04403ab0ff@mail50.sea31.mcsv.net designates 148.105.11.50 as permitted sender) client-ip=148.105.11.50;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=FBvFe4XR;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=a4imJ8XT;
+       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570010-04403ab0ff@mail50.sea31.mcsv.net designates 148.105.11.50 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570010-04403ab0ff@mail50.sea31.mcsv.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mcsv.net;
+	s=k1; t=1706796477; x=1706882877;
+	bh=mZKvIUINdVyFaHkcA4PVRd2RVqqj1KIYCtJBz40n0nY=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=FBvFe4XRzDMqVGOkzWNWaA035YJ2jAcSEDxg2z3Ng1y2nqCPWxEcJJxnu6UtCLhWY
+	 wTgTQ4aOEbJIUWRt5Qi7aR4sB78BmVJcnLTnuhvyRrDf53R+iYeDumscJ7fqCCvRDG
+	 xuRXWtp7i1WMA1Yul/JQ7APbYuL+F1vnG/0uEYjRak2thwnfHDaaSFEBsifkP3c2ko
+	 UEACKgQxB0waN2a8ImxN5pMqn87X3sE0FsDpf3O6kRPlggRYhDlYmY+VwYZT0g/7hI
+	 rN3n6+7awMO/hrh1+Zd3GTLv7bi6BwB2Ug4HS4lELBMjmmHr7liVu0TASsFw+v1Ec8
+	 4/WizkkhwpvyA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimpapp.net;
+	s=k2; t=1706796477; x=1707056977;
+	i=info=3Dhindenburgresearch.com@mailchimpapp.net;
+	bh=mZKvIUINdVyFaHkcA4PVRd2RVqqj1KIYCtJBz40n0nY=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=a4imJ8XTZgVUqvkAYW47J64lrkscBVQ1sS0Y8sd3wd/tT5jgxRlcK8o9SBMF8oxnN
+	 dXZ/4+0/xzPxEcr4ZfoYJya5HI5EPtX5gr+xLWkTsywRLIyHZvfcntycsTeMsByP6z
+	 UQrS0I4deAWHRLPba8Rt67C45ukyQ5a87CC8MTcW8PVpKwFZtNIK0SwU871miTtcdM
+	 kw1nCq88c6E2rWHFnC5Oc0o736nM+a6fJZU1/+7ZMRztdNDSjf3MVTFJ4KhM71jurQ
+	 6gGhe5hY+1zIZoLfYDbILYbQHOmguO/jVsBqhcEwL0wm+ImwwfEYgehkMk9Nq3cD+0
+	 zRus74c9m5ZZw==
+Received: from localhost (localhost [127.0.0.1])
+	by mail50.sea31.mcsv.net (Mailchimp) with ESMTP id 4TQgj92ZDNzP0nRSb
+	for <rylorin@gmail.com>; Thu,  1 Feb 2024 14:07:57 +0000 (GMT)
+Subject: =?utf-8?Q?LifeStance=3A=20A=20Private=20Equity=2DBacked=20Mental=20Health=20Rollup=20Headed=20For=20A=20Breakdown=20=28Nasdaq=3ALFST=29?=
+From: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+Reply-To: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+To: <rylorin@gmail.com>
+Date: Thu,  1 Feb 2024 14:07:52 +0000
+Message-ID: <ffb3753afd4493d4fbd300492.04403ab0ff.20240201140740.e03b5aff82.1507e85d@mail50.sea31.mcsv.net>
+X-Mailer: Mailchimp Mailer - **CIDe03b5aff8204403ab0ff**
+X-Campaign: mailchimpffb3753afd4493d4fbd300492.e03b5aff82
+X-campaignid: mailchimpffb3753afd4493d4fbd300492.e03b5aff82
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=ffb3753afd4493d4fbd300492&id=e03b5aff82&e=04403ab0ff
+X-MC-User: ffb3753afd4493d4fbd300492
+Feedback-ID: 104347118:104347118.6570010:us19:mc
+List-ID: ffb3753afd4493d4fbd300492mc list <ffb3753afd4493d4fbd300492.63691.list-id.mcsv.net>
+X-Accounttype: pr
+List-Unsubscribe: <https://hindenburgresearch.us19.list-manage.com/unsubscribe?u=ffb3753afd4493d4fbd300492&id=5b17860351&t=h&e=04403ab0ff&c=e03b5aff82>, <mailto:unsubscribe-mc.us19_ffb3753afd4493d4fbd300492.e03b5aff82-04403ab0ff@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_212929487"
+MIME-Version: 1.0
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_212929487
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+** LifeStance: A Private Equity-Backed Mental Health Rollup Headed For A B=
+reakdown
+------------------------------------------------------------
+(NASDAQ:LFST)
+* LifeStance (NASDAQ:LFST) is a $2.3 billion market cap mental health prov=
+ider with 6=2C400 clinicians located across 33 U.S. states. The company ha=
+s grown its clinician base at 18% per year in a behavioral health market f=
+orecasted to grow at ~5% per year until 2030.
+* LifeStance trades at a ~23% premium to its peers in the behavioral healt=
+h industry=2C despite reporting in its most recent Q3 =E2=80=9923 report:=
+ $188 million in losses over the last twelve months=2C $482 million in deb=
+t and lease obligations and a $716 million accumulated deficit.
+* We assess that LifeStance will need to raise cash imminently given its l=
+atest Q3 =E2=80=9923 results showing its (i) razor-thin cash balance of $4=
+2.6 million (ii) quarterly cash burn of $33.7 million and (iii) $42 millio=
+n in expected cash payments by the end of Q1 =E2=80=9924 to settle litigat=
+ion alleging that LifeStance misled IPO investors.
+* A former LifeStance manager explained that the employee mix between ther=
+apy and psychiatry is critical information for investors to understand mar=
+gin and profitability potential=2C but LifeStance doesn=E2=80=99t regularl=
+y share those metrics. A former employee and industry experts referred to=
+ therapy reimbursement rates as =E2=80=9Chumiliatingly low=E2=80=9D and co=
+mpared it to wages earned by =E2=80=9Cmani-pedi or salon haircut=E2=80=9D=
+ workers.
+* In 2021 the company last disclosed ~66% of its clinician base were thera=
+pists=2C which are lower-margin vs. higher-margin psychiatrists. In 2024=
+=2C our scrape of the LifeStance website shows the mix has deteriorated: ~=
+79% of the company=E2=80=99s clinician base are therapists.
+* One of the company=E2=80=99s most widely followed public metrics is the=
+ retention rate of the clinicians it employs. During LifeStance=E2=80=99s=
+ June 2021 IPO=2C the company claimed it retained 87% of its clinicians (i=
+=2Ee. 13% clinician churn).
+* Just two months later=2C during its first public earnings report=2C Life=
+Stance posted almost twice the net loss analysts expected and reported a c=
+hange in retention rates to levels =E2=80=9Cconsistent with the broader he=
+althcare industry=E2=80=9D=2C which it had previously defined as 77% reten=
+tion (i.e. 23% churn). Its stock dropped 46% on the day.
+* LifeStance investors filed a securities class action lawsuit against ins=
+iders=2C alleging =E2=80=9Cuntrue statements of material facts=E2=80=9D re=
+garding the company=E2=80=99s IPO clinician retention disclosures. In Octo=
+ber 2023=2C LifeStance settled the lawsuit for $50 million.
+* Following the IPO debacle=2C LifeStance reported or confirmed on 7 diffe=
+rent investor-facing calls and in conferences between 2022-2023 that its c=
+linician retention rate had stabilized at 80%.
+* Our scrape of the LifeStance website showed that in the five months betw=
+een August 15=2C 2023 to January 15=2C 2024=2C ~11.5% of providers listed=
+ in the company=E2=80=99s directory had disappeared=2C indicating an annua=
+lized retention rate closer to ~72% (i.e. a 28% churn rate)=2C well below=
+ the industry average and once again below management=E2=80=99s claims.
+* Interviews and lawsuit allegations corroborate the retention issues=2C w=
+ith former employees detailing how (i) LifeStance overpromises on compensa=
+tion (ii) LifeStance institutes a system whereby clinicians end up indebte=
+d to the company (iii) LifeStance has a crippling corporate culture with n=
+o value-added and (iv) there are almost zero barriers to entry in operatin=
+g a private practice.
+* According to two employee class action lawsuits and an employment lawsui=
+t=2C LifeStance overpromises on compensation. Nurse practitioners and ther=
+apists claimed deceptive employment offers and claw backs of previous paym=
+ents left them earning less than minimum wage or receiving nothing at all=
+ during some pay periods.
+* LifeStance provides advances to clinicians who expect to eventually reac=
+h the company=E2=80=99s lofty compensation promises. This often results in=
+ burdensome debt when expectations fall short. One former LifeStance manag=
+er described the situation as =E2=80=9Ca crappy thing=2C to owe your emplo=
+yer money.=E2=80=9D
+* The owner of a former practice acquired by LifeStance told us that medic=
+ation prescribers are more likely to go into debt than therapists=2C makin=
+g them more likely to sacrifice quality of care by shortening appointments=
+ to dig their way out of debt.
+* Former employees at practices acquired by LifeStance described working a=
+t the company as a culture shock=2C with locations being run =E2=80=9Clike=
+ a fast-food restaurant=E2=80=9D with =E2=80=9Cno one really caring that t=
+hese are patients=E2=80=99 lives.=E2=80=9D
+* Former employees describing how LifeStance provided no or negative value=
+ in an industry with virtually no barriers to entry. Per one former LifeSt=
+ance manager: =E2=80=9Call you need to do to open up your own private prac=
+tice is post a thing on Facebook=E2=80=A6 and you can start seeing private=
+=2C cash-only patients.=E2=80=9D
+* LifeStance deals in controlled substances and medications like Xanax and=
+ Adderall that have huge potential for abuse=2C with prescription volume g=
+rowth rivaling opiate prescriptions at their peak=2C according to health p=
+rofessionals.
+* Despite the potentially addictive nature of some of these medications=2C=
+ former LifeStance employees claim that medication prescribers have been a=
+dvised to cut consultation times to maximize revenue=2C with some former c=
+linicians having seen =E2=80=9C30 patients a day=E2=80=9D. Others describe=
+d it as akin to =E2=80=9Cwar medicine.=E2=80=9D
+* LifeStance also rewarded its =E2=80=9Chighest-performing=E2=80=9D medica=
+tion prescribers with stock grants=2C according to the company=E2=80=99s C=
+FO. A former practice owner told us the grants were tied to number of sess=
+ions a clinician conducts=2C an incentive that can encourage quantity over=
+ quality of care.
+* In December 2023=2C we signed up for an appointment with a LifeStance ps=
+ychiatrist to better understand the company=E2=80=99s patient onboarding p=
+rocess. We were given a questionnaire developed by Pfizer and were asked i=
+f we were open to medication 13 minutes into our first session.
+* Despite reporting to the psychiatrist that we had been in a good mood si=
+nce Christmas=2C 32 minutes into our first session we were offered Pfizer=
+=E2=80=99s Zoloft for treating depression and anxiety. By the end of a 15-=
+minute follow up session we were prescribed Zoloft.
+* LifeStance insiders and private equity backers have dumped $243 million=
+ in stock since the company=E2=80=99s 2021 IPO=2C with company management=
+ having sold $18 million since IPO.
+* LifeStance has experienced rapid executive turnover=2C shuffling through=
+ 3 CFOs over the course of just 3 years=2C a red flag of financial stress.
+* We think executives and backers who have cashed out likely understand wh=
+at our research has shown: LifeStance is a low margin=2C unsustainable bus=
+iness operating under a crippling debt load with no cash cushion and no re=
+alistic hope of profitability.
+* Overall=2C we think LifeStance is a classic example of what happens when=
+ private equity meets a =E2=80=98hot=E2=80=99 healthcare sector: Massive d=
+ebt fueling a grinding=2C metric-focused corporate culture resulting in wo=
+rse quality of care for patients=2C a worse environment for clinicians and=
+ long-term losses for the average investor.
+
+Initial Disclosure: After extensive research=2C we have taken a short posi=
+tion in shares of LifeStance Health Group=2C Inc. (NASDAQ:LFST). This repo=
+rt represents our opinion=2C and we encourage every reader to do their own=
+ due diligence. Please see our full disclaimer at the bottom of the report=
+=2E
+Read The Full Report Here (https://hindenburgresearch.com/lifestance/)
+https://twitter.com/HindenburgRes
+Follow Us On Twitter (https://twitter.com/HindenburgRes)
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Copyright =C2=A9 2022 *Hindenburg Research=2C All rights reserved.
+
+Want to change how you receive these emails?
+You can ** update your preferences (https://hindenburgresearch.us19.list-m=
+anage.com/profile?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3De03b5aff82)
+or ** unsubscribe from this list (https://hindenburgresearch.us19.list-man=
+age.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&t=3Db&e=
+=3D04403ab0ff&c=3De03b5aff82)
+=2E
+--_----------=_MCPart_212929487
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-micros=
+oft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    <head>
+        <!-- NAME: FOLLOW UP -->
+        <!--[if gte mso 15]>
+        <xml>
+            <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]-->
+        <meta charset=3D"UTF-8">
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial=
+-scale=3D1">
+        <title>LifeStance: A Private Equity-Backed Mental Health Rollup He=
+aded For A Breakdown (Nasdaq:LFST)</title>
+
+    <style type=3D"text/css">
+=09=09p{
+=09=09=09margin:10px 0;
+=09=09=09padding:0;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09h1=2Ch2=2Ch3=2Ch4=2Ch5=2Ch6{
+=09=09=09display:block;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img=2Ca img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body=2C#bodyTable=2C#bodyCell{
+=09=09=09height:100%;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09table{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cblockquote{
+=09=09=09mso-line-height-rule:exactly;
+=09=09}
+=09=09a[href^=3Dtel]=2Ca[href^=3Dsms]{
+=09=09=09color:inherit;
+=09=09=09cursor:default;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cbody=2Ctable=2Cblockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09.ExternalClass=2C.ExternalClass p=2C.ExternalClass td=2C.ExternalCla=
+ss div=2C.ExternalClass span=2C.ExternalClass font{
+=09=09=09line-height:100%;
+=09=09}
+=09=09a[x-apple-data-detectors]{
+=09=09=09color:inherit !important;
+=09=09=09text-decoration:none !important;
+=09=09=09font-size:inherit !important;
+=09=09=09font-family:inherit !important;
+=09=09=09font-weight:inherit !important;
+=09=09=09line-height:inherit !important;
+=09=09}
+=09=09.templateContainer{
+=09=09=09max-width:600px !important;
+=09=09}
+=09=09a.mcnButton{
+=09=09=09display:block;
+=09=09}
+=09=09.mcnImage=2C.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent{
+=09=09=09word-break:break-word;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09.mcnDividerBlock{
+=09=09=09table-layout:fixed !important;
+=09=09}
+=09=09h1{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:40px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h2{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:34px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h3{
+=09=09=09color:#444444;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:22px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h4{
+=09=09=09color:#949494;
+=09=09=09font-family:Georgia;
+=09=09=09font-size:20px;
+=09=09=09font-style:italic;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templateHeader{
+=09=09=09background-color:#f7f7f7;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0px;
+=09=09=09padding-bottom:0px;
+=09=09}
+=09=09.headerContainer{
+=09=09=09background-color:#transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.headerContainer .mcnTextContent a=2C.headerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateBody{
+=09=09=09background-color:#FFFFFF;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:27px;
+=09=09=09padding-bottom:54px;
+=09=09}
+=09=09.bodyContainer{
+=09=09=09background-color:transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.bodyContainer .mcnTextContent a=2C.bodyContainer .mcnTextContent p=
+ a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateFooter{
+=09=09=09background-color:#333333;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:45px;
+=09=09=09padding-bottom:63px;
+=09=09}
+=09=09.footerContainer{
+=09=09=09background-color:transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09color:#FFFFFF;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:12px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09.footerContainer .mcnTextContent a=2C.footerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#FFFFFF;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09@media only screen and (min-width:768px){
+=09=09.templateContainer{
+=09=09=09width:600px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body=2Ctable=2Ctd=2Cp=2Ca=2Cli=2Cblockquote{
+=09=09=09-webkit-text-size-adjust:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImage{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCartContainer=2C.mcnCaptionTopContent=2C.mcnRecContentContainer=
+=2C.mcnCaptionBottomContent=2C.mcnTextContentContainer=2C.mcnBoxedTextCont=
+entContainer=2C.mcnImageGroupContentContainer=2C.mcnCaptionLeftTextContent=
+Container=2C.mcnCaptionRightTextContentContainer=2C.mcnCaptionLeftImageCon=
+tentContainer=2C.mcnCaptionRightImageContentContainer=2C.mcnImageCardLeftT=
+extContentContainer=2C.mcnImageCardRightTextContentContainer=2C.mcnImageCa=
+rdLeftImageContentContainer=2C.mcnImageCardRightImageContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupContent{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCaptionLeftContentOuter .mcnTextContent=2C.mcnCaptionRightConten=
+tOuter .mcnTextContent{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardTopImageContent=2C.mcnCaptionBottomContent:last-child .=
+mcnCaptionBottomImageContent=2C.mcnCaptionBlockInner .mcnCaptionTopContent=
+:last-child .mcnTextContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardBottomImageContent{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockInner{
+=09=09=09padding-top:0 !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockOuter{
+=09=09=09padding-top:9px !important;
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnTextContent=2C.mcnBoxedTextContentColumn{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardLeftImageContent=2C.mcnImageCardRightImageContent{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcpreview-image-uploader{
+=09=09=09display:none !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h1{
+=09=09=09font-size:30px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h2{
+=09=09=09font-size:26px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h3{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h4{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer .mcnTextContent=2C.mcnBoxedTextContent=
+Container .mcnTextContent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}</style></head>
+    <body style=3D"height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-=
+size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+        <!--
+-->
+        <center>
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;pad=
+ding: 0;width: 100%;">
+                <tr>
+                    <td align=3D"center" valign=3D"top" id=3D"bodyCell" st=
+yle=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"border-collapse: collapse;mso-table-lspace:=
+ 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;">
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateHeader" data-template-container=3D"" style=3D"background:#f7f7f7 n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #f7f7f7;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padd=
+ing-bottom: 0px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"he=
+aderContainer" style=3D"background:#transparent none no-repeat center/cove=
+r;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;background-color: #transparent;background-image: none;back=
+ground-repeat: no-repeat;background-position: center;background-size: cove=
+r;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateBody" data-template-container=3D"" style=3D"background:#FFFFFF non=
+e no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;backgroun=
+d-image: none;background-repeat: no-repeat;background-position: center;bac=
+kground-size: cover;border-top: 0;border-bottom: 0;padding-top: 27px;paddi=
+ng-bottom: 54px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"bo=
+dyContainer" style=3D"background:transparent none no-repeat center/cover;m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;background-color: transparent;background-image: none;backgrou=
+nd-repeat: no-repeat;background-position: center;background-size: cover;bo=
+rder-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnT=
+extBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <h1 style=3D"display: block;margin: 0;padding:=
+ 0;color: #222222;font-family: Helvetica;font-size: 40px;font-style: norma=
+l;font-weight: bold;line-height: 150%;letter-spacing: normal;text-align: c=
+enter;">LifeStance: A Private Equity-Backed Mental Health Rollup Headed Fo=
+r A Breakdown</h1>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <!-- wp:list --><span style=3D"font-size:20px"=
+><strong>(NASDAQ:LFST)</strong></span>
+
+<ul>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LifeStance (NASDAQ:LFST) is a $2.3 billion=
+ market cap mental health provider with 6=2C400 clinicians located across=
+ 33 U.S. states. The company has grown its clinician base at 18% per year=
+ in a behavioral health market forecasted to grow at ~5% per year until 20=
+30.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LifeStance trades at a ~23% premium to its=
+ peers in the behavioral health industry=2C despite reporting in its most=
+ recent Q3 =E2=80=9923 report: $188 million in losses over the last twelve=
+ months=2C $482 million in debt and lease obligations and a $716 million a=
+ccumulated deficit.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">We assess that LifeStance will need to rai=
+se cash imminently given its latest Q3 =E2=80=9923 results showing its (i)=
+ razor-thin cash balance of $42.6 million (ii) quarterly cash burn of $33.=
+7 million and (iii) $42 million in expected cash payments by the end of Q1=
+ =E2=80=9924 to settle litigation alleging that LifeStance misled IPO inve=
+stors.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former LifeStance manager explained that=
+ the employee mix between therapy and psychiatry is critical information f=
+or investors to understand margin and profitability potential=2C but LifeS=
+tance doesn=E2=80=99t regularly share those metrics. A former employee and=
+ industry experts referred to therapy reimbursement rates as =E2=80=9Chumi=
+liatingly low=E2=80=9D and compared it to wages earned by =E2=80=9Cmani-pe=
+di or salon haircut=E2=80=9D workers.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In 2021 the company last disclosed ~66% of=
+ its clinician base were therapists=2C which are lower-margin vs. higher-m=
+argin psychiatrists. In 2024=2C our scrape of the LifeStance website shows=
+ the mix has deteriorated: ~79% of the company=E2=80=99s clinician base ar=
+e therapists.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">One of the company=E2=80=99s most widely f=
+ollowed public metrics is the retention rate of the clinicians it employs.=
+ During LifeStance=E2=80=99s June 2021 IPO=2C the company claimed it retai=
+ned 87% of its clinicians (i.e. 13% clinician churn).</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Just two months later=2C during its first=
+ public earnings report=2C LifeStance posted almost twice the net loss ana=
+lysts expected and reported a change in retention rates to levels =E2=80=
+=9Cconsistent with the broader healthcare industry=E2=80=9D=2C which it ha=
+d previously defined as 77% retention (i.e. 23% churn). Its stock dropped=
+ 46% on the day.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LifeStance investors filed a securities cl=
+ass action lawsuit against insiders=2C alleging =E2=80=9Cuntrue statements=
+ of material facts=E2=80=9D regarding the company=E2=80=99s IPO clinician=
+ retention disclosures. In October 2023=2C LifeStance settled the lawsuit=
+ for $50 million.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Following the IPO debacle=2C LifeStance re=
+ported or confirmed on 7 different investor-facing calls and in conference=
+s between 2022-2023 that its clinician retention rate had stabilized at 80=
+%.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Our scrape of the LifeStance website showe=
+d that in the five months between August 15=2C 2023 to January 15=2C 2024=
+=2C ~11.5% of providers listed in the company=E2=80=99s directory had disa=
+ppeared=2C indicating an annualized retention rate closer to ~72% (i.e. a=
+ 28% churn rate)=2C well below the industry average and once again below m=
+anagement=E2=80=99s claims.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Interviews and lawsuit allegations corrobo=
+rate the retention issues=2C with former employees detailing how (i) LifeS=
+tance overpromises on compensation (ii) LifeStance institutes a system whe=
+reby clinicians end up indebted to the company (iii) LifeStance has a crip=
+pling corporate culture with no value-added and (iv) there are almost zero=
+ barriers to entry in operating a private practice.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">According to two employee class action law=
+suits and an employment lawsuit=2C LifeStance overpromises on compensation=
+=2E Nurse practitioners and therapists claimed deceptive employment offers a=
+nd claw backs of previous payments left them earning less than minimum wag=
+e or receiving nothing at all during some pay periods. &nbsp;</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LifeStance provides advances to clinicians=
+ who expect to eventually reach the company=E2=80=99s lofty compensation p=
+romises. This often results in burdensome debt when expectations fall shor=
+t. One former LifeStance manager described the situation as =E2=80=9Ca cra=
+ppy thing=2C to owe your employer money.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">The owner of a former practice acquired by=
+ LifeStance told us that medication prescribers are more likely to go into=
+ debt than therapists=2C making them more likely to sacrifice quality of c=
+are by shortening appointments to dig their way out of debt.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Former employees at practices acquired by=
+ LifeStance described working at the company as a culture shock=2C with lo=
+cations being run =E2=80=9Clike a fast-food restaurant=E2=80=9D with =E2=
+=80=9Cno one really caring that these are patients=E2=80=99 lives.=E2=80=
+=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Former employees describing how LifeStance=
+ provided no or <em>negative</em> value in an industry with virtually no b=
+arriers to entry. Per one former LifeStance manager: =E2=80=9Call you need=
+ to do to open up your own private practice is post a thing on Facebook=E2=
+=80=A6 and you can start seeing private=2C cash-only patients.=E2=80=9D</l=
+i>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LifeStance deals in controlled substances=
+ and medications like Xanax and Adderall that have huge potential for abus=
+e=2C with prescription volume growth rivaling opiate prescriptions at thei=
+r peak=2C according to health professionals.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Despite the potentially addictive nature o=
+f some of these medications=2C former LifeStance employees claim that medi=
+cation prescribers have been advised to cut consultation times to maximize=
+ revenue=2C with some former clinicians having seen =E2=80=9C30 patients a=
+ day=E2=80=9D. Others described it as akin to =E2=80=9Cwar medicine.=E2=80=
+=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LifeStance also rewarded its =E2=80=9Chigh=
+est-performing=E2=80=9D medication prescribers with stock grants=2C accord=
+ing to the company=E2=80=99s CFO. A former practice owner told us the gran=
+ts were tied to number of sessions a clinician conducts=2C an incentive th=
+at can encourage quantity over quality of care.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In December 2023=2C we signed up for an ap=
+pointment with a LifeStance psychiatrist to better understand the company=
+=E2=80=99s patient onboarding process. We were given a questionnaire devel=
+oped by Pfizer and were asked if we were open to medication 13 minutes int=
+o our first session.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Despite reporting to the psychiatrist that=
+ we had been in a good mood since Christmas=2C 32 minutes into our first s=
+ession we were offered Pfizer=E2=80=99s Zoloft for treating depression and=
+ anxiety. By the end of a 15-minute follow up session we were prescribed Z=
+oloft.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LifeStance insiders and private equity bac=
+kers have dumped $243 million in stock since the company=E2=80=99s 2021 IP=
+O=2C with company management having sold $18 million since IPO.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LifeStance has experienced rapid executive=
+ turnover=2C shuffling through 3 CFOs over the course of just 3 years=2C a=
+ red flag of financial stress.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">We think executives and backers who have c=
+ashed out likely understand what our research has shown: LifeStance is a l=
+ow margin=2C unsustainable business operating under a crippling debt load=
+ with no cash cushion and no realistic hope of profitability.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Overall=2C we think LifeStance is a classi=
+c example of what happens when private equity meets a =E2=80=98hot=E2=80=
+=99 healthcare sector: Massive debt fueling a grinding=2C metric-focused c=
+orporate culture resulting in worse quality of care for patients=2C a wors=
+e environment for clinicians and long-term losses for the average investor=
+=2E</li>
+</ul>
+<em>Initial Disclosure: After extensive research=2C we have taken a short=
+ position in shares of LifeStance Health Group=2C Inc. (NASDAQ:LFST). This=
+ report represents our opinion=2C and we encourage every reader to do thei=
+r own due diligence. Please see our full disclaimer at the bottom of the r=
+eport.</em><!-- /wp:list-item --><!-- /wp:list --><br>
+<!-- /wp:paragraph -->
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 9px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" align=3D"center"=
+ class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mcnButtonContentContainer" style=3D"border-collapse: separate !impo=
+rtant;border-radius: 3px;background-color: #00ADD8;mso-table-lspace: 0pt;m=
+so-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
+ 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Helvetica;font-size: 18px;padd=
+ing: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"Read The=
+ Full Report Here" href=3D"https://hindenburgresearch.us19.list-manage.com=
+/track/click?u=3Dffb3753afd4493d4fbd300492&id=3De5aae9c0af&e=3D04403ab0ff=
+" target=3D"_blank" style=3D"font-weight: bold;letter-spacing: -0.5px;line=
+-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;display: block;">Read The Full Report Here</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnFollowBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnFollowBlockOuter">
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"padding: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" class=3D"mcnFollowBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnFollowContentContainer" style=3D"min-width: 100%;=
+border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td align=3D"center" style=3D"padding-left: 9px;padding-right: 9px=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;" class=3D"mcnFollowContent">
+                <tbody><tr>
+                    <td align=3D"center" valign=3D"top" style=3D"padding-t=
+op: 9px;padding-right: 9px;padding-left: 9px;mso-line-height-rule: exactly=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                        <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse;mso-table-lspa=
+ce: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;">
+                            <tbody><tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+                                    <!--[if mso]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0">
+                                    <tr>
+                                    <![endif]-->
+
+                                        <!--[if mso]>
+                                        <td align=3D"center" valign=3D"top=
+">
+                                        <![endif]-->
+
+                                            <table align=3D"left" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnFollowStacked" styl=
+e=3D"display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;">
+
+                                                <tbody><tr>
+                                                    <td align=3D"center" v=
+align=3D"top" class=3D"mcnFollowIconContent" style=3D"padding-right: 0;pad=
+ding-bottom: 5px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">
+                                                        <a href=3D"https:/=
+/hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
+bd300492&id=3Dd2aeedb9b2&e=3D04403ab0ff" target=3D"_blank" style=3D"mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;"><img src=3D"https://cdn-images.mailchimp.com/icons/social-block=
+-v2/color-twitter-96.png" alt=3D"Follow Us On Twitter" class=3D"mcnFollowB=
+lockIcon" width=3D"48" style=3D"width: 48px;max-width: 48px;display: block=
+;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolat=
+ion-mode: bicubic;"></a>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td align=3D"center" v=
+align=3D"top" class=3D"mcnFollowTextContent" style=3D"padding-right: 0;pad=
+ding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">
+                                                        <a href=3D"https:/=
+/hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
+bd300492&id=3Dbe15f587e8&e=3D04403ab0ff" target=3D"_blank" style=3D"color=
+: #202020;font-family: Arial;font-size: 18px;font-weight: bold;text-decora=
+tion: none;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">Follow Us On Twitter</a>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody></table>
+
+
+                                        <!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+                                    <!--[if mso]>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateFooter" data-template-container=3D"" style=3D"background:#333333 n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #333333;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 45px;pad=
+ding-bottom: 63px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"fo=
+oterContainer" style=3D"background:transparent none no-repeat center/cover=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;background-color: transparent;background-image: none;backgr=
+ound-repeat: no-repeat;background-position: center;background-size: cover;=
+border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mc=
+nDividerBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px solid #505050;border-collapse: collapse;mso-table-lspace: 0pt;mso-=
+table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #FFFFFF;font-family: Helve=
+tica;font-size: 12px;line-height: 150%;text-align: center;">
+
+                            <em>Copyright =C2=A9 2022 *Hindenburg Research=
+=2C All rights reserved.</em><br>
+<br>
+Want to change how you receive these emails?<br>
+You can <a href=3D"https://hindenburgresearch.us19.list-manage.com/profile=
+?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3De03b5aff82=
+" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;color: #FFFFFF;font-weight: normal;text-decoratio=
+n: underline;">update your preferences</a> or <a href=3D"https://hindenbur=
+gresearch.us19.list-manage.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&i=
+d=3D5b17860351&t=3Db&e=3D04403ab0ff&c=3De03b5aff82" style=3D"mso-line-height=
+-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;c=
+olor: #FFFFFF;font-weight: normal;text-decoration: underline;">unsubscribe=
+ from this list</a>.
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://hindenburgresearch.us19.list-manage.com/track/open=
+=2Ephp?u=3Dffb3753afd4493d4fbd300492&id=3De03b5aff82&e=3D04403ab0ff" height=
+=3D"1" width=3D"1" alt=3D""></body>
+</html>
+--_----------=_MCPart_212929487--

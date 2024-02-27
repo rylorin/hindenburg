@@ -1,5 +1,15 @@
-import { IBApiNext, MarketDataType } from "@stoqey/ib";
+import {
+  Contract,
+  IBApiNext,
+  IBApiNextError,
+  MarketDataType,
+  SecType,
+} from "@stoqey/ib";
 import { Subscription } from "rxjs";
+
+const exchangeMap: Record<string, string> = {
+  ["SWX"]: "EBS",
+};
 
 export class IBTrader {
   /** The [[IBApiNext]] instance. */
@@ -47,5 +57,26 @@ export class IBTrader {
     this.api.setMarketDataType(MarketDataType.DELAYED_FROZEN);
   }
 
-  public placeOrder(symbol: string) {}
+  public async placeOrder(ticker: string) {
+    const [exchange, symbol] = ticker.split(":");
+    let ibContract: Contract = {
+      secType: SecType.STK,
+      exchange: exchangeMap[exchange] || "SMART",
+      symbol,
+    };
+    await this.api
+      .getContractDetails(ibContract)
+      .then((detailstab) => {
+        if (detailstab.length >= 1) {
+          ibContract = detailstab[0]?.contract;
+          console.log("got contract details", ibContract);
+        } else {
+          console.log("Contract details not found", ibContract);
+        }
+      })
+      .catch((err: IBApiNextError) => {
+        const message = `getContractDetails failed for ${ibContract.secType} ${ibContract.symbol} ${ibContract.lastTradeDateOrContractMonth} ${ibContract.strike} ${ibContract.right} with error #${err.code}: '${err.error.message}'`;
+        console.error(message, ibContract);
+      });
+  }
 }

@@ -1,0 +1,1378 @@
+Delivered-To: rylorin@gmail.com
+Received: by 2002:a05:6a10:a6d5:b0:515:6553:5627 with SMTP id q21csp365654pxv;
+        Tue, 7 Nov 2023 06:08:57 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IF+56Idjt/KEaji7ke8PiggPfFvr9GPzaEWRuUoeCMS5q/5tY1UrZrqSMhXYZ0nNtozH5qB
+X-Received: by 2002:a05:6808:2099:b0:3ab:8956:ad95 with SMTP id s25-20020a056808209900b003ab8956ad95mr41854932oiw.9.1699366136690;
+        Tue, 07 Nov 2023 06:08:56 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1699366136; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Wkc5B0Y4z9LChGTnifwlV0r94y4gN54SSLk6s5RNpQzNVuWM4mjld+Cb1O3CeNgtP1
+         7TczBz+3TF3T+DWLfww3x8hwhr0hJcaN9uxbd/Xrp0YwGZeyPekvR1V3sUEKBl5y6L7K
+         V5hX/YUogApfDeDq864AbwoCGJlC66ZfR4I/slpeOaxNBr8YIfq91NoFU9QH3f6p0Z12
+         ZSVJEQjbxIRaIcveEktklaQmVcn8IXjOb+F3FyAoSUux58B4zqMMv8RRJac9sTp9lCb9
+         YeYbvX5Q4iPsuelPcd4Cby7xgYX1oXdpV9v9OKzmHZ20IZIO31goF2NlGLHBB4ZoeK80
+         MQig==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :dkim-signature;
+        bh=puhzZRMtmAwHDV09Tdyd4n4CLelWg6hDowv0BJvXBOA=;
+        fh=Gl0xcCE2dclMB2Ryz6H+lWeG7Rn7rUJHLaSQLXr9WsA=;
+        b=sfw8cmQ41XSR9ingfM+6fGBd7O6ayMzjJmXnc92EiPPeStMhWXQ6WF7onGgyjIpBtH
+         sHO0iOUe21lwFzfl+qMMhI+Wiu01CQBIjtabLl0XHPj5H6LkCyb19Xpc0YeSge1qg+hh
+         nFBJ2efM28cz4C3fkVblfYPQKzxwkPUaDLbyWvqwsmGuJ1nDV82MXvWIP4CEaxH3/nmQ
+         st32NLI2wn2zQTZIT2izw05zC2AoYb8VgBjoEL5CVJOSwXda01oX+9CQDMhDXZOIOkew
+         JxaP0h03y9w2EU3cay7cBDOkqo+rLZcFjC07KeJ0fQbykj4n8C8LM2pbVaz5WHWFncF8
+         aqlA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=CbgM0PWB;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=SuHSkFH6;
+       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570006-04403ab0ff@mail72.atl71.mcdlv.net designates 198.2.129.72 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570006-04403ab0ff@mail72.atl71.mcdlv.net
+Return-Path: <bounce-mc.us19_104347118.6570006-04403ab0ff@mail72.atl71.mcdlv.net>
+Received: from mail72.atl71.mcdlv.net (mail72.atl71.mcdlv.net. [198.2.129.72])
+        by mx.google.com with ESMTPS id t21-20020a252d15000000b00d7ba886c1a5si6164700ybt.459.2023.11.07.06.08.56
+        for <rylorin@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 07 Nov 2023 06:08:56 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-mc.us19_104347118.6570006-04403ab0ff@mail72.atl71.mcdlv.net designates 198.2.129.72 as permitted sender) client-ip=198.2.129.72;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=CbgM0PWB;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=SuHSkFH6;
+       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570006-04403ab0ff@mail72.atl71.mcdlv.net designates 198.2.129.72 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570006-04403ab0ff@mail72.atl71.mcdlv.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mcsv.net;
+	s=k1; t=1699365933; x=1699452333;
+	bh=puhzZRMtmAwHDV09Tdyd4n4CLelWg6hDowv0BJvXBOA=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=CbgM0PWBcV5j21X3E2CdzBfcWf81ZDuW1CEMhd+8ptT7IGi5jxq9DVEf6Wl8ywy+v
+	 lP5EHyvypQKSr/i+ayLRW0GuGHoVTaTa/nF8ZM86f+L7+O/AMeO6eNQr9pHj9Z19DM
+	 6EMyXaBNAR/9+K/PEZegI2Zhti1OGdGjTLsb2D8Na/eIbtqKgMirzzA49/MPdFxHHd
+	 tWMTyG5FohN/DT3C84kY8cthY+6ueK7ZSgf7RsEEnDRL3lghBwfXlkAxnQ8Zgw1p+t
+	 j4s86hihYDz3FvfwQFWJx2iGSNxLuLnVUga++Vp+A1YOK308w9yxCzU51mEeW1acnx
+	 WqVFfy5XpiZhQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimpapp.net;
+	s=k2; t=1699365933; x=1699626433;
+	i=info=3Dhindenburgresearch.com@mailchimpapp.net;
+	bh=puhzZRMtmAwHDV09Tdyd4n4CLelWg6hDowv0BJvXBOA=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=SuHSkFH6TxlZwFjab9XOrXa651GcD0i7d4JqEHd5e2DckWiwzPjdkt5Cs3bnIansf
+	 jyOLUkIcNPTpXnhjGFIVGkq2Af+R0fcOMKgm3bt/BVYisXr9F1KGsyosup0NWuKoU6
+	 9hopt5CGwYm7vvrWO42WyKIW9j9QfxWy5Wq0GdgC6SyjeKIZcqrAYbBazk8+LOeVJx
+	 vxQZ9cTSOSOdm/Emgn8bmg4ZDZ7nW1O7VdPvUEZE65PN/PvSMuqDzJkaRqmwh9K2HP
+	 e8zg+EZRMh6AFBlXWIxrT3/uxTbMofTgaRJmhmvXaFqbbd+u2Ih4EvoTRUFiS1uYu7
+	 AEg21vKQ81oag==
+Received: from localhost (localhost [127.0.0.1])
+	by mail72.atl71.mcdlv.net (Mailchimp) with ESMTP id 4SPqk50KJkzK5xFlj
+	for <rylorin@gmail.com>; Tue,  7 Nov 2023 14:05:33 +0000 (GMT)
+Subject: =?utf-8?Q?EHang=3A=20Hollow=20Order=20Book=20And=20Fake=20Sales=20Make=20This=20China=2DBased=20eVTOL=20Company=20Last=20In=20Line=20For=20Takeoff=20=28NASDAQ=3AEH=29?=
+From: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+Reply-To: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+To: <rylorin@gmail.com>
+Date: Tue,  7 Nov 2023 14:05:30 +0000
+Message-ID: <ffb3753afd4493d4fbd300492.04403ab0ff.20231107140517.020114510b.972fc43b@mail72.atl71.mcdlv.net>
+X-Mailer: Mailchimp Mailer - **CID020114510b04403ab0ff**
+X-Campaign: mailchimpffb3753afd4493d4fbd300492.020114510b
+X-campaignid: mailchimpffb3753afd4493d4fbd300492.020114510b
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=ffb3753afd4493d4fbd300492&id=020114510b&e=04403ab0ff
+X-MC-User: ffb3753afd4493d4fbd300492
+Feedback-ID: 104347118:104347118.6570006:us19:mc
+List-ID: ffb3753afd4493d4fbd300492mc list <ffb3753afd4493d4fbd300492.63691.list-id.mcsv.net>
+X-Accounttype: pr
+List-Unsubscribe: <https://hindenburgresearch.us19.list-manage.com/unsubscribe?u=ffb3753afd4493d4fbd300492&id=5b17860351&e=04403ab0ff&c=020114510b>, <mailto:unsubscribe-mc.us19_ffb3753afd4493d4fbd300492.020114510b-04403ab0ff@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_1893870706"
+MIME-Version: 1.0
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_1893870706
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+** EHang: Hollow Order Book And Fake Sales Make This China-Based eVTOL Com=
+pany Last In Line For Takeoff
+------------------------------------------------------------
+(NASDAQ:EH)
+* EHang is a $903 million market cap=2C China-based=2C Nasdaq-listed elect=
+ric vertical take-off and landing (=E2=80=9CeVTOL=E2=80=9D) aircraft compa=
+ny.
+* The company=E2=80=99s share price has surged more than 267% over the las=
+t year due to market excitement over eVTOL companies=2C a recently granted=
+ aircraft design certification from the Chinese government=2C and a 1=2C30=
+0+ unit pre-order book=2C suggesting imminent largescale revenue.
+* EHang has generated net losses since inception and currently trades at ~=
+50.3x its tangible book value=2C a significant premium to competitors Joby=
+ Aviation (4.1x) and Archer Aviation (5.0x). Despite its premium valuation=
+=2C EHang=E2=80=99s flagship aircraft is outmatched by competitors on key=
+ performance metrics.
+* Aircraft manufacturing is a matter of life and death. Yet EHang has oper=
+ated on a shoestring budget relative to peers=2C investing just $97.4 mill=
+ion in cumulative R&D=2C while competitors Joby and Archer Aviation have i=
+nvested $761.9 million and $381.1 million=2C respectively.
+* EHang's competitors have hundreds of millions in cash=2C while EHang has=
+ only $44.9 million left=2C representing limited runway in the capital-int=
+ensive aviation industry.
+* Short on cash=2C in July 2023 EHang announced a $23 million capital rais=
+e led by a South Korean music producer who was previously put on an INTERP=
+OL wanted list and sentenced to 2 years in prison for embezzling from a Ko=
+rean company he founded=2C according to media reports.
+* EHang=E2=80=99s much touted=2C recently granted certification comes with=
+ numerous flight restrictions that it has failed to fully disclose to inve=
+stors. The restrictions invalidate the bulk of its potential commercial us=
+e cases=2C including restrictions against flying in densely populated area=
+s=2C in shared airspace=2C and out of sight of a ground crew.
+* EHang claims restrictions will be progressively lifted=2C but according=
+ to China-based eVTOL experts=2C EHang=E2=80=99s flagship aircraft would n=
+eed a billion-dollar redesign and an entirely different class of certifica=
+tion to avoid the limitations.
+* We found that 92+% of EHang=E2=80=99s claimed 1=2C300+ unit preorder boo=
+k is based on =E2=80=9Cdead=E2=80=9D or =E2=80=9Cabandoned=E2=80=9D deals=
+=2C failed partnerships=2C and newly-formed customer entities with no disc=
+ernible operations.
+* EHang=E2=80=99s largest deal is a 1=2C000-unit preorder from one of its=
+ pre-IPO investors=2C a biotech company called United Therapeutics=2C whic=
+h represents ~74% of EHang=E2=80=99s total preorders. The deal was initial=
+ly signed in 2016.
+* In 2020=2C the CEO of United Therapeutics said she was looking for a muc=
+h longer-range aircraft than what EHang offered=2C saying=2C =E2=80=9C250=
+ nautical miles=E2=80=A6 is the sweet spot in terms of range=2C=E2=80=9D w=
+hile EHang=E2=80=99s EH216 offers a range of just 19 miles (30km).
+* United Therapeutics quietly sold its entire $109 million stake in EHang=
+ by February 2021. In November 2021=2C in its last public comments on Ehan=
+g=2C the VP of Drone Delivery for United Therapeutics said=2C =E2=80=9CI d=
+on=E2=80=99t think anyone could say right now that they [EHang] have a ce=
+rtifiable configuration in terms of aircraft design.=E2=80=9D
+* A former EHang employee said the deal was =E2=80=9Cdead=E2=80=9D. We rep=
+eatedly inquired with United Therapeutics and rather than confirm the part=
+nership=2C we were told by its PR rep: =E2=80=9CWe have no comment. We=E2=
+=80=99re just not going to comment on this.=E2=80=9D EHang continues to ma=
+rket the deal as active in its SEC filings and investor presentations.
+* EHang=E2=80=99s second largest commitment is a 100-unit preorder=2C wort=
+h ~$30 million=2C from Prestige Aviation=2C an Indonesian entity that was=
+ formed with $34=2C000 in registered capital 1 day prior to its announced=
+ partnership with EHang.
+* Outside of promotional events with EHang=2C we found no website and zero=
+ evidence of any aviation operations for Prestige Aviation except for a ph=
+otoshoot where it appears to have photoshopped its logo onto a rented jet.
+* In January 2022=2C EHang received a 50-unit preorder from AirX=2C valued=
+ at an estimated $15 million. AirX is a Japanese startup based out of a We=
+Work that reportedly raised around $1 million in capital=2C largely to sca=
+le its helicopter sightseeing booking website.
+* AirX=E2=80=99s website indicates it merely intends to resell EHang produ=
+cts to buyers that don=E2=80=99t yet seem to exist=2C in a country (Japan)=
+ where EHang would need to complete a multi-year certification process.
+* In September 2023=2C EHang announced an up to 100-unit order=2C represen=
+ting an estimated $30 million in sales=2C from Shenzhen Boling Holdings Gr=
+oup=2C which was in the business of =E2=80=9CRadio and Television=E2=80=9D=
+ production up until 5 days before the Ehang deal announcement=2C when it=
+ added aviation-related terms to its official Chinese business description=
+=2E
+* Boling has virtually no web presence and has zero registered employees=
+=2C according to QCC=2C a Chinese corporate database. Its corporate addres=
+s leads to a residential apartment building.
+* Beyond pre-orders=2C in 2019=2C EHang announced a major partnership with=
+ DHL-Sinotrans to develop a =E2=80=9Cfully automated and intelligent drone=
+ logistics solution.=E2=80=9D EHang hasn=E2=80=99t provided an update on t=
+he project since August 2020. A former EHang employee told us the project=
+ was a =E2=80=9Cdead end=2C=E2=80=9D saying=2C =E2=80=9C=E2=80=A6there wer=
+e some problems in the integration=2C and they abandoned the project.=E2=
+=80=9D
+* In 2021=2C a research firm alleged that one of EHang=E2=80=99s largest c=
+ustomers=2C Kunxiang=2C was secretly a pre-IPO investor that signed =E2=80=
+=9Csham sales contracts=E2=80=9D so that EHang could report revenue growth=
+ as it approached its IPO. EHang=E2=80=99s CEO denied the allegations=2C c=
+alling its dealings =E2=80=9Carm-length transactions.=E2=80=9D
+* Corporate records reveal that Kunxiang is in fact controlled by a sancti=
+oned Chinese financier whose venture capital firm invested in EHang pre-IP=
+O through an offshore shell company in 2017.
+* An executive from the venture capital firm admitted in a 2018 interview=
+ to investing in EHang. Further confirming this=2C the same executive was=
+ photographed celebrating with EHang CEO Hu Huazhi at the company=E2=80=99=
+s Nasdaq IPO bell-ringing ceremony.
+* To summarize=2C when faced with allegations of suspicious product purcha=
+ses by a conflicted party=2C EHang CEO Hu Huazhi seemingly chose to flagra=
+ntly mislead shareholders by claiming that the aircraft purchases were arm=
+=E2=80=99s length.
+* EHang never seemed to collect the suspect revenue and has instead been a=
+ggressively impairing its receivables since 2020=2C writing down $15.2 mil=
+lion in receivables during a period where it only reported $15.3 million i=
+n revenue.
+* EHang's insiders & key stakeholders haven't reported a single stock purc=
+hase since inception. Instead they have reported selling more than 28 mill=
+ion shares=2C including share sales in September 2022 at prices as low as=
+ $4.21-$6.17=2C 59%-72% below current levels.
+* Overall=2C EHang seems to have a major credibility issue=E2=80=94whether=
+ it be by fluffing up its preorder book (which looks to almost entirely be=
+ vapor) or by brazenly misleading about early sales that bear all the hall=
+marks of fake revenue.
+* Trust is crucial in the aviation industry=2C both for investors and pote=
+ntial customers who are literally putting their lives at risk. We think th=
+e company is a fatal accident waiting to happen=2C both for investors and=
+ for passengers.
+
+Initial Disclosure: After extensive research=2C we have taken a short posi=
+tion in shares of EHang Holdings Limited (NASDAQ:EH). This report represen=
+ts our opinion=2C and we encourage every reader to do their own due dilige=
+nce. Please see our full disclaimer at the bottom of the report.
+Read The Full Report Here (https://hindenburgresearch.com/ehang/)
+https://twitter.com/HindenburgRes
+Follow Us On Twitter (https://twitter.com/HindenburgRes)
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Copyright =C2=A9 2022 *Hindenburg Research=2C All rights reserved.
+
+Want to change how you receive these emails?
+You can ** update your preferences (https://hindenburgresearch.us19.list-m=
+anage.com/profile?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3D020114510b)
+or ** unsubscribe from this list (https://hindenburgresearch.us19.list-man=
+age.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3D020114510b)
+=2E
+--_----------=_MCPart_1893870706
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-micros=
+oft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    <head>
+        <!-- NAME: FOLLOW UP -->
+        <!--[if gte mso 15]>
+        <xml>
+            <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]-->
+        <meta charset=3D"UTF-8">
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial=
+-scale=3D1">
+        <title>EHang: Hollow Order Book And Fake Sales Make This China-Bas=
+ed eVTOL Company Last In Line For Takeoff (NASDAQ:EH)</title>
+
+    <style type=3D"text/css">
+=09=09p{
+=09=09=09margin:10px 0;
+=09=09=09padding:0;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09h1=2Ch2=2Ch3=2Ch4=2Ch5=2Ch6{
+=09=09=09display:block;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img=2Ca img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body=2C#bodyTable=2C#bodyCell{
+=09=09=09height:100%;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09table{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cblockquote{
+=09=09=09mso-line-height-rule:exactly;
+=09=09}
+=09=09a[href^=3Dtel]=2Ca[href^=3Dsms]{
+=09=09=09color:inherit;
+=09=09=09cursor:default;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cbody=2Ctable=2Cblockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09.ExternalClass=2C.ExternalClass p=2C.ExternalClass td=2C.ExternalCla=
+ss div=2C.ExternalClass span=2C.ExternalClass font{
+=09=09=09line-height:100%;
+=09=09}
+=09=09a[x-apple-data-detectors]{
+=09=09=09color:inherit !important;
+=09=09=09text-decoration:none !important;
+=09=09=09font-size:inherit !important;
+=09=09=09font-family:inherit !important;
+=09=09=09font-weight:inherit !important;
+=09=09=09line-height:inherit !important;
+=09=09}
+=09=09.templateContainer{
+=09=09=09max-width:600px !important;
+=09=09}
+=09=09a.mcnButton{
+=09=09=09display:block;
+=09=09}
+=09=09.mcnImage=2C.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent{
+=09=09=09word-break:break-word;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09.mcnDividerBlock{
+=09=09=09table-layout:fixed !important;
+=09=09}
+=09=09h1{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:40px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h2{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:34px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h3{
+=09=09=09color:#444444;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:22px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h4{
+=09=09=09color:#949494;
+=09=09=09font-family:Georgia;
+=09=09=09font-size:20px;
+=09=09=09font-style:italic;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templateHeader{
+=09=09=09background-color:#f7f7f7;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0px;
+=09=09=09padding-bottom:0px;
+=09=09}
+=09=09.headerContainer{
+=09=09=09background-color:#transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.headerContainer .mcnTextContent a=2C.headerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateBody{
+=09=09=09background-color:#FFFFFF;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:27px;
+=09=09=09padding-bottom:54px;
+=09=09}
+=09=09.bodyContainer{
+=09=09=09background-color:transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.bodyContainer .mcnTextContent a=2C.bodyContainer .mcnTextContent p=
+ a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateFooter{
+=09=09=09background-color:#333333;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:45px;
+=09=09=09padding-bottom:63px;
+=09=09}
+=09=09.footerContainer{
+=09=09=09background-color:transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09color:#FFFFFF;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:12px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09.footerContainer .mcnTextContent a=2C.footerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#FFFFFF;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09@media only screen and (min-width:768px){
+=09=09.templateContainer{
+=09=09=09width:600px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body=2Ctable=2Ctd=2Cp=2Ca=2Cli=2Cblockquote{
+=09=09=09-webkit-text-size-adjust:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImage{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCartContainer=2C.mcnCaptionTopContent=2C.mcnRecContentContainer=
+=2C.mcnCaptionBottomContent=2C.mcnTextContentContainer=2C.mcnBoxedTextCont=
+entContainer=2C.mcnImageGroupContentContainer=2C.mcnCaptionLeftTextContent=
+Container=2C.mcnCaptionRightTextContentContainer=2C.mcnCaptionLeftImageCon=
+tentContainer=2C.mcnCaptionRightImageContentContainer=2C.mcnImageCardLeftT=
+extContentContainer=2C.mcnImageCardRightTextContentContainer=2C.mcnImageCa=
+rdLeftImageContentContainer=2C.mcnImageCardRightImageContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupContent{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCaptionLeftContentOuter .mcnTextContent=2C.mcnCaptionRightConten=
+tOuter .mcnTextContent{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardTopImageContent=2C.mcnCaptionBottomContent:last-child .=
+mcnCaptionBottomImageContent=2C.mcnCaptionBlockInner .mcnCaptionTopContent=
+:last-child .mcnTextContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardBottomImageContent{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockInner{
+=09=09=09padding-top:0 !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockOuter{
+=09=09=09padding-top:9px !important;
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnTextContent=2C.mcnBoxedTextContentColumn{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardLeftImageContent=2C.mcnImageCardRightImageContent{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcpreview-image-uploader{
+=09=09=09display:none !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h1{
+=09=09=09font-size:30px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h2{
+=09=09=09font-size:26px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h3{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h4{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer .mcnTextContent=2C.mcnBoxedTextContent=
+Container .mcnTextContent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}</style></head>
+    <body style=3D"height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-=
+size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+        <!--
+-->
+        <center>
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;pad=
+ding: 0;width: 100%;">
+                <tr>
+                    <td align=3D"center" valign=3D"top" id=3D"bodyCell" st=
+yle=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"border-collapse: collapse;mso-table-lspace:=
+ 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;">
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateHeader" data-template-container=3D"" style=3D"background:#f7f7f7 n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #f7f7f7;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padd=
+ing-bottom: 0px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"he=
+aderContainer" style=3D"background:#transparent none no-repeat center/cove=
+r;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;background-color: #transparent;background-image: none;back=
+ground-repeat: no-repeat;background-position: center;background-size: cove=
+r;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateBody" data-template-container=3D"" style=3D"background:#FFFFFF non=
+e no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;backgroun=
+d-image: none;background-repeat: no-repeat;background-position: center;bac=
+kground-size: cover;border-top: 0;border-bottom: 0;padding-top: 27px;paddi=
+ng-bottom: 54px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"bo=
+dyContainer" style=3D"background:transparent none no-repeat center/cover;m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;background-color: transparent;background-image: none;backgrou=
+nd-repeat: no-repeat;background-position: center;background-size: cover;bo=
+rder-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnT=
+extBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <h1 style=3D"display: block;margin: 0;padding:=
+ 0;color: #222222;font-family: Helvetica;font-size: 40px;font-style: norma=
+l;font-weight: bold;line-height: 150%;letter-spacing: normal;text-align: c=
+enter;">EHang: Hollow Order Book And Fake Sales Make This China-Based eVTO=
+L Company Last In Line For Takeoff</h1>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <strong>(NASDAQ:EH)</strong><!-- wp:list --><!=
+-- wp:list-item -->
+
+<ul>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">EHang is a $903 million market cap=2C Chin=
+a-based=2C Nasdaq-listed electric vertical take-off and landing (=E2=80=9C=
+eVTOL=E2=80=9D) aircraft company.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">The company=E2=80=99s share price has surg=
+ed more than 267% over the last year due to market excitement over eVTOL c=
+ompanies=2C a recently granted aircraft design certification from the Chin=
+ese government=2C and a 1=2C300+ unit pre-order book=2C suggesting imminen=
+t largescale revenue.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">EHang has generated net losses since incep=
+tion and currently trades at ~50.3x its tangible book value=2C a significa=
+nt premium to competitors Joby Aviation (4.1x) and Archer Aviation (5.0x).=
+ Despite its premium valuation=2C EHang=E2=80=99s flagship aircraft is out=
+matched by competitors on key performance metrics.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Aircraft manufacturing is a matter of life=
+ and death. Yet EHang has operated on a shoestring budget relative to peer=
+s=2C investing just $97.4 million in cumulative R&amp;D=2C while competito=
+rs Joby and Archer Aviation have invested $761.9 million and $381.1 millio=
+n=2C respectively.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">EHang's competitors have hundreds of milli=
+ons in cash=2C while EHang has only $44.9 million left=2C representing lim=
+ited runway in the capital-intensive aviation industry.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Short on cash=2C in July 2023 EHang announ=
+ced a $23 million capital raise led by a South Korean music producer who w=
+as previously put on an INTERPOL wanted list and sentenced to 2 years in p=
+rison for embezzling from a Korean company he founded=2C according to medi=
+a reports.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">EHang=E2=80=99s much touted=2C recently gr=
+anted certification comes with numerous flight restrictions that it has fa=
+iled to fully disclose to investors. The restrictions invalidate the bulk=
+ of its potential commercial use cases=2C including restrictions against f=
+lying in densely populated areas=2C in shared airspace=2C and out of sight=
+ of a ground crew.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">EHang claims restrictions will be progress=
+ively lifted=2C but according to China-based eVTOL experts=2C EHang=E2=80=
+=99s flagship aircraft would need a billion-dollar redesign and an entirel=
+y different class of certification to avoid the limitations.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">We found that 92+% of EHang=E2=80=99s clai=
+med 1=2C300+ unit preorder book is based on =E2=80=9Cdead=E2=80=9D or =E2=
+=80=9Cabandoned=E2=80=9D deals=2C failed partnerships=2C and newly-formed=
+ customer entities with no discernible operations.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">EHang=E2=80=99s largest deal is a 1=2C000-=
+unit preorder from one of its pre-IPO investors=2C a biotech company calle=
+d United Therapeutics=2C which represents ~74% of EHang=E2=80=99s total pr=
+eorders. The deal was initially signed in 2016.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In 2020=2C the CEO of United Therapeutics=
+ said she was looking for a much longer-range aircraft than what EHang off=
+ered=2C saying=2C =E2=80=9C250 nautical miles=E2=80=A6 is the sweet spot i=
+n terms of range=2C=E2=80=9D while EHang=E2=80=99s EH216 offers a range of=
+ just 19 miles (30km).</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">United Therapeutics quietly sold its entir=
+e $109 million stake in EHang by February 2021. In November 2021=2C in its=
+ last public comments on Ehang=2C the VP of Drone Delivery for United Ther=
+apeutics said=2C =E2=80=9CI don=E2=80=99t think anyone could say right now=
+ that they [EHang] have a certifiable configuration in terms of aircraft=
+ design.=E2=80=9D</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former EHang employee said the deal was=
+ =E2=80=9Cdead=E2=80=9D. We repeatedly inquired with United Therapeutics a=
+nd rather than confirm the partnership=2C we were told by its PR rep: =E2=
+=80=9CWe have no comment. We=E2=80=99re just not going to comment on this.=
+=E2=80=9D EHang continues to market the deal as active in its SEC filings=
+ and investor presentations.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">EHang=E2=80=99s second largest commitment=
+ is a 100-unit preorder=2C worth ~$30 million=2C from Prestige Aviation=2C=
+ an Indonesian entity that was formed with $34=2C000 in registered capital=
+ 1 day prior to its announced partnership with EHang.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Outside of promotional events with EHang=
+=2C we found no website and zero evidence of any aviation operations for P=
+restige Aviation except for a photoshoot where it appears to have photosho=
+pped its logo onto a rented jet.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In January 2022=2C EHang received a 50-uni=
+t preorder from AirX=2C valued at an estimated $15 million. AirX is a Japa=
+nese startup based out of a WeWork that reportedly raised around $1 millio=
+n in capital=2C largely to scale its helicopter sightseeing booking websit=
+e.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">AirX=E2=80=99s website indicates it merely=
+ intends to resell EHang products to buyers that don=E2=80=99t yet seem to=
+ exist=2C in a country (Japan) where EHang would need to complete a multi-=
+year certification process.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In September 2023=2C EHang announced an up=
+ to 100-unit order=2C representing an estimated $30 million in sales=2C fr=
+om Shenzhen Boling Holdings Group=2C which was in the business of =E2=80=
+=9CRadio and Television=E2=80=9D production up until 5 days before the Eha=
+ng deal announcement=2C when it added aviation-related terms to its offici=
+al Chinese business description.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Boling has virtually no web presence and h=
+as zero registered employees=2C according to QCC=2C a Chinese corporate da=
+tabase. Its corporate address leads to a residential apartment building.</=
+li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Beyond pre-orders=2C in 2019=2C EHang anno=
+unced a major partnership with DHL-Sinotrans to develop a =E2=80=9Cfully a=
+utomated and intelligent drone logistics solution.=E2=80=9D EHang hasn=E2=
+=80=99t provided an update on the project since August 2020. A former EHan=
+g employee told us the project was a =E2=80=9Cdead end=2C=E2=80=9D saying=
+=2C =E2=80=9C=E2=80=A6there were some problems in the integration=2C and t=
+hey abandoned the project.=E2=80=9D</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In 2021=2C a research firm alleged that on=
+e of EHang=E2=80=99s largest customers=2C Kunxiang=2C was secretly a pre-I=
+PO investor that signed =E2=80=9Csham sales contracts=E2=80=9D so that EHa=
+ng could report revenue growth as it approached its IPO. EHang=E2=80=99s C=
+EO denied the allegations=2C calling its dealings =E2=80=9Carm-length tran=
+sactions.=E2=80=9D</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Corporate records reveal that Kunxiang is=
+ in fact controlled by a sanctioned Chinese financier whose venture capita=
+l firm invested in EHang pre-IPO through an offshore shell company in 2017=
+=2E</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">An executive from the venture capital firm=
+ admitted in a 2018 interview to investing in EHang. Further confirming th=
+is=2C the same executive was photographed celebrating with EHang CEO Hu Hu=
+azhi at the company=E2=80=99s Nasdaq IPO bell-ringing ceremony.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">To summarize=2C when faced with allegation=
+s of suspicious product purchases by a conflicted party=2C EHang CEO Hu Hu=
+azhi seemingly chose to flagrantly mislead shareholders by claiming that t=
+he aircraft purchases were arm=E2=80=99s length.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">EHang never seemed to collect the suspect=
+ revenue and has instead been aggressively impairing its receivables since=
+ 2020=2C writing down $15.2 million in receivables during a period where i=
+t only reported $15.3 million in revenue.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">EHang's insiders &amp; key stakeholders ha=
+ven't reported a single stock purchase since inception. Instead they have=
+ reported selling more than 28 million shares=2C including share sales in=
+ September 2022 at prices as low as $4.21-$6.17=2C 59%-72% below current l=
+evels.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Overall=2C EHang seems to have a major cre=
+dibility issue=E2=80=94whether it be by fluffing up its preorder book (whi=
+ch looks to almost entirely be vapor) or by brazenly misleading about earl=
+y sales that bear all the hallmarks of fake revenue.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Trust is crucial in the aviation industry=
+=2C both for investors and potential customers who are literally putting t=
+heir lives at risk. We think the company is a fatal accident waiting to ha=
+ppen=2C both for investors and for passengers.<!-- /wp:list-item --><!-- /=
+wp:list --></li>
+</ul>
+<!-- /wp:list --><!-- wp:paragraph -->
+
+<p style=3D"margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #757575;font-fa=
+mily: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><em>I=
+nitial Disclosure: After extensive research=2C we have taken a short posit=
+ion in shares of EHang Holdings Limited (NASDAQ:EH). This report represent=
+s our opinion=2C and we encourage every reader to do their own due diligen=
+ce. Please see our full disclaimer at the bottom of the report.</em></p>
+<!-- /wp:paragraph -->
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 9px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" align=3D"center"=
+ class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mcnButtonContentContainer" style=3D"border-collapse: separate !impo=
+rtant;border-radius: 3px;background-color: #00ADD8;mso-table-lspace: 0pt;m=
+so-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
+ 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Helvetica;font-size: 18px;padd=
+ing: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"Read The=
+ Full Report Here" href=3D"https://hindenburgresearch.us19.list-manage.com=
+/track/click?u=3Dffb3753afd4493d4fbd300492&id=3D53b099f7c3&e=3D04403ab0ff=
+" target=3D"_blank" style=3D"font-weight: bold;letter-spacing: -0.5px;line=
+-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;display: block;">Read The Full Report Here</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnFollowBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnFollowBlockOuter">
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"padding: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" class=3D"mcnFollowBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnFollowContentContainer" style=3D"min-width: 100%;=
+border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td align=3D"center" style=3D"padding-left: 9px;padding-right: 9px=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;" class=3D"mcnFollowContent">
+                <tbody><tr>
+                    <td align=3D"center" valign=3D"top" style=3D"padding-t=
+op: 9px;padding-right: 9px;padding-left: 9px;mso-line-height-rule: exactly=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                        <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse;mso-table-lspa=
+ce: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;">
+                            <tbody><tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+                                    <!--[if mso]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0">
+                                    <tr>
+                                    <![endif]-->
+
+                                        <!--[if mso]>
+                                        <td align=3D"center" valign=3D"top=
+">
+                                        <![endif]-->
+
+                                            <table align=3D"left" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnFollowStacked" styl=
+e=3D"display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;">
+
+                                                <tbody><tr>
+                                                    <td align=3D"center" v=
+align=3D"top" class=3D"mcnFollowIconContent" style=3D"padding-right: 0;pad=
+ding-bottom: 5px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">
+                                                        <a href=3D"https:/=
+/hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
+bd300492&id=3D97fb56ba43&e=3D04403ab0ff" target=3D"_blank" style=3D"mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;"><img src=3D"https://cdn-images.mailchimp.com/icons/social-block=
+-v2/color-twitter-96.png" alt=3D"Follow Us On Twitter" class=3D"mcnFollowB=
+lockIcon" width=3D"48" style=3D"width: 48px;max-width: 48px;display: block=
+;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolat=
+ion-mode: bicubic;"></a>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td align=3D"center" v=
+align=3D"top" class=3D"mcnFollowTextContent" style=3D"padding-right: 0;pad=
+ding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">
+                                                        <a href=3D"https:/=
+/hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
+bd300492&id=3Dbd73d61ad5&e=3D04403ab0ff" target=3D"_blank" style=3D"color=
+: #202020;font-family: Arial;font-size: 18px;font-weight: bold;text-decora=
+tion: none;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">Follow Us On Twitter</a>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody></table>
+
+
+                                        <!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+                                    <!--[if mso]>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateFooter" data-template-container=3D"" style=3D"background:#333333 n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #333333;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 45px;pad=
+ding-bottom: 63px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"fo=
+oterContainer" style=3D"background:transparent none no-repeat center/cover=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;background-color: transparent;background-image: none;backgr=
+ound-repeat: no-repeat;background-position: center;background-size: cover;=
+border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mc=
+nDividerBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px solid #505050;border-collapse: collapse;mso-table-lspace: 0pt;mso-=
+table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #FFFFFF;font-family: Helve=
+tica;font-size: 12px;line-height: 150%;text-align: center;">
+
+                            <em>Copyright =C2=A9 2022 *Hindenburg Research=
+=2C All rights reserved.</em><br>
+<br>
+Want to change how you receive these emails?<br>
+You can <a href=3D"https://hindenburgresearch.us19.list-manage.com/profile=
+?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3D020114510b=
+" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;color: #FFFFFF;font-weight: normal;text-decoratio=
+n: underline;">update your preferences</a> or <a href=3D"https://hindenbur=
+gresearch.us19.list-manage.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&i=
+d=3D5b17860351&e=3D04403ab0ff&c=3D020114510b" style=3D"mso-line-height-rule:=
+ exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color:=
+ #FFFFFF;font-weight: normal;text-decoration: underline;">unsubscribe from=
+ this list</a>.
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://hindenburgresearch.us19.list-manage.com/track/open=
+=2Ephp?u=3Dffb3753afd4493d4fbd300492&id=3D020114510b&e=3D04403ab0ff" height=
+=3D"1" width=3D"1" alt=3D""></body>
+</html>
+--_----------=_MCPart_1893870706--

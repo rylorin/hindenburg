@@ -25,7 +25,7 @@ export class SmtpClient {
     // We need to change "to" or mail will loop back
     email.to =
       process.env.RCPT_TO || process.env.RELAY_USERNAME || "<foo@bar.com>";
-    console.log(email);
+    // console.log(email);
     const info = await this.transporter.sendMail(email);
 
     console.log("Message sent: %s", info.messageId);

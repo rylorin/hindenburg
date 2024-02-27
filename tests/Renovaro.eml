@@ -1,0 +1,1490 @@
+Delivered-To: rylorin@gmail.com
+Received: by 2002:a05:7110:371b:b0:22a:d451:3e7e with SMTP id bs27csp256652geb;
+        Tue, 13 Feb 2024 06:44:48 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGcjLZxTB8EKhac4hhAc4Bh23FA7IxKGSpigW8n41bjljASyFq1r7DsN21fgVLFyAyU/ydF
+X-Received: by 2002:a81:8882:0:b0:607:9918:8c7b with SMTP id y124-20020a818882000000b0060799188c7bmr773596ywf.22.1707835488312;
+        Tue, 13 Feb 2024 06:44:48 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1707835488; cv=none;
+        d=google.com; s=arc-20160816;
+        b=bZjqpVSi6mmhp1igw0yagshJUd4M8kWUQsjD/0VfUZrt/Q0ul9KpdnSOfTQ4TbuPA1
+         Pt+Bx9lOOjIgunT56SNHzI2ar10AeW0jKdvjTKKFoXoc+lyrzhukU/gA8i5zG5b13TPC
+         xxT9x35LbPVKrv3SeIh2sWZdGzr7X9oE7qZz/Ncybi2SS98V9Z/7r295ivzyNrzpUbTA
+         p+PJNmlfvIwDeLoPYZ1BG7RSisC/+2c9MN3OpoOdR4t3yH2taE6o6k7E98vHjJs0PT/r
+         ZHf1Tt2FYC+J+j0bWJwHKRzD6Og6h/xZ2pcWD5xhSCLgomG5ALg0UxWWo5M1OQkgqM2K
+         AEYA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :dkim-signature;
+        bh=Ur9SUlFMK3q2enDcFFDDfD4P5t/YDvZFzhG8M4iFgDo=;
+        fh=Gl0xcCE2dclMB2Ryz6H+lWeG7Rn7rUJHLaSQLXr9WsA=;
+        b=oj6CFc6ZvowRSgmJkM75RbbuUUzT4nDwCjWLjD7IAIWoUwsofrvYil47yAzLf/w6va
+         OHsm379N72j+iYFJtq6EjJOrBVrNoi4uyEvtPGZEoZq8JVkN2htfVDmlJtylZJhZXVbJ
+         4tQT4IOPXcRRK8/6dbd7E+aPFXqaBzEwvBxCn7M7VKrPYetF607X/eL/lifoUD9ed71S
+         UWJAWlx9cpa4dHumfBbH4nWXW5mncHM7oaEGthzEfydvG3iAkEsaPHpejmOqfxvT32Bt
+         /c5+nW6H7zKy3D0YodgXxs5mwJNHEiHUpEium4/lY63PWQhx0D91ZAI8kIG3LqCv0rDw
+         OkZw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=ONyL9Mmu;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=pxTcW9dq;
+       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570014-04403ab0ff@mail54.suw15.mcsv.net designates 198.2.182.54 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570014-04403ab0ff@mail54.suw15.mcsv.net
+Return-Path: <bounce-mc.us19_104347118.6570014-04403ab0ff@mail54.suw15.mcsv.net>
+Received: from mail54.suw15.mcsv.net (mail54.suw15.mcsv.net. [198.2.182.54])
+        by mx.google.com with ESMTPS id g197-20020a0dddce000000b006078ace6eb8si499399ywe.144.2024.02.13.06.44.47
+        for <rylorin@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 13 Feb 2024 06:44:48 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-mc.us19_104347118.6570014-04403ab0ff@mail54.suw15.mcsv.net designates 198.2.182.54 as permitted sender) client-ip=198.2.182.54;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=ONyL9Mmu;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=pxTcW9dq;
+       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570014-04403ab0ff@mail54.suw15.mcsv.net designates 198.2.182.54 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570014-04403ab0ff@mail54.suw15.mcsv.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mcsv.net;
+	s=k1; t=1707835421; x=1707921821;
+	bh=Ur9SUlFMK3q2enDcFFDDfD4P5t/YDvZFzhG8M4iFgDo=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=ONyL9Mmu2UvoFB+NOvufdgAvHvHHdNwS1ANtdXM7Vl+taoVqCTRFfDb17C3uDw/sV
+	 Wr0RDPBcdlEdhr4MeSMeXlXH+ZPXR4Ahp7OIGMg+YnfpxNOTsNiO4n7k12wz93ptkV
+	 /2+3UCNviucdXHoOg4Pdc3IxOOBLA4vf+6RfF2+VbXcYlc0sY8/hjXaYnhkRy8jH69
+	 oxZeEMAAOhHKPXJIt9w3pywCJxwukX801+O6TIWGDaubZiJV31wTrkweoOsrDGU7gd
+	 Y/7PxqmWDZl0MBpdZvk+ljM2PHvr2oLOJ8NTbp+dM7df3egaOEJZ6Yo4saRxB7b9DW
+	 HxQbhYLWUgutA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimpapp.net;
+	s=k2; t=1707835421; x=1708095921;
+	i=info=3Dhindenburgresearch.com@mailchimpapp.net;
+	bh=Ur9SUlFMK3q2enDcFFDDfD4P5t/YDvZFzhG8M4iFgDo=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=pxTcW9dqAaofgyMzlkQGS8Own1ZIAbcBEd4DxxPw2L55+zC4dcTtFLVP8+fLly+CH
+	 7mba0SABq6FDLFvxRGn999yrP1tZp/9Q8foQCzlPPhF1PfkjR8elSc1DI+lQ9pG36+
+	 nsZ50DQHImMwsY8WGL+LS/ppikK4mZsl5BxSrTOQOITQGSEFaYW7+fStg8A+wiy+C1
+	 MpII/UMNhjyprk1ybrMDqK6sqXGgzuQiOSysxQ5Qjj4AzUjnGSOruss0+Pn6kBp7qd
+	 nLfDUgYtUrfRj57hcyf47M1+q3B+fqcpH5XNsjs/QC18+kf6zmrH1NPm264vA5XQiB
+	 CXK8J6uOh4V1A==
+Received: from localhost (localhost [127.0.0.1])
+	by mail54.suw15.mcsv.net (Mailchimp) with ESMTP id 4TZ3ws3NltzQY0fTT
+	for <rylorin@gmail.com>; Tue, 13 Feb 2024 14:43:41 +0000 (GMT)
+Subject: =?utf-8?Q?Renovaro=20BioSciences=3A=20A=20Worthless=20AI=20Shell=20Game=20With=20A=20Murderous=20Magician=20Past=20=28Nasdaq=3ARENB=29?=
+From: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+Reply-To: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+To: <rylorin@gmail.com>
+Date: Tue, 13 Feb 2024 14:43:35 +0000
+Message-ID: <ffb3753afd4493d4fbd300492.04403ab0ff.20240213144325.c4163c5509.5509bd2a@mail54.suw15.mcsv.net>
+X-Mailer: Mailchimp Mailer - **CIDc4163c550904403ab0ff**
+X-Campaign: mailchimpffb3753afd4493d4fbd300492.c4163c5509
+X-campaignid: mailchimpffb3753afd4493d4fbd300492.c4163c5509
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=ffb3753afd4493d4fbd300492&id=c4163c5509&e=04403ab0ff
+X-MC-User: ffb3753afd4493d4fbd300492
+Feedback-ID: 104347118:104347118.6570014:us19:mc
+List-ID: ffb3753afd4493d4fbd300492mc list <ffb3753afd4493d4fbd300492.63691.list-id.mcsv.net>
+X-Accounttype: pr
+List-Unsubscribe: <https://hindenburgresearch.us19.list-manage.com/unsubscribe?u=ffb3753afd4493d4fbd300492&id=5b17860351&t=h&e=04403ab0ff&c=c4163c5509>, <mailto:unsubscribe-mc.us19_ffb3753afd4493d4fbd300492.c4163c5509-04403ab0ff@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_319206347"
+MIME-Version: 1.0
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_319206347
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+** Renovaro BioSciences: A Worthless AI Shell Game With A Murderous Magici=
+an Past
+------------------------------------------------------------
+(NASDAQ:RENB)
+* Renovaro is a biotech company with several preclinical drug candidates t=
+hat is =E2=80=9Ccommitted to curing people with cancers and infectious dis=
+eases=E2=80=9D. Weeks ago=2C it voted to merge with =E2=80=9CAI Health=E2=
+=80=9D company GEDi Cube=2C giving the company a pro-forma fully diluted m=
+arket cap of ~$567 million.
+* Current CEO Dr. Mark Dybul has a prestigious background (i) serving unde=
+r Anthony Fauci at the National Institute of Health (NIH) (ii) as Executiv=
+e Director of the Global Fund to Fight AIDS=2C Tuberculosis=2C and Malaria=
+ and (iii) as a tenured professor at Georgetown University.
+* Dybul has been involved with the company since 2017=2C before it went pu=
+blic. The company went public in early 2018 under a predecessor name=2C En=
+ochian BioSciences. Dybul stepped into the CEO role in 2021=2C where he re=
+mains today.
+* Then known as Enochian=2C the company=E2=80=99s co-founder=2C =E2=80=9Cs=
+cientific founder=E2=80=9D=2C =E2=80=9Cinventor=E2=80=9D=2C and largest sh=
+areholder was an individual named Dr. Serhat Gumrukcu.
+* CEO Dybul praised Gumrukcu as a =E2=80=9Crare genius=E2=80=9D=2C saying=
+ he could be =E2=80=9Cthe most impactful scientist in generations=E2=80=9D=
+=2E In a now-deleted company video=2C Dybul praised Gumrukcu=E2=80=99s =E2=
+=80=9Cbrilliance=E2=80=9D and said he created =E2=80=9Csome of the most in=
+novative approaches to HIV and oncology=E2=80=9D that he knew of.
+* In May 2022=2C Gumrukcu=2C was charged by the Department of Justice over=
+ allegations that he conspired to hire a hitman to murder one of the victi=
+ms of his many scams=2C a Vermont father of 6 who was taken from his home=
+ and executed in a snowbank.
+* A week after the charges=2C we published a report on the company titled=
+ =E2=80=9CMiracle Cures and Murder For Hire: How A Spoon-Bending Turkish M=
+agician Built A $600 Million Nasdaq-Listed Scam Based On A Lifetime Of Lie=
+s=E2=80=9D=2C which largely profiled the now-imprisoned Gumrukcu.
+* In that report=2C we revealed Gumrukcu had faked his entire academic his=
+tory=2C including forging his Russian medical degrees=2C and that he was a=
+ magician who had fled authorities in Turkey after being charged over alle=
+gations he faked being a doctor to steal money from a terminally ill cance=
+r patient.
+* We also revealed that as a fugitive in the United States=2C Gumrukcu con=
+tinued his crime spree=2C culminating in 14 felony charges in 2017 relatin=
+g to the fraudulent sale of a home he didn=E2=80=99t own=2C writing bad ch=
+ecks=2C and defrauding a businessman through a fake energy trading deal.
+* The day after we published our report=2C CEO Dybul called it "misleading=
+ propaganda"=2C claiming the magician's study results were still valid. "T=
+he science is the science=2C and the data are the data".
+* One month after the murder charges and our report=2C in July 2022=2C the=
+ company announced that Gumrukcu had faked clinical data relating to the c=
+ompany=E2=80=99s HBV and COVID-19 therapies. In October 2022=2C the compan=
+y sued Gumrukcu=2C saying his conduct amounted to =E2=80=9Cbrazen fraud=E2=
+=80=9D. The data was apparently not the data.
+* The company claimed it had =E2=80=9Cno reason=E2=80=9D to doubt Gumrukcu=
+=E2=80=99s data. Dybul later admitted he and the company knew Gumrukcu had=
+ been arrested on 14 felony counts relating to fraud at the time they bega=
+n working with him=2C but kept working with him anyway.
+* Dybul ignored other obvious red flags including (i) in 2018 when the com=
+pany=E2=80=99s CFO raised concerns of =E2=80=9Cserious financial improprie=
+ties=E2=80=9D related to Gumrukcu (ii) when analysts in 2019 pointed out G=
+umrukcu=E2=80=99s suspicious medical credentials and criminal history and=
+ (iii) when Dybul was questioned in 2020 regarding a U.S. lawsuit alleging=
+ Gumrukcu practiced sham medicine on a terminally ill child and absconded=
+ with the parent=E2=80=99s $253=2C000.
+* Enochian Chairman Rene Sindlev also knew of and ignored Gumrukcu=E2=80=
+=99s felony fraud charges and previously compared Gumrukcu to Leonardo Da=
+ Vinci and Albert Einstein. No board members or key executives resigned de=
+spite their inexcusable governance failures.
+* In late 2022=2C 6 months after the murder charges and 2 months after the=
+ company sued Gumrukcu for =E2=80=9Cbrazen fraud=E2=80=9D=2C the board of=
+ Renovaro elected to pay Dybul a $100=2C000 cash performance bonus on top=
+ of his $850=2C000 annual salary.
+* In March and April 2023=2C with Enochian almost out of cash and its stoc=
+k near lows=2C Chairman Sindlev =E2=80=9Cconducted multiple calls and in-p=
+erson meetings=E2=80=9D with representatives of GEDi Cube=2C an entity whi=
+ch didn=E2=80=99t even exist at the time=2C later company disclosures reve=
+aled.
+* Also on the same day of the LOI and the name change=2C insiders includin=
+g Chairman Sindlev quietly acquired millions of shares and warrants at eff=
+ective prices ranging from $0.65 to $0.713 per share. Renovaro was trading=
+ at ~$0.65 at the time.
+* 8 days later=2C Renovaro publicly announced the merger=2C calling GEDi C=
+ube an =E2=80=9CAI Company=E2=80=9D using =E2=80=9Ccutting edge AI/machine=
+ learning technology=E2=80=9D. Renovaro stock spiked 83% on the day=2C tra=
+ding 78.5x its preceding 30-day average volume.
+* At the time of the announcement=2C GEDi Cube was a 2-month-old entity wi=
+th =E2=80=9Cno operational history=E2=80=9D=2C no product=2C no revenue an=
+d virtually no assets=2C according to disclosures made months later. GEDi=
+ basically consisted of only a term sheet to acquire an entity called Grac=
+e Systems=2C which it claimed had AI technology.
+* Grace Systems was a nearly insolvent tiny startup with no revenue and no=
+ commercial ready product after 10 years. It reported having $1=2C583 in c=
+ash on hand with ~$376=2C000 in liabilities at year end 2022. In April 202=
+3=2C a Grace subsidiary filed for bankruptcy in the Netherlands.
+* GEDi needed =E2=82=AC1 million to own 51% of Grace=2C implying a ~$2.2 m=
+illion valuation for Grace. But the newly formed GEDi entity had next to n=
+othing=2C so Renovaro lent it the needed $1.05 million to close the deal.
+* During merger negotiations to merge with Renovaro=2C GEDi then proposed=
+ a valuation of $225 million=2C which Renovaro rejected because GEDi =E2=
+=80=9Cgenerated no revenue and had no projections=E2=80=9D.
+* Renovaro and CEO Dybul then apparently negotiated against themselves=2C=
+ relying on a valuation opinion from an unnamed =E2=80=9CAI expert=E2=80=
+=9D that ultimately resulted in Renovaro agreeing to pay $275 million in c=
+onsideration for GEDi.
+* In brief=2C Renovaro and CEO Dybul lent GEDi the cash to close the Grace=
+ deal at a ~$2.2 million implied valuation=2C then turned around and merge=
+d with GEDi for $275 million in consideration after a hard-fought negotiat=
+ion against himself.
+* Renovaro has repeatedly touted the importance of =E2=80=9Cvisionary=E2=
+=80=9D former Intel/Nvidia executive Craig Rhodes as CEO of GEDi Cube. Sha=
+reholders likely voted for the deal in part due to Rhodes=E2=80=99 backgro=
+und. Rhodes confirmed to us in an email that he resigned in December 2023=
+=2C a month before the vote=2C with no apparent disclosure of the key resi=
+gnation to shareholders.
+* Renovaro also touted the appointment of Lester Russell=2C GEDi=E2=80=99s=
+ Chief Medical Officer=2C in an August 2023 press release. Russell also re=
+signed in December 2023=2C also without disclosure to shareholders.
+* Renovaro and Dybul also repeatedly highlighted GEDi=E2=80=99s =E2=80=9Cs=
+trategic partnership=E2=80=9D with Nvidia as a key justification for the m=
+erger. But the Nvidia =E2=80=9Cpartnership=E2=80=9D is a free program that=
+ over 17=2C000 companies have joined.
+* In the months leading up to the merger vote=2C Renovaro enlisted stock p=
+romoters=2C including one previously sanctioned by the SEC=2C to hype up t=
+he GEDi deal and pump shares to retail investors.
+* Dybul now claims that GEDi can provide a =E2=80=9Cmultiplier effect=E2=
+=80=9D that will enhance Renovaro=E2=80=99s pipeline.
+* The company=E2=80=99s lead candidate remains Gumrukcu=E2=80=99s cancer t=
+herapy. Dybul still touts the jailed magician=E2=80=99s treatment=2C refer=
+ring to it in January 2024 as =E2=80=9Cthe holy grail of cancer research=
+=E2=80=9D and hopes to begin human trials later this year.
+* In an ironic twist=2C Gumrukcu=E2=80=99s husband sued Renovaro=E2=80=99s=
+ key executives and financiers in January 2024=2C alleging a range of secu=
+rities law violations by Dybul and Sindlev=2C among others. The complaint=
+ alleges Sindlev purchased significant Renovaro stock while in possession=
+ of material nonpublic information relating to the merger.
+* The complaint also cites damning internal emails to allege Dybul is enga=
+ged in a =E2=80=9Cwink and nod scheme=E2=80=9D with Renovaro=E2=80=99s fin=
+ancier Lincoln Park Capital=2C whereby Renovaro provides them with non-pub=
+lic information ahead of key company news to help Lincoln Park trade again=
+st Renovaro=E2=80=99s own shareholders.
+* Gumrukcu and his husband are a key holder of Renovaro=2C with ~19 millio=
+n shares=2C or ~28% of the company. The family of Gumrukcu=E2=80=99s murde=
+r victim sued him for wrongful death and courts have frozen 12.8 million o=
+f his Enochian shares to cover potential damages.
+* Gumrukcu=E2=80=99s husband still owns 3.6 million free-trading shares wh=
+ich we expect will hit the market soon to cover litigation costs and defen=
+se costs for the upcoming murder conspiracy trial=2C slated for later this=
+ year.
+* In conclusion=2C if your company co-founder and key inventor turns out t=
+o be a con artist magician who (allegedly) murdered someone and faked his=
+ scientific data=2C you can=E2=80=99t just change your company name and pi=
+vot to AI and hope no one notices.
+* CEO Mark Dybul appears set on trying to run the same shameless scam with=
+ a new name. We think he is in a league of his own as far as poor judgment=
+ and governance and see inevitable massive downside in shares of Renovaro.
+
+Initial Disclosure: After extensive research=2C we have taken a short posi=
+tion in shares of Renovaro Biosciences=2C Inc. (NASDAQ:RENB). This report=
+ represents our opinion=2C and we encourage every reader to do their own d=
+ue diligence. Please see our full disclaimer at the bottom of the report.
+Read The Full Report Here (https://hindenburgresearch.com/renovaro/)
+https://twitter.com/HindenburgRes
+Follow Us On Twitter (https://twitter.com/HindenburgRes)
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Copyright =C2=A9 2022 *Hindenburg Research=2C All rights reserved.
+
+Want to change how you receive these emails?
+You can ** update your preferences (https://hindenburgresearch.us19.list-m=
+anage.com/profile?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3Dc4163c5509)
+or ** unsubscribe from this list (https://hindenburgresearch.us19.list-man=
+age.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&t=3Db&e=
+=3D04403ab0ff&c=3Dc4163c5509)
+=2E
+--_----------=_MCPart_319206347
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-micros=
+oft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    <head>
+        <!-- NAME: FOLLOW UP -->
+        <!--[if gte mso 15]>
+        <xml>
+            <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]-->
+        <meta charset=3D"UTF-8">
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial=
+-scale=3D1">
+        <title>Renovaro BioSciences: A Worthless AI Shell Game With A Murd=
+erous Magician Past (Nasdaq:RENB)</title>
+
+    <style type=3D"text/css">
+=09=09p{
+=09=09=09margin:10px 0;
+=09=09=09padding:0;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09h1=2Ch2=2Ch3=2Ch4=2Ch5=2Ch6{
+=09=09=09display:block;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img=2Ca img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body=2C#bodyTable=2C#bodyCell{
+=09=09=09height:100%;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09table{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cblockquote{
+=09=09=09mso-line-height-rule:exactly;
+=09=09}
+=09=09a[href^=3Dtel]=2Ca[href^=3Dsms]{
+=09=09=09color:inherit;
+=09=09=09cursor:default;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cbody=2Ctable=2Cblockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09.ExternalClass=2C.ExternalClass p=2C.ExternalClass td=2C.ExternalCla=
+ss div=2C.ExternalClass span=2C.ExternalClass font{
+=09=09=09line-height:100%;
+=09=09}
+=09=09a[x-apple-data-detectors]{
+=09=09=09color:inherit !important;
+=09=09=09text-decoration:none !important;
+=09=09=09font-size:inherit !important;
+=09=09=09font-family:inherit !important;
+=09=09=09font-weight:inherit !important;
+=09=09=09line-height:inherit !important;
+=09=09}
+=09=09.templateContainer{
+=09=09=09max-width:600px !important;
+=09=09}
+=09=09a.mcnButton{
+=09=09=09display:block;
+=09=09}
+=09=09.mcnImage=2C.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent{
+=09=09=09word-break:break-word;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09.mcnDividerBlock{
+=09=09=09table-layout:fixed !important;
+=09=09}
+=09=09h1{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:40px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h2{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:34px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h3{
+=09=09=09color:#444444;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:22px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h4{
+=09=09=09color:#949494;
+=09=09=09font-family:Georgia;
+=09=09=09font-size:20px;
+=09=09=09font-style:italic;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templateHeader{
+=09=09=09background-color:#f7f7f7;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0px;
+=09=09=09padding-bottom:0px;
+=09=09}
+=09=09.headerContainer{
+=09=09=09background-color:#transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.headerContainer .mcnTextContent a=2C.headerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateBody{
+=09=09=09background-color:#FFFFFF;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:27px;
+=09=09=09padding-bottom:54px;
+=09=09}
+=09=09.bodyContainer{
+=09=09=09background-color:transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.bodyContainer .mcnTextContent a=2C.bodyContainer .mcnTextContent p=
+ a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateFooter{
+=09=09=09background-color:#333333;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:45px;
+=09=09=09padding-bottom:63px;
+=09=09}
+=09=09.footerContainer{
+=09=09=09background-color:transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09color:#FFFFFF;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:12px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09.footerContainer .mcnTextContent a=2C.footerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#FFFFFF;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09@media only screen and (min-width:768px){
+=09=09.templateContainer{
+=09=09=09width:600px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body=2Ctable=2Ctd=2Cp=2Ca=2Cli=2Cblockquote{
+=09=09=09-webkit-text-size-adjust:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImage{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCartContainer=2C.mcnCaptionTopContent=2C.mcnRecContentContainer=
+=2C.mcnCaptionBottomContent=2C.mcnTextContentContainer=2C.mcnBoxedTextCont=
+entContainer=2C.mcnImageGroupContentContainer=2C.mcnCaptionLeftTextContent=
+Container=2C.mcnCaptionRightTextContentContainer=2C.mcnCaptionLeftImageCon=
+tentContainer=2C.mcnCaptionRightImageContentContainer=2C.mcnImageCardLeftT=
+extContentContainer=2C.mcnImageCardRightTextContentContainer=2C.mcnImageCa=
+rdLeftImageContentContainer=2C.mcnImageCardRightImageContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupContent{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCaptionLeftContentOuter .mcnTextContent=2C.mcnCaptionRightConten=
+tOuter .mcnTextContent{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardTopImageContent=2C.mcnCaptionBottomContent:last-child .=
+mcnCaptionBottomImageContent=2C.mcnCaptionBlockInner .mcnCaptionTopContent=
+:last-child .mcnTextContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardBottomImageContent{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockInner{
+=09=09=09padding-top:0 !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockOuter{
+=09=09=09padding-top:9px !important;
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnTextContent=2C.mcnBoxedTextContentColumn{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardLeftImageContent=2C.mcnImageCardRightImageContent{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcpreview-image-uploader{
+=09=09=09display:none !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h1{
+=09=09=09font-size:30px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h2{
+=09=09=09font-size:26px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h3{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h4{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer .mcnTextContent=2C.mcnBoxedTextContent=
+Container .mcnTextContent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}</style></head>
+    <body style=3D"height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-=
+size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+        <!--
+-->
+        <center>
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;pad=
+ding: 0;width: 100%;">
+                <tr>
+                    <td align=3D"center" valign=3D"top" id=3D"bodyCell" st=
+yle=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"border-collapse: collapse;mso-table-lspace:=
+ 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;">
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateHeader" data-template-container=3D"" style=3D"background:#f7f7f7 n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #f7f7f7;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padd=
+ing-bottom: 0px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"he=
+aderContainer" style=3D"background:#transparent none no-repeat center/cove=
+r;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;background-color: #transparent;background-image: none;back=
+ground-repeat: no-repeat;background-position: center;background-size: cove=
+r;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateBody" data-template-container=3D"" style=3D"background:#FFFFFF non=
+e no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;backgroun=
+d-image: none;background-repeat: no-repeat;background-position: center;bac=
+kground-size: cover;border-top: 0;border-bottom: 0;padding-top: 27px;paddi=
+ng-bottom: 54px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"bo=
+dyContainer" style=3D"background:transparent none no-repeat center/cover;m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;background-color: transparent;background-image: none;backgrou=
+nd-repeat: no-repeat;background-position: center;background-size: cover;bo=
+rder-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnT=
+extBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <h1 style=3D"display: block;margin: 0;padding:=
+ 0;color: #222222;font-family: Helvetica;font-size: 40px;font-style: norma=
+l;font-weight: bold;line-height: 150%;letter-spacing: normal;text-align: c=
+enter;">Renovaro BioSciences: A Worthless AI Shell Game With A Murderous M=
+agician Past</h1>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <!-- wp:list --><span style=3D"font-size:20px"=
+><strong>(NASDAQ:RENB)</strong></span>
+
+<ul>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Renovaro is a biotech company with several=
+ preclinical drug candidates that is =E2=80=9Ccommitted to curing people w=
+ith cancers and infectious diseases=E2=80=9D. Weeks ago=2C it voted to mer=
+ge with =E2=80=9CAI Health=E2=80=9D company GEDi Cube=2C giving the compan=
+y a pro-forma fully diluted market cap of ~$567 million.<!-- /wp:list-item=
+ --><!-- /wp:list --><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Current CEO Dr. Mark Dybul has a prestigio=
+us background (i) serving under Anthony Fauci at the National Institute of=
+ Health (NIH) (ii) as Executive Director of the Global Fund to Fight AIDS=
+=2C Tuberculosis=2C and Malaria and (iii) as a tenured professor at George=
+town University.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list --><!-=
+- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Dybul has been involved with the company s=
+ince 2017=2C before it went public. The company went public in early 2018=
+ under a predecessor name=2C Enochian BioSciences. Dybul stepped into the=
+ CEO role in 2021=2C where he remains today.<!-- /wp:list-item --><!-- /wp=
+:list --><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Then known as Enochian=2C the company=E2=
+=80=99s co-founder=2C =E2=80=9Cscientific founder=E2=80=9D=2C =E2=80=9Cinv=
+entor=E2=80=9D=2C and largest shareholder was an individual named Dr. Serh=
+at Gumrukcu.&nbsp;<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list --><=
+!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">CEO Dybul praised Gumrukcu as a =E2=80=9Cr=
+are genius=E2=80=9D=2C saying he could be =E2=80=9Cthe most impactful scie=
+ntist in generations=E2=80=9D. In a now-deleted company video=2C Dybul pra=
+ised Gumrukcu=E2=80=99s =E2=80=9Cbrilliance=E2=80=9D and said he created=
+ =E2=80=9Csome of the most innovative approaches to HIV and oncology=E2=80=
+=9D that he knew of.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list --=
+><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In May 2022=2C Gumrukcu=2C was charged by=
+ the Department of Justice over allegations that he conspired to hire a hi=
+tman to murder one of the victims of his many scams=2C a Vermont father of=
+ 6 who was taken from his home and executed in a snowbank.<!-- /wp:list-it=
+em --><!-- /wp:list --><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A week after the charges=2C we published a=
+ report on the company titled =E2=80=9CMiracle Cures and Murder For Hire:=
+ How A Spoon-Bending Turkish Magician Built A $600 Million Nasdaq-Listed S=
+cam Based On A Lifetime Of Lies=E2=80=9D=2C which largely profiled the now=
+-imprisoned Gumrukcu.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list -=
+-><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In that report=2C we revealed Gumrukcu had=
+ faked his entire academic history=2C including forging his Russian medica=
+l degrees=2C and that he was a magician who had fled authorities in Turkey=
+ after being charged over allegations he faked being a doctor to steal mon=
+ey from a terminally ill cancer patient.<!-- /wp:list-item --><!-- /wp:lis=
+t --><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">We also revealed that as a fugitive in the=
+ United States=2C Gumrukcu continued his crime spree=2C culminating in 14=
+ felony charges in 2017 relating to the fraudulent sale of a home he didn=
+=E2=80=99t own=2C writing bad checks=2C and defrauding a businessman throu=
+gh a fake energy trading deal.<!-- /wp:list-item --><!-- /wp:list --><!--=
+ wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">The day after we published our report=2C C=
+EO Dybul called it "misleading propaganda"=2C claiming the magician's stud=
+y results were still valid. "The science is the science=2C and the data ar=
+e the data".<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list --><!-- wp=
+:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">One month after the murder charges and our=
+ report=2C in July 2022=2C the company announced that Gumrukcu had faked c=
+linical data relating to the company=E2=80=99s HBV and COVID-19 therapies.=
+ In October 2022=2C the company sued Gumrukcu=2C saying his conduct amount=
+ed to =E2=80=9Cbrazen fraud=E2=80=9D. The data was apparently not the data=
+=2E<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list --><!-- wp:list-item=
+ --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">The company claimed it had =E2=80=9Cno rea=
+son=E2=80=9D to doubt Gumrukcu=E2=80=99s data. Dybul later admitted he and=
+ the company knew Gumrukcu had been arrested on 14 felony counts relating=
+ to fraud at the time they began working with him=2C but kept working with=
+ him anyway.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list --><!-- wp=
+:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Dybul ignored other obvious red flags incl=
+uding (i) in 2018 when the company=E2=80=99s CFO raised concerns of =E2=80=
+=9Cserious financial improprieties=E2=80=9D related to Gumrukcu (ii) when=
+ analysts in 2019 pointed out Gumrukcu=E2=80=99s suspicious medical creden=
+tials and criminal history and (iii) when Dybul was questioned in 2020 reg=
+arding a U.S. lawsuit alleging Gumrukcu practiced sham medicine on a termi=
+nally ill child and absconded with the parent=E2=80=99s $253=2C000.<!-- /w=
+p:list-item --><!-- /wp:list --><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Enochian Chairman Rene Sindlev also knew o=
+f and ignored Gumrukcu=E2=80=99s felony fraud charges and previously compa=
+red Gumrukcu to Leonardo Da Vinci and Albert Einstein. No board members or=
+ key executives resigned despite their inexcusable governance failures.<!-=
+- /wp:list-item --><!-- /wp:list --><!-- wp:list --><!-- wp:list-item --><=
+/li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In late 2022=2C 6 months after the murder=
+ charges and 2 months after the company sued Gumrukcu for =E2=80=9Cbrazen=
+ fraud=E2=80=9D=2C the board of Renovaro elected to pay Dybul a $100=2C000=
+ cash performance bonus on top of his $850=2C000 annual salary.<!-- /wp:li=
+st-item --><!-- /wp:list --><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In March and April 2023=2C with Enochian a=
+lmost out of cash and its stock near lows=2C Chairman Sindlev =E2=80=9Ccon=
+ducted multiple calls and in-person meetings=E2=80=9D with representatives=
+ of GEDi Cube=2C an entity which didn=E2=80=99t even exist at the time=2C=
+ later company disclosures revealed.<!-- /wp:list-item --><!-- /wp:list --=
+><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Also on the same day of the LOI and the na=
+me change=2C insiders including Chairman Sindlev quietly acquired millions=
+ of shares and warrants at effective prices ranging from $0.65 to $0.713 p=
+er share. Renovaro was trading at ~$0.65 at the time.<!-- /wp:list-item --=
+><!-- /wp:list --><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">8 days later=2C Renovaro publicly announce=
+d the merger=2C calling GEDi Cube an =E2=80=9CAI Company=E2=80=9D using=
+ =E2=80=9Ccutting edge AI/machine learning technology=E2=80=9D. Renovaro s=
+tock spiked 83% on the day=2C trading 78.5x its preceding 30-day average v=
+olume.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list --><!-- wp:list-=
+item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">At the time of the announcement=2C GEDi Cu=
+be was a 2-month-old entity with =E2=80=9Cno operational history=E2=80=9D=
+=2C no product=2C no revenue and virtually no assets=2C according to discl=
+osures made months later. GEDi basically consisted of only a term sheet to=
+ acquire an entity called Grace Systems=2C which it claimed had AI technol=
+ogy.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list --><!-- wp:list-it=
+em --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Grace Systems was a nearly insolvent tiny=
+ startup with no revenue and no commercial ready product after 10 years. I=
+t reported having $1=2C583 in cash on hand with ~$376=2C000 in liabilities=
+ at year end 2022. In April 2023=2C a Grace subsidiary filed for bankruptc=
+y in the Netherlands.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list -=
+-><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">GEDi needed =E2=82=AC1 million to own 51%=
+ of Grace=2C implying a ~$2.2 million valuation for Grace. But the newly f=
+ormed GEDi entity had next to nothing=2C so Renovaro lent it the needed $1=
+=2E05 million to close the deal.<!-- /wp:list-item --><!-- /wp:list --><!--=
+ wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">During merger negotiations to merge with R=
+enovaro=2C GEDi then proposed a valuation of $225 million=2C which Renovar=
+o rejected because GEDi =E2=80=9Cgenerated no revenue and had no projectio=
+ns=E2=80=9D.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list --><!-- wp=
+:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Renovaro and CEO Dybul then apparently neg=
+otiated against themselves=2C relying on a valuation opinion from an unnam=
+ed =E2=80=9CAI expert=E2=80=9D that ultimately resulted in Renovaro agreei=
+ng to pay $275 million in consideration for GEDi.<!-- /wp:list-item --><!-=
+- /wp:list --><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In brief=2C Renovaro and CEO Dybul lent GE=
+Di the cash to close the Grace deal at a ~$2.2 million implied valuation=
+=2C then turned around and merged with GEDi for $275 million in considerat=
+ion after a hard-fought negotiation against himself.<!-- /wp:list-item -->=
+<!-- /wp:list --><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Renovaro has repeatedly touted the importa=
+nce of =E2=80=9Cvisionary=E2=80=9D former Intel/Nvidia executive Craig Rho=
+des as CEO of GEDi Cube. Shareholders likely voted for the deal in part du=
+e to Rhodes=E2=80=99 background. Rhodes confirmed to us in an email that h=
+e resigned in December 2023=2C a month before the vote=2C with no apparent=
+ disclosure of the key resignation to shareholders.<!-- /wp:list-item --><=
+!-- /wp:list --><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Renovaro also touted the appointment of Le=
+ster Russell=2C GEDi=E2=80=99s Chief Medical Officer=2C in an August 2023=
+ press release. Russell also resigned in December 2023=2C also without dis=
+closure to shareholders.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:lis=
+t --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Renovaro and Dybul also repeatedly highlig=
+hted GEDi=E2=80=99s =E2=80=9Cstrategic partnership=E2=80=9D with Nvidia as=
+ a key justification for the merger. But the Nvidia =E2=80=9Cpartnership=
+=E2=80=9D is a free program that over 17=2C000 companies have joined.<!--=
+ /wp:list-item --><!-- /wp:list --><!-- wp:list --><!-- wp:list-item --></=
+li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In the months leading up to the merger vot=
+e=2C Renovaro enlisted stock promoters=2C including one previously sanctio=
+ned by the SEC=2C to hype up the GEDi deal and pump shares to retail inves=
+tors.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list --><!-- wp:list-i=
+tem --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Dybul now claims that GEDi can provide a=
+ =E2=80=9Cmultiplier effect=E2=80=9D that will enhance Renovaro=E2=80=99s=
+ pipeline.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">The company=E2=80=99s lead candidate remai=
+ns Gumrukcu=E2=80=99s cancer therapy. Dybul still touts the jailed magicia=
+n=E2=80=99s treatment=2C referring to it in January 2024 as =E2=80=9Cthe h=
+oly grail of cancer research=E2=80=9D and&nbsp;hopes to begin human trials=
+&nbsp;later this year.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list=
+ --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In an ironic twist=2C Gumrukcu=E2=80=99s h=
+usband sued Renovaro=E2=80=99s key executives and financiers in January 20=
+24=2C alleging a range of securities law violations by Dybul and Sindlev=
+=2C among others. The complaint alleges Sindlev purchased significant Reno=
+varo stock while in possession of material nonpublic information relating=
+ to the merger.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list --><!--=
+ wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">The complaint also cites damning internal=
+ emails to allege Dybul is engaged in a =E2=80=9Cwink and nod scheme=E2=80=
+=9D with Renovaro=E2=80=99s financier Lincoln Park Capital=2C whereby Reno=
+varo provides them with non-public information ahead of key company news t=
+o help Lincoln Park trade against Renovaro=E2=80=99s own shareholders.<!--=
+ /wp:list-item --><!-- /wp:list --><!-- wp:list --><!-- wp:list-item --></=
+li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Gumrukcu and his husband are a key holder=
+ of Renovaro=2C with ~19 million shares=2C or ~28% of the company. The fam=
+ily of Gumrukcu=E2=80=99s murder victim sued him for wrongful death and co=
+urts have frozen 12.8 million of his Enochian shares to cover potential da=
+mages.<!-- /wp:list-item --><!-- /wp:list --><!-- wp:list --><!-- wp:list-=
+item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Gumrukcu=E2=80=99s husband still owns 3.6=
+ million free-trading shares which we expect will hit the market soon to c=
+over litigation costs and defense costs for the upcoming murder conspiracy=
+ trial=2C slated for later this year.<!-- /wp:list-item --><!-- /wp:list -=
+-><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In conclusion=2C if your company co-founde=
+r and key inventor turns out to be a con artist magician who (allegedly) m=
+urdered someone and faked his scientific data=2C you can=E2=80=99t just ch=
+ange your company name and pivot to AI and hope no one notices.<!-- /wp:li=
+st-item --><!-- /wp:list --><!-- wp:list --><!-- wp:list-item --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">CEO Mark Dybul appears set on trying to ru=
+n the same shameless scam with a new name. We think he is in a league of h=
+is own as far as poor judgment and governance and see inevitable massive d=
+ownside in shares of Renovaro.<!-- /wp:list-item --><!-- /wp:list --></li>
+</ul>
+<em>Initial Disclosure: After extensive research=2C we have taken a short=
+ position in shares of Renovaro Biosciences=2C Inc. (NASDAQ:RENB). This re=
+port represents our opinion=2C and we encourage every reader to do their o=
+wn due diligence. Please see our full disclaimer at the bottom of the repo=
+rt.</em><br>
+<!-- /wp:paragraph -->
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 9px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" align=3D"center"=
+ class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mcnButtonContentContainer" style=3D"border-collapse: separate !impo=
+rtant;border-radius: 3px;background-color: #00ADD8;mso-table-lspace: 0pt;m=
+so-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
+ 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Helvetica;font-size: 18px;padd=
+ing: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"Read The=
+ Full Report Here" href=3D"https://hindenburgresearch.us19.list-manage.com=
+/track/click?u=3Dffb3753afd4493d4fbd300492&id=3D73c1ac30fc&e=3D04403ab0ff=
+" target=3D"_blank" style=3D"font-weight: bold;letter-spacing: -0.5px;line=
+-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;display: block;">Read The Full Report Here</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnFollowBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnFollowBlockOuter">
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"padding: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" class=3D"mcnFollowBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnFollowContentContainer" style=3D"min-width: 100%;=
+border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td align=3D"center" style=3D"padding-left: 9px;padding-right: 9px=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;" class=3D"mcnFollowContent">
+                <tbody><tr>
+                    <td align=3D"center" valign=3D"top" style=3D"padding-t=
+op: 9px;padding-right: 9px;padding-left: 9px;mso-line-height-rule: exactly=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                        <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse;mso-table-lspa=
+ce: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;">
+                            <tbody><tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+                                    <!--[if mso]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0">
+                                    <tr>
+                                    <![endif]-->
+
+                                        <!--[if mso]>
+                                        <td align=3D"center" valign=3D"top=
+">
+                                        <![endif]-->
+
+                                            <table align=3D"left" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnFollowStacked" styl=
+e=3D"display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;">
+
+                                                <tbody><tr>
+                                                    <td align=3D"center" v=
+align=3D"top" class=3D"mcnFollowIconContent" style=3D"padding-right: 0;pad=
+ding-bottom: 5px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">
+                                                        <a href=3D"https:/=
+/hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
+bd300492&id=3Da14c34e9ef&e=3D04403ab0ff" target=3D"_blank" style=3D"mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;"><img src=3D"https://cdn-images.mailchimp.com/icons/social-block=
+-v2/color-twitter-96.png" alt=3D"Follow Us On Twitter" class=3D"mcnFollowB=
+lockIcon" width=3D"48" style=3D"width: 48px;max-width: 48px;display: block=
+;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolat=
+ion-mode: bicubic;"></a>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td align=3D"center" v=
+align=3D"top" class=3D"mcnFollowTextContent" style=3D"padding-right: 0;pad=
+ding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">
+                                                        <a href=3D"https:/=
+/hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
+bd300492&id=3D2a9ed75591&e=3D04403ab0ff" target=3D"_blank" style=3D"color=
+: #202020;font-family: Arial;font-size: 18px;font-weight: bold;text-decora=
+tion: none;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">Follow Us On Twitter</a>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody></table>
+
+
+                                        <!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+                                    <!--[if mso]>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateFooter" data-template-container=3D"" style=3D"background:#333333 n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #333333;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 45px;pad=
+ding-bottom: 63px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"fo=
+oterContainer" style=3D"background:transparent none no-repeat center/cover=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;background-color: transparent;background-image: none;backgr=
+ound-repeat: no-repeat;background-position: center;background-size: cover;=
+border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mc=
+nDividerBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px solid #505050;border-collapse: collapse;mso-table-lspace: 0pt;mso-=
+table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #FFFFFF;font-family: Helve=
+tica;font-size: 12px;line-height: 150%;text-align: center;">
+
+                            <em>Copyright =C2=A9 2022 *Hindenburg Research=
+=2C All rights reserved.</em><br>
+<br>
+Want to change how you receive these emails?<br>
+You can <a href=3D"https://hindenburgresearch.us19.list-manage.com/profile=
+?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3Dc4163c5509=
+" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;color: #FFFFFF;font-weight: normal;text-decoratio=
+n: underline;">update your preferences</a> or <a href=3D"https://hindenbur=
+gresearch.us19.list-manage.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&i=
+d=3D5b17860351&t=3Db&e=3D04403ab0ff&c=3Dc4163c5509" style=3D"mso-line-height=
+-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;c=
+olor: #FFFFFF;font-weight: normal;text-decoration: underline;">unsubscribe=
+ from this list</a>.
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://hindenburgresearch.us19.list-manage.com/track/open=
+=2Ephp?u=3Dffb3753afd4493d4fbd300492&id=3Dc4163c5509&e=3D04403ab0ff" height=
+=3D"1" width=3D"1" alt=3D""></body>
+</html>
+--_----------=_MCPart_319206347--
