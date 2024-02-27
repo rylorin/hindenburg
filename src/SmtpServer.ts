@@ -36,7 +36,7 @@ export class SmtpServer {
     session: SMTPServerSession,
     callback: (err?: Error | null | undefined) => void
   ): void {
-    stream.pipe(process.stderr); // print message to console
+    // stream.pipe(process.stderr); // print message to console
     stream.on("end", callback);
     stream.on("error", () => console.error("error"));
     simpleParser(stream).then((email: Record<string, any>) =>

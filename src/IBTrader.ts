@@ -1,14 +1,21 @@
 import {
+  BarSizeSetting,
   Contract,
   IBApiNext,
   IBApiNextError,
   MarketDataType,
+  Order,
+  OrderAction,
+  OrderType,
   SecType,
+  TimeInForce,
 } from "@stoqey/ib";
 import { Subscription } from "rxjs";
 
 const exchangeMap: Record<string, string> = {
-  ["SWX"]: "EBS",
+  // ["SWX"]: "EBS",
+  ["SWX"]: "SMART",
+  ["NASDAQ"]: "SMART",
 };
 
 export class IBTrader {
@@ -21,11 +28,9 @@ export class IBTrader {
   /** Connect to TWS. */
   constructor() {
     // create the IBApiNext object
-
     const host = process.env.IBGW_HOST || "localhost";
     const port = process.env.IBGW_PORT ? parseInt(process.env.IBGW_PORT) : 4002;
     const reconnectInterval = 10000;
-
     this.api = new IBApiNext({
       reconnectInterval,
       host,
@@ -58,25 +63,58 @@ export class IBTrader {
   }
 
   public async placeOrder(ticker: string) {
+    console.log("IBTrader.placeOrder", ticker);
     const [exchange, symbol] = ticker.split(":");
-    let ibContract: Contract = {
+    let contract: Contract = {
       secType: SecType.STK,
-      exchange: exchangeMap[exchange] || "SMART",
+      exchange: exchangeMap[exchange] || exchange,
       symbol,
     };
     await this.api
-      .getContractDetails(ibContract)
+      .getContractDetails(contract)
       .then((detailstab) => {
         if (detailstab.length >= 1) {
-          ibContract = detailstab[0]?.contract;
-          console.log("got contract details", ibContract);
+          contract = detailstab[0]?.contract;
+          console.log("got contract details", contract);
+          return this.api
+            .getHistoricalData(
+              contract,
+              undefined,
+              "30 S",
+              BarSizeSetting.SECONDS_ONE,
+              "TRADES",
+              0,
+              2
+            )
+            .then((bars) => {
+              // console.log("got historical data", bars);
+              const price: number | undefined = bars.at(-1)?.close;
+              console.log("price", price);
+              return { contract, price };
+            });
         } else {
-          console.log("Contract details not found", ibContract);
+          throw "Contract details not found";
         }
       })
+      .then(({ contract, price }) => {
+        const order: Order = {
+          action: OrderAction.SELL,
+          orderType: OrderType.MKT,
+          totalQuantity: price ? Math.round(10000 / price) : 100,
+          tif: TimeInForce.GTC,
+          outsideRth: true,
+          transmit: false,
+        };
+        return this.api.placeNewOrder(contract, order);
+      })
+      .then((orderId: number) => {
+        console.log("orderid:", orderId.toString());
+      })
       .catch((err: IBApiNextError) => {
-        const message = `getContractDetails failed for ${ibContract.secType} ${ibContract.symbol} ${ibContract.lastTradeDateOrContractMonth} ${ibContract.strike} ${ibContract.right} with error #${err.code}: '${err.error.message}'`;
-        console.error(message, ibContract);
+        console.error("IBTrader.placeOrder failed", contract);
+      })
+      .finally(() => {
+        // console.error("getContractDetails done", ibContract);
       });
   }
 }
