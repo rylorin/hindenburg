@@ -28,6 +28,6 @@ export class SmtpClient {
     console.log(email);
     const info = await this.transporter.sendMail(email);
 
-    console.error("Message sent: %s", info.messageId);
+    console.log("Message sent: %s", info.messageId);
   }
 }

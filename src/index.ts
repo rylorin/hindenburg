@@ -17,11 +17,13 @@ export class MyTradingBotApp extends SmtpServer {
   }
 
   public start(): void {
+    this.trader.start();
     super.start();
   }
 
   protected fireOrder(symbol: string) {
     console.log("MyTradingBotApp.fireOrder", symbol);
+    this.trader.placeOrder(symbol);
   }
 
   protected processMail(
