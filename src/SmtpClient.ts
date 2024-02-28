@@ -19,27 +19,23 @@ export class SmtpClient {
     });
   }
 
-  public async forwardEmail(email: Record<string, any>) {
-    // We need to change "from" to get mail accepted from gateway
-    // if (process.env.RELAY_USERNAME) {
-    //   email.from = process.env.RELAY_USERNAME;
-    //   email.headers.delete("from");
-    //   email.headerLines = email.headerLines.filter(
-    //     (item: { key: string; line: string }) => item.key != "from"
-    //   );
-    // }
-    // We need to change "to" or mail will loop back
-    // email.to =
-    //   process.env.RCPT_TO || process.env.RELAY_USERNAME || "<foo@bar.com>";
-    // console.log(email);
-    const info = await this.transporter.sendMail({
-      from: process.env.RELAY_USERNAME || email.from,
-      to: process.env.RCPT_TO || process.env.RELAY_USERNAME,
-      subject: email.subject,
-      text: email.text,
-      html: email.html,
-    });
-
-    console.log("Message sent: %s", info.messageId);
+  public forwardEmail(email: Record<string, any>): Promise<void> {
+    console.log("from:", email.headers.get("from"));
+    console.log("to:", email.headers.get("to"));
+    console.log("subject:", email.subject);
+    return this.transporter
+      .sendMail({
+        from: process.env.RELAY_USERNAME || email.from,
+        to: process.env.RCPT_TO || process.env.RELAY_USERNAME,
+        subject: email.subject,
+        text: email.text,
+        html: email.html,
+      })
+      .then((info) => console.log("Message sent: %s", info.messageId))
+      .catch((err: Error) => {
+        console.error(err);
+        console.error(email);
+        throw err;
+      });
   }
 }

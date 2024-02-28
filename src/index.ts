@@ -21,18 +21,28 @@ export class MyTradingBotApp extends SmtpServer {
     super.start();
   }
 
-  protected fireOrder(symbol: string) {
-    console.log("MyTradingBotApp.fireOrder", symbol);
-    this.trader.placeOrder(symbol);
+  private isValidSender(from: {
+    text: string;
+    html: string;
+    values: { name: string; address: string }[];
+  }): boolean {
+    if (!from) return false;
+    return from.text == '"Hindenburg Research" <info@hindenburgresearch.com>';
+  }
+
+  private isValidDestinee(_to: {
+    text: string;
+    html: string;
+    values: { name: string; address: string }[];
+  }): boolean {
+    return true;
   }
 
   protected processMail(
     _session: SMTPServerSession,
     email: Record<string, any>
-  ): void {
-    if (
-      email.from.text == '"Hindenburg Research" <info@hindenburgresearch.com>'
-    ) {
+  ): Promise<void> {
+    if (this.isValidSender(email.from) && this.isValidDestinee(email.to)) {
       const disclosureStart = email.text.indexOf("Initial Disclosure:");
       if (disclosureStart >= 0) {
         const disclosureEnd = email.text.indexOf("\n", disclosureStart);
@@ -40,11 +50,11 @@ export class MyTradingBotApp extends SmtpServer {
         const pattern = new RegExp("\\([A-Z]+:[A-Z]+\\)", "g");
         const result = disclosure.match(pattern);
         console.log("Hindenburg disclosure", disclosure, result);
-        if (result.length) this.fireOrder(result[0].slice(1, -1));
+        if (result.length) this.trader.placeOrder(result[0].slice(1, -1));
       }
     }
     // Forward email
-    this.smtpClient.forwardEmail(email);
+    return this.smtpClient.forwardEmail(email);
   }
 }
 

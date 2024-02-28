@@ -1,3 +1,9 @@
+/*
+  Simple SMTP server.
+
+  documentation available at:
+    https://nodemailer.com/extras/smtp-server/
+*/
 import {
   SMTPServer,
   SMTPServerDataStream,
@@ -36,18 +42,19 @@ export class SmtpServer {
     session: SMTPServerSession,
     callback: (err?: Error | null | undefined) => void
   ): void {
-    // stream.pipe(process.stderr); // print message to console
-    stream.on("end", callback);
-    stream.on("error", () => console.error("error"));
-    simpleParser(stream).then((email: Record<string, any>) =>
-      this.processMail(session, email)
-    );
+    // stream.on("end", callback);
+    // stream.on("error", () => console.error("error"));
+    simpleParser(stream)
+      .then((email: Record<string, any>) => this.processMail(session, email))
+      .then(() => callback())
+      .catch((err: Error) => callback(err));
   }
 
   protected processMail(
     session: SMTPServerSession,
     email: Record<string, any>
-  ): void {
+  ): Promise<void> {
     console.log("processMail", session, email);
+    return Promise.resolve();
   }
 }

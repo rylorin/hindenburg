@@ -1,6 +1,33 @@
 version: "3.8"
 
 services:
+  ibgw:
+    image: rylorin/ib-gateway-docker:stable
+    environment:
+      IB_ACCOUNT: ${TWS_USERID}
+      IB_PASSWORD: ${TWS_PASSWORD}
+      TRADE_MODE: ${TRADE_MODE:-paper}
+      VNC_SERVER_PASSWORD: ${VNC_SERVER_PASSWORD:-}
+      IB_GATEWAY_PING_CLIENT_ID: ${IB_GATEWAY_PING_CLIENT_ID:-1001}
+      IBGW_WATCHDOG_CLIENT_ID: ${IBGW_WATCHDOG_CLIENT_ID:-1002}
+    restart: unless-stopped
+    networks:
+      - default
+    ports:
+      #      - published: 4001
+      #        target: 4002
+      #        protocol: tcp
+      #        mode: host
+      - published: 5901
+        target: 5900
+        protocol: tcp
+        mode: ingress
+    deploy:
+      placement:
+        constraints:
+          - node.platform.os == linux
+          - node.role == manager
+      replicas: 1
   bot:
     image: rylorin/hindenburg:dev
     environment:
@@ -9,7 +36,7 @@ services:
       RELAY_USERNAME: ${RELAY_USERNAME}
       RELAY_PASSWORD: ${RELAY_PASSWORD}
       IBGW_HOST: ${IBGW_HOST:-localhost}
-      IBGW_PORT: ${IBGW_PORT}
+      IBGW_PORT: ${IBGW_PORT:-4002}
     restart: unless-stopped
     networks:
       - default

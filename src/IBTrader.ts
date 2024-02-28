@@ -12,7 +12,7 @@ import {
 } from "@stoqey/ib";
 import { Subscription } from "rxjs";
 
-const exchangeMap: Record<string, string> = {
+const _exchangeMap: Record<string, string> = {
   // ["SWX"]: "EBS",
   ["SWX"]: "SMART",
   ["NASDAQ"]: "SMART",
@@ -62,15 +62,16 @@ export class IBTrader {
     this.api.setMarketDataType(MarketDataType.DELAYED_FROZEN);
   }
 
-  public async placeOrder(ticker: string) {
+  public placeOrder(ticker: string): Promise<void> {
     console.log("IBTrader.placeOrder", ticker);
     const [exchange, symbol] = ticker.split(":");
     let contract: Contract = {
       secType: SecType.STK,
-      exchange: exchangeMap[exchange] || exchange,
+      // exchange: exchangeMap[exchange] || exchange,
+      exchange: "SMART",
       symbol,
     };
-    await this.api
+    return this.api
       .getContractDetails(contract)
       .then((detailstab) => {
         if (detailstab.length >= 1) {
@@ -97,10 +98,17 @@ export class IBTrader {
         }
       })
       .then(({ contract, price }) => {
+        let totalQuantity = 100;
+        if (process.env.ORDER_QUANTITY)
+          totalQuantity = parseInt(process.env.ORDER_QUANTITY);
+        else if (process.env.ORDER_AMOUNT)
+          totalQuantity = price
+            ? Math.round(parseInt(process.env.ORDER_AMOUNT) / price)
+            : 100;
         const order: Order = {
           action: OrderAction.SELL,
           orderType: OrderType.MKT,
-          totalQuantity: price ? Math.round(10000 / price) : 100,
+          totalQuantity,
           tif: TimeInForce.GTC,
           outsideRth: true,
           transmit: false,
@@ -108,13 +116,10 @@ export class IBTrader {
         return this.api.placeNewOrder(contract, order);
       })
       .then((orderId: number) => {
-        console.log("orderid:", orderId.toString());
+        console.log("Order placed, id:", orderId.toString());
       })
       .catch((err: IBApiNextError) => {
         console.error("IBTrader.placeOrder failed", contract);
-      })
-      .finally(() => {
-        // console.error("getContractDetails done", ibContract);
       });
   }
 }
