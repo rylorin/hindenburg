@@ -33,8 +33,8 @@ export class SmtpClient {
       })
       .then((info) => console.log("Message sent: %s", info.messageId))
       .catch((err: Error) => {
-        console.error(err);
-        console.error(email);
+        console.error("error:", err);
+        console.error("email:", email);
         throw err;
       });
   }

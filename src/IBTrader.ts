@@ -101,17 +101,17 @@ export class IBTrader {
         let totalQuantity = 100;
         if (process.env.ORDER_QUANTITY)
           totalQuantity = parseInt(process.env.ORDER_QUANTITY);
-        else if (process.env.ORDER_AMOUNT)
-          totalQuantity = price
-            ? Math.round(parseInt(process.env.ORDER_AMOUNT) / price)
-            : 100;
+        else if (process.env.ORDER_AMOUNT && price)
+          totalQuantity = Math.round(
+            parseInt(process.env.ORDER_AMOUNT) / price
+          );
         const order: Order = {
           action: OrderAction.SELL,
           orderType: OrderType.MKT,
           totalQuantity,
           tif: TimeInForce.GTC,
           outsideRth: true,
-          transmit: false,
+          transmit: true,
         };
         return this.api.placeNewOrder(contract, order);
       })
