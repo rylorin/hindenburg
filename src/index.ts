@@ -6,12 +6,20 @@ import { IBTrader as Trader } from "./IBTrader";
 import { SmtpClient } from "./SmtpClient";
 import { SmtpServer } from "./SmtpServer";
 
+const getValidSenders = (): string[] => {
+  if (process.env.VALID_SENDERS)
+    return process.env.VALID_SENDERS.split(",").map((item) => item.trim());
+  else return [];
+};
+
 export class MyTradingBotApp extends SmtpServer {
   private smtpClient;
   private trader;
+  private valid_senders: string[];
 
   constructor() {
     super();
+    this.valid_senders = getValidSenders();
     this.smtpClient = new SmtpClient();
     this.trader = new Trader();
   }
@@ -24,16 +32,20 @@ export class MyTradingBotApp extends SmtpServer {
   private isValidSender(from: {
     text: string;
     html: string;
-    values: { name: string; address: string }[];
+    value: { name: string; address: string }[];
   }): boolean {
     if (!from) return false;
-    return from.text == '"Hindenburg Research" <info@hindenburgresearch.com>';
+    if (this.valid_senders.length) {
+      console.log("isValidSender", from.value[0].address, this.valid_senders);
+      return this.valid_senders.includes(from.value[0].address);
+    } else
+      return from.text == '"Hindenburg Research" <info@hindenburgresearch.com>';
   }
 
   private isValidDestinee(_to: {
     text: string;
     html: string;
-    values: { name: string; address: string }[];
+    value: { name: string; address: string }[];
   }): boolean {
     return true;
   }

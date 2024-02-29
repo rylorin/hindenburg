@@ -98,13 +98,13 @@ export class IBTrader {
         }
       })
       .then(({ contract, price }) => {
-        let totalQuantity = 100;
-        if (process.env.ORDER_QUANTITY)
-          totalQuantity = parseInt(process.env.ORDER_QUANTITY);
-        else if (process.env.ORDER_AMOUNT && price)
+        let totalQuantity = 1;
+        if (process.env.ORDER_AMOUNT && price)
           totalQuantity = Math.round(
             parseInt(process.env.ORDER_AMOUNT) / price
           );
+        else if (process.env.ORDER_QUANTITY)
+          totalQuantity = parseInt(process.env.ORDER_QUANTITY);
         const order: Order = {
           action: OrderAction.SELL,
           orderType: OrderType.MKT,
