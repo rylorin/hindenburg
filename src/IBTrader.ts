@@ -3,19 +3,20 @@ import {
   Contract,
   IBApiNext,
   IBApiNextError,
+  IBApiTickType,
   MarketDataType,
   Order,
   OrderAction,
   OrderType,
   SecType,
+  TickType,
   TimeInForce,
 } from "@stoqey/ib";
 import { Subscription } from "rxjs";
 
-const _exchangeMap: Record<string, string> = {
-  // ["SWX"]: "EBS",
-  ["SWX"]: "SMART",
-  ["NASDAQ"]: "SMART",
+const exchangeMap: Record<string, string> = {
+  ["SWX"]: "EBS",
+  ["NASDAQ"]: "NYSE",
 };
 
 export class IBTrader {
@@ -36,6 +37,7 @@ export class IBTrader {
       host,
       port,
     });
+    this.api.setMarketDataType(MarketDataType.DELAYED_FROZEN);
 
     // log generic errors (reqId = -1) and exit with failure code
     this.error$ = this.api.errorSubject.subscribe((error) => {
@@ -62,64 +64,109 @@ export class IBTrader {
     this.api.setMarketDataType(MarketDataType.DELAYED_FROZEN);
   }
 
+  private getContract(exchange: string, symbol: string): Promise<Contract> {
+    let contract: Contract = {
+      secType: SecType.STK,
+      exchange: exchangeMap[exchange] || exchange,
+      symbol,
+    };
+    return this.api.getContractDetails(contract).then((detailstab) => {
+      if (detailstab.length >= 1) {
+        contract = detailstab[0]?.contract;
+      }
+      console.log("contract:", contract);
+      return contract;
+    });
+  }
+
+  private _getBarPrice(
+    contract: Contract
+  ): Promise<{ contract: Contract; price: number | undefined }> {
+    return this.api
+      .getHistoricalData(
+        contract,
+        undefined,
+        "30 S",
+        BarSizeSetting.SECONDS_ONE,
+        "TRADES",
+        0,
+        2
+      )
+      .then((bars) => {
+        const price: number | undefined = bars.at(-1)?.close;
+        console.log("price", price);
+        return { contract, price };
+      });
+  }
+
+  private getSnapshotPrice(
+    contract: Contract
+  ): Promise<{ contract: Contract; price: number | undefined }> {
+    return this.api
+      .getMarketDataSnapshot({ ...contract, exchange: "SMART" }, "", false)
+      .then((marketData) => {
+        let price, bid, ask, previousClosePrice;
+        marketData.forEach((tick, type: TickType) => {
+          if (tick.value)
+            if (
+              type == IBApiTickType.LAST ||
+              type == IBApiTickType.DELAYED_LAST
+            ) {
+              price = (tick.value as number) > 0 ? tick.value : null;
+            } else if (
+              type == IBApiTickType.BID ||
+              type == IBApiTickType.DELAYED_BID
+            ) {
+              bid = (tick.value as number) > 0 ? tick.value : null;
+            } else if (
+              type == IBApiTickType.ASK ||
+              type == IBApiTickType.DELAYED_ASK
+            ) {
+              ask = (tick.value as number) > 0 ? tick.value : null;
+            } else if (
+              type == IBApiTickType.CLOSE ||
+              type == IBApiTickType.DELAYED_CLOSE
+            ) {
+              previousClosePrice =
+                (tick.value as number) > 0 ? tick.value : null;
+            }
+        });
+        if (ask && bid) price = (ask + bid) / 2;
+        else if (!price) price = previousClosePrice;
+        console.log("price:", price);
+        return { contract, price };
+      })
+      .finally(() => console.log("getMarketDataSnapshot done"));
+  }
+
+  private placeNewOrder(contract: Contract, price: number | undefined) {
+    let totalQuantity = 1;
+    if (process.env.ORDER_AMOUNT && price)
+      totalQuantity = Math.round(parseInt(process.env.ORDER_AMOUNT) / price);
+    else if (process.env.ORDER_QUANTITY)
+      totalQuantity = parseInt(process.env.ORDER_QUANTITY);
+    const order: Order = {
+      action: OrderAction.SELL,
+      orderType: OrderType.MKT,
+      totalQuantity,
+      tif: TimeInForce.GTC,
+      outsideRth: true,
+      transmit: true,
+    };
+    return this.api.placeNewOrder({ ...contract, exchange: "SMART" }, order);
+  }
+
   public placeOrder(ticker: string): Promise<void> {
     console.log("IBTrader.placeOrder", ticker);
     const [exchange, symbol] = ticker.split(":");
-    let contract: Contract = {
-      secType: SecType.STK,
-      // exchange: exchangeMap[exchange] || exchange,
-      exchange: "SMART",
-      symbol,
-    };
-    return this.api
-      .getContractDetails(contract)
-      .then((detailstab) => {
-        if (detailstab.length >= 1) {
-          contract = detailstab[0]?.contract;
-          console.log("got contract details", contract);
-          return this.api
-            .getHistoricalData(
-              contract,
-              undefined,
-              "30 S",
-              BarSizeSetting.SECONDS_ONE,
-              "TRADES",
-              0,
-              2
-            )
-            .then((bars) => {
-              // console.log("got historical data", bars);
-              const price: number | undefined = bars.at(-1)?.close;
-              console.log("price", price);
-              return { contract, price };
-            });
-        } else {
-          throw "Contract details not found";
-        }
-      })
-      .then(({ contract, price }) => {
-        let totalQuantity = 1;
-        if (process.env.ORDER_AMOUNT && price)
-          totalQuantity = Math.round(
-            parseInt(process.env.ORDER_AMOUNT) / price
-          );
-        else if (process.env.ORDER_QUANTITY)
-          totalQuantity = parseInt(process.env.ORDER_QUANTITY);
-        const order: Order = {
-          action: OrderAction.SELL,
-          orderType: OrderType.MKT,
-          totalQuantity,
-          tif: TimeInForce.GTC,
-          outsideRth: true,
-          transmit: true,
-        };
-        return this.api.placeNewOrder(contract, order);
-      })
+    return this.getContract(exchange, symbol)
+      .then((contract) => this.getSnapshotPrice(contract))
+      .then(({ contract, price }) => this.placeNewOrder(contract, price))
       .then((orderId: number) => {
         console.log("Order placed, id:", orderId.toString());
       })
       .catch((err: IBApiNextError) => {
-        console.error("IBTrader.placeOrder failed", contract);
+        console.error("IBTrader.placeOrder failed");
       });
   }
 }
