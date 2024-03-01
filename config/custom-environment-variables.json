@@ -1,0 +1,16 @@
+{
+  "SmtpClient": {
+    "rcpt_to": "RCPT_TO",
+    "smtp_relay": "SMTP_RELAY",
+    "relay_username": "RELAY_USERNAME",
+    "relay_password": "RELAY_PASSWORD"
+  },
+  "SmtpServer": { "smtpd_port": "SMTPD_PORT" },
+  "IBtrader": {
+    "ibgw_host": "IBGW_HOST",
+    "ibgw_port": "IBGW_PORT",
+    "order_amount": "ORDER_AMOUNT",
+    "order_quantity": "ORDER_QUANTITY"
+  },
+  "valid_senders": "VALID_SENDERS"
+}

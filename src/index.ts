@@ -1,32 +1,34 @@
-import dotenv from "dotenv";
-dotenv.config(); // eslint-disable-line @typescript-eslint/no-var-requires,@typescript-eslint/no-unsafe-call
-
+import { IConfig } from "config";
 import { SMTPServerSession } from "smtp-server";
 import { IBTrader as Trader } from "./IBTrader";
 import { SmtpClient } from "./SmtpClient";
 import { SmtpServer } from "./SmtpServer";
 
-const getValidSenders = (): string[] => {
-  if (process.env.VALID_SENDERS)
-    return process.env.VALID_SENDERS.split(",").map((item) => item.trim());
-  else return [];
-};
-
 export class MyTradingBotApp extends SmtpServer {
+  protected config: IConfig;
   private smtpClient;
   private trader;
   private valid_senders: string[];
 
-  constructor() {
-    super();
-    this.valid_senders = getValidSenders();
-    this.smtpClient = new SmtpClient();
-    this.trader = new Trader();
+  constructor(config: IConfig) {
+    super(config);
+    this.config = config;
+    this.valid_senders = this.getValidSenders();
+    this.smtpClient = new SmtpClient(config);
+    this.trader = new Trader(config);
   }
 
   public start(): void {
     this.trader.start();
     super.start();
+  }
+
+  private getValidSenders(): string[] {
+    const valid_senders = this.config.get("valid_senders");
+    if (typeof valid_senders == "string")
+      return valid_senders.split(",").map((item) => item.trim());
+    else if (valid_senders) return valid_senders as string[];
+    else return [];
   }
 
   private isValidSender(from: {
@@ -70,5 +72,11 @@ export class MyTradingBotApp extends SmtpServer {
   }
 }
 
-const app = new MyTradingBotApp();
+import config from "config";
+import dotenv from "dotenv";
+dotenv.config(); // eslint-disable-line @typescript-eslint/no-var-requires,@typescript-eslint/no-unsafe-call
+
+console.log("env", process.env["NODE_ENV"]);
+// const config = new Config();
+const app = new MyTradingBotApp(config);
 app.start();

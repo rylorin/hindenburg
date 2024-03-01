@@ -4,17 +4,21 @@
   documentation available at:
     https://nodemailer.com/extras/smtp-server/
 */
+import { IConfig } from "config";
 import {
   SMTPServer,
   SMTPServerDataStream,
   SMTPServerSession,
 } from "smtp-server";
+
 const simpleParser = require("mailparser").simpleParser;
 
 export class SmtpServer {
   private server: SMTPServer;
+  protected config: IConfig;
 
-  constructor() {
+  constructor(config: IConfig) {
+    this.config = config;
     this.server = new SMTPServer({
       authOptional: true,
       size: 10 * 1024 * 1024, // 10 Mb
@@ -29,7 +33,7 @@ export class SmtpServer {
   }
 
   public start(): void {
-    const port = process.env.SMTPD_PORT ? parseInt(process.env.SMTPD_PORT) : 25;
+    const port = this.config.get("SmtpServer.smtpd_port") || 25;
     this.server.listen(port);
   }
 

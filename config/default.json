@@ -1,0 +1,16 @@
+{
+  "SmtpClient": {
+    "rcpt_to": "to be defined",
+    "smtp_relay": "localhost",
+    "relay_username": "to be defined",
+    "relay_password": "to be defined"
+  },
+  "SmtpServer": { "smtpd_port": 25 },
+  "IBtrader": {
+    "ibgw_host": "localhost",
+    "ibgw_port": 4002,
+    "order_amount": 5000,
+    "order_quantity": 100
+  },
+  "valid_senders": ["info@hindenburgresearch.com"]
+}

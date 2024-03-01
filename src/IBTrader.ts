@@ -12,6 +12,7 @@ import {
   TickType,
   TimeInForce,
 } from "@stoqey/ib";
+import { IConfig } from "config";
 import { Subscription } from "rxjs";
 
 const exchangeMap: Record<string, string> = {
@@ -20,6 +21,8 @@ const exchangeMap: Record<string, string> = {
 };
 
 export class IBTrader {
+  protected config: IConfig;
+
   /** The [[IBApiNext]] instance. */
   protected api: IBApiNext;
 
@@ -27,11 +30,13 @@ export class IBTrader {
   protected error$: Subscription;
 
   /** Connect to TWS. */
-  constructor() {
+  constructor(config: IConfig) {
+    this.config = config;
     // create the IBApiNext object
-    const host = process.env.IBGW_HOST || "localhost";
-    const port = process.env.IBGW_PORT ? parseInt(process.env.IBGW_PORT) : 4002;
+    const host: string = this.config.get("IBtrader.ibgw_host") || "localhost";
+    const port: number = this.config.get("IBtrader.ibgw_port") || 4002;
     const reconnectInterval = 10000;
+    console.log("IBApiNext", host, port);
     this.api = new IBApiNext({
       reconnectInterval,
       host,
@@ -70,13 +75,16 @@ export class IBTrader {
       exchange: exchangeMap[exchange] || exchange,
       symbol,
     };
-    return this.api.getContractDetails(contract).then((detailstab) => {
-      if (detailstab.length >= 1) {
-        contract = detailstab[0]?.contract;
-      }
-      console.log("contract:", contract);
-      return contract;
-    });
+    return this.api
+      .getContractDetails(contract)
+      .then((detailstab) => {
+        if (detailstab.length >= 1) {
+          contract = detailstab[0]?.contract;
+        }
+        console.log("contract:", contract);
+        return contract;
+      })
+      .finally(() => console.log("getContractDetails done", contract));
   }
 
   private _getBarPrice(
@@ -140,18 +148,16 @@ export class IBTrader {
   }
 
   private placeNewOrder(contract: Contract, price: number | undefined) {
-    let totalQuantity = 1;
-    if (process.env.ORDER_AMOUNT && price)
-      totalQuantity = Math.round(parseInt(process.env.ORDER_AMOUNT) / price);
-    else if (process.env.ORDER_QUANTITY)
-      totalQuantity = parseInt(process.env.ORDER_QUANTITY);
+    let totalQuantity: number = this.config.get("IBtrader.order_quantity") || 1;
+    let totalAmount: number = this.config.get("IBtrader.order_amount");
+    if (totalAmount && price) totalQuantity = Math.round(totalAmount / price);
     const order: Order = {
       action: OrderAction.SELL,
       orderType: OrderType.MKT,
       totalQuantity,
       tif: TimeInForce.GTC,
       outsideRth: true,
-      transmit: true,
+      transmit: false,
     };
     return this.api.placeNewOrder({ ...contract, exchange: "SMART" }, order);
   }

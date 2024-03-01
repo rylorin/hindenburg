@@ -1,17 +1,26 @@
+/*
+  Simple SMTP client that forward email to a defined user.
+
+  documentation available at:
+    https://nodemailer.com/about/
+*/
+import { IConfig } from "config";
 import nodemailer from "nodemailer";
 
 export class SmtpClient {
   private transporter;
+  protected config: IConfig;
 
-  constructor() {
+  constructor(config: IConfig) {
+    this.config = config;
     this.transporter = nodemailer.createTransport({
-      host: process.env.SMTP_RELAY || "localhost",
+      host: this.config.get("SmtpClient.smtp_relay"),
       port: 465,
       secure: true,
       auth: {
         // TODO: replace `user` and `pass` values from <https://forwardemail.net>
-        user: process.env.RELAY_USERNAME,
-        pass: process.env.RELAY_PASSWORD,
+        user: this.config.get("SmtpClient.relay_username"),
+        pass: this.config.get("SmtpClient.relay_password"),
       },
       disableFileAccess: true,
       disableUrlAccess: true,
@@ -20,13 +29,15 @@ export class SmtpClient {
   }
 
   public forwardEmail(email: Record<string, any>): Promise<void> {
-    console.log("from:", email.headers.get("from"));
-    console.log("to:", email.headers.get("to"));
+    console.log("from:", email.headers.get("from")?.text);
+    console.log("to:", email.headers.get("to")?.text);
     console.log("subject:", email.subject);
     return this.transporter
       .sendMail({
-        from: process.env.RELAY_USERNAME || email.from,
-        to: process.env.RCPT_TO || process.env.RELAY_USERNAME,
+        from: this.config.get("SmtpClient.relay_username") || email.from,
+        to:
+          this.config.get("SmtpClient.rcpt_to") ||
+          this.config.get("SmtpClient.relay_username"),
         subject: email.subject,
         text: email.text,
         html: email.html,
