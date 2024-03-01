@@ -157,7 +157,7 @@ export class IBTrader {
       totalQuantity,
       tif: TimeInForce.GTC,
       outsideRth: true,
-      transmit: false,
+      transmit: true,
     };
     return this.api.placeNewOrder({ ...contract, exchange: "SMART" }, order);
   }

@@ -12,6 +12,7 @@ RUN yarn install
 COPY tsconfig.json .
 COPY src/ ./src
 RUN yarn build
+COPY config/ ./config
 
 EXPOSE ${SMTPD_PORT}
 ENTRYPOINT [ "yarn", "start" ]

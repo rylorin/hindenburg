@@ -1,0 +1,7 @@
+{
+  "IBtrader": {
+    "ibgw_port": 4001,
+    "order_amount": 5000,
+    "order_quantity": 100
+  }
+}

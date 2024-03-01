@@ -13,8 +13,8 @@
     "prepare": "husky install",
     "prepublishOnly": "yarn build",
     "qc": "yarn lint && tsc --noEmit && prettier --check . && stylelint \"**/*.css\"",
-    "start": "node build/index.js",
-    "start:dev": "ts-node-dev --project tsconfig.json src/index"
+    "start": "NODE_ENV=production node build/index.js",
+    "start:dev": "NODE_ENV=development ts-node-dev --project tsconfig.json src/index"
   },
   "dependencies": {
     "@stoqey/ib": "^1.3.16",

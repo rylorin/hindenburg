@@ -11,6 +11,5 @@
     "ibgw_port": "IBGW_PORT",
     "order_amount": "ORDER_AMOUNT",
     "order_quantity": "ORDER_QUANTITY"
-  },
-  "valid_senders": "VALID_SENDERS"
+  }
 }

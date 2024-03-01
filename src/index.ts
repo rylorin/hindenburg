@@ -76,7 +76,11 @@ import config from "config";
 import dotenv from "dotenv";
 dotenv.config(); // eslint-disable-line @typescript-eslint/no-var-requires,@typescript-eslint/no-unsafe-call
 
-console.log("env", process.env["NODE_ENV"]);
+console.log(
+  "NODE_ENV",
+  process.env["NODE_ENV"],
+  process.env["NODE_CONFIG_DIR"]
+);
 // const config = new Config();
 const app = new MyTradingBotApp(config);
 app.start();

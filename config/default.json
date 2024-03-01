@@ -9,8 +9,8 @@
   "IBtrader": {
     "ibgw_host": "localhost",
     "ibgw_port": 4002,
-    "order_amount": 5000,
-    "order_quantity": 100
+    "order_amount": 0,
+    "order_quantity": 1
   },
   "valid_senders": ["info@hindenburgresearch.com"]
 }
