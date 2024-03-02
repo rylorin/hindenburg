@@ -89,11 +89,7 @@ import dotenv from "dotenv";
 import { SMTPServerSession } from "smtp-server";
 dotenv.config(); // eslint-disable-line @typescript-eslint/no-var-requires,@typescript-eslint/no-unsafe-call
 
-console.log(
-  "NODE_ENV",
-  process.env["NODE_ENV"],
-  process.env["NODE_CONFIG_DIR"]
-);
+console.log("NODE_ENV", process.env["NODE_ENV"]);
 // const config = new Config();
 const app = new MyTradingBotApp(config);
 app.start();

@@ -1,7 +1,7 @@
 {
   "IBtrader": {
     "ibgw_port": 4001,
-    "order_amount": 5000,
+    "order_amount": 0,
     "order_quantity": 100
   },
   "valid_senders": ["info@hindenburgresearch.com"]

@@ -37,6 +37,8 @@ services:
       RELAY_PASSWORD: ${RELAY_PASSWORD}
       IBGW_HOST: ${IBGW_HOST:-localhost}
       IBGW_PORT: ${IBGW_PORT:-4002}
+      ORDER_AMOUNT: ${ORDER_AMOUNT:-0}
+      ORDER_QUANTITY: ${ORDER_QUANTITY:-1}
     restart: unless-stopped
     networks:
       - default
