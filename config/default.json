@@ -12,5 +12,5 @@
     "order_amount": 0,
     "order_quantity": 1
   },
-  "valid_senders": ["info@hindenburgresearch.com"]
+  "valid_senders": []
 }
