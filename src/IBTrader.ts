@@ -50,9 +50,11 @@ export class IBTrader {
         console.warn(`${error.error.message} (Error #${error.code})`);
       } else {
         console.error(
-          `${error.error.message} (Error #${error.code}) ${
-            error.advancedOrderReject ? error.advancedOrderReject : ""
-          }`
+          `[${error.reqId}] ${error.error.message} (Error #${error.code}) ${
+            error.advancedOrderReject ?
+              JSON.stringify(error.advancedOrderReject)
+            : ""
+          }`,
         );
       }
     });
@@ -72,7 +74,7 @@ export class IBTrader {
   private getContract(exchange: string, symbol: string): Promise<Contract> {
     let contract: Contract = {
       secType: SecType.STK,
-      exchange: exchangeMap[exchange] || exchange,
+      primaryExch: exchangeMap[exchange] || exchange,
       symbol,
     };
     return this.api
@@ -81,14 +83,14 @@ export class IBTrader {
         if (detailstab.length >= 1) {
           contract = detailstab[0]?.contract;
         }
-        console.log("contract:", contract);
+        // contract.exchange = "SMART";
         return contract;
       })
-      .finally(() => console.log("getContractDetails done", contract));
+      .finally(() => console.log("getContractDetails done:", contract));
   }
 
-  private _getBarPrice(
-    contract: Contract
+  private getBarPrice(
+    contract: Contract,
   ): Promise<{ contract: Contract; price: number | undefined }> {
     return this.api
       .getHistoricalData(
@@ -98,7 +100,7 @@ export class IBTrader {
         BarSizeSetting.SECONDS_ONE,
         "TRADES",
         0,
-        2
+        2,
       )
       .then((bars) => {
         const price: number | undefined = bars.at(-1)?.close;
@@ -108,35 +110,38 @@ export class IBTrader {
   }
 
   private getSnapshotPrice(
-    contract: Contract
+    contract: Contract,
   ): Promise<{ contract: Contract; price: number | undefined }> {
     return this.api
-      .getMarketDataSnapshot({ ...contract, exchange: "SMART" }, "", false)
+      .getMarketDataSnapshot(contract, "", false)
       .then((marketData) => {
-        let price, bid, ask, previousClosePrice;
+        let price: number | undefined;
+        let bid: number | undefined;
+        let ask: number | undefined;
+        let previousClosePrice: number | undefined;
         marketData.forEach((tick, type: TickType) => {
           if (tick.value)
             if (
               type == IBApiTickType.LAST ||
               type == IBApiTickType.DELAYED_LAST
             ) {
-              price = (tick.value as number) > 0 ? tick.value : null;
+              price = (tick.value as number) > 0 ? tick.value : undefined;
             } else if (
               type == IBApiTickType.BID ||
               type == IBApiTickType.DELAYED_BID
             ) {
-              bid = (tick.value as number) > 0 ? tick.value : null;
+              bid = (tick.value as number) > 0 ? tick.value : undefined;
             } else if (
               type == IBApiTickType.ASK ||
               type == IBApiTickType.DELAYED_ASK
             ) {
-              ask = (tick.value as number) > 0 ? tick.value : null;
+              ask = (tick.value as number) > 0 ? tick.value : undefined;
             } else if (
               type == IBApiTickType.CLOSE ||
               type == IBApiTickType.DELAYED_CLOSE
             ) {
               previousClosePrice =
-                (tick.value as number) > 0 ? tick.value : null;
+                (tick.value as number) > 0 ? tick.value : undefined;
             }
         });
         if (ask && bid) price = (ask + bid) / 2;
@@ -144,22 +149,32 @@ export class IBTrader {
         console.log("price:", price);
         return { contract, price };
       })
+      .catch((err: IBApiNextError) => {
+        console.error(
+          "IBTrader.getMarketDataSnapshot failed",
+          err.error.message,
+        );
+        return { contract, price: undefined };
+      })
       .finally(() => console.log("getMarketDataSnapshot done"));
   }
 
-  private placeNewOrder(contract: Contract, price: number | undefined) {
+  private placeNewOrder(
+    contract: Contract,
+    price: number | undefined,
+  ): Promise<number> {
     let totalQuantity: number = this.config.get("IBtrader.order_quantity") || 1;
-    let totalAmount: number = this.config.get("IBtrader.order_amount");
+    const totalAmount: number = this.config.get("IBtrader.order_amount");
     if (totalAmount && price) totalQuantity = Math.round(totalAmount / price);
     const order: Order = {
       action: OrderAction.SELL,
       orderType: OrderType.MKT,
       totalQuantity,
-      tif: TimeInForce.GTC,
+      tif: TimeInForce.DAY,
       outsideRth: true,
       transmit: true,
     };
-    return this.api.placeNewOrder({ ...contract, exchange: "SMART" }, order);
+    return this.api.placeNewOrder(contract, order);
   }
 
   public placeOrder(ticker: string): Promise<void> {
@@ -169,10 +184,10 @@ export class IBTrader {
       .then((contract) => this.getSnapshotPrice(contract))
       .then(({ contract, price }) => this.placeNewOrder(contract, price))
       .then((orderId: number) => {
-        console.log("Order placed, id:", orderId.toString());
+        console.log("Order placed, id:", orderId, "for", ticker);
       })
       .catch((err: IBApiNextError) => {
-        console.error("IBTrader.placeOrder failed");
+        console.error("IBTrader.placeOrder failed", err.error.message);
       });
   }
 }

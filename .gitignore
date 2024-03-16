@@ -130,6 +130,6 @@ dist
 .pnp.*
 
 # Repository specific settings
-docker-env-file
 build/
 config/local*
+docker-env-file

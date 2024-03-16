@@ -4,6 +4,7 @@
   documentation available at:
     https://nodemailer.com/extras/smtp-server/
 */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { IConfig } from "config";
 import {
   SMTPServer,
@@ -11,7 +12,7 @@ import {
   SMTPServerSession,
 } from "smtp-server";
 
-const simpleParser = require("mailparser").simpleParser;
+const simpleParser = require("mailparser").simpleParser; // eslint-disable-line @typescript-eslint/no-var-requires
 
 export class SmtpServer {
   private server: SMTPServer;
@@ -23,7 +24,7 @@ export class SmtpServer {
       authOptional: true,
       size: 10 * 1024 * 1024, // 10 Mb
       disableReverseLookup: true,
-      onData: (stream, session, callback) =>
+      onData: (stream, session, callback): void =>
         this.onData(stream, session, callback),
       logger: true,
     });
@@ -44,7 +45,7 @@ export class SmtpServer {
   protected onData(
     stream: SMTPServerDataStream,
     session: SMTPServerSession,
-    callback: (err?: Error | null | undefined) => void
+    callback: (err?: Error | null | undefined) => void,
   ): void {
     // stream.on("end", callback);
     // stream.on("error", () => console.error("error"));
@@ -56,7 +57,7 @@ export class SmtpServer {
 
   protected processMail(
     session: SMTPServerSession,
-    email: Record<string, any>
+    email: Record<string, any>,
   ): Promise<void> {
     console.log("processMail", session, email);
     return Promise.resolve();

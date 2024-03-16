@@ -4,6 +4,7 @@
   documentation available at:
     https://nodemailer.com/about/
 */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { IConfig } from "config";
 import nodemailer from "nodemailer";
 

@@ -27,6 +27,4 @@ export class Config {
 
     console.log(Object.entries(this));
   }
-
-  public toto() {}
 }

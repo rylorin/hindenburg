@@ -1,110 +1,240 @@
 Delivered-To: rylorin@gmail.com
-Received: by 2002:a05:6a10:8690:b0:4e4:48f4:a827 with SMTP id e16csp410101pxn;
-        Thu, 31 Aug 2023 14:31:26 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IF8EOU/vK4TfEeruaM6568+AL374y9r09sCwPRSK2n1k3ZaHmfwc6Tuba7Wt5C4UduJ2QRs
-X-Received: by 2002:a05:6a20:431d:b0:12e:cbce:444a with SMTP id h29-20020a056a20431d00b0012ecbce444amr1099302pzk.37.1693517486355;
-        Thu, 31 Aug 2023 14:31:26 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1693517486; cv=none;
+Received: by 2002:a05:7110:b12a:b0:22d:5a9f:a159 with SMTP id br42csp672790geb;
+        Fri, 15 Mar 2024 00:20:52 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IECouzjcoiRZ8JjX7/rn3PUEQVxGFuC6BVtKqmGTcGyjAvLFUqfjs5OpbakYAFyzS/ukfc6
+X-Received: by 2002:a81:4987:0:b0:609:ecdf:7c9c with SMTP id w129-20020a814987000000b00609ecdf7c9cmr6033396ywa.19.1710487251893;
+        Fri, 15 Mar 2024 00:20:51 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1710487251; cv=none;
         d=google.com; s=arc-20160816;
-        b=dt6T482oHXd1xxkgk5IgDC3Lw06XxZwhqSjwyJ/Dz4n3PbOnRwg0+o4EYBhvxQAkGP
-         V8mX8in11bMafjBqBZiL8OxS0wdXGuiH17ZVoT63pc04Oo99XAeJhzMQFKUjzzZtWuTn
-         aAfMyrweJQzcx7/KQn9CD2+CiLM026lwWSpykXAlYmTUZENM0/FzA53zLruHMtQSvUzE
-         SOe5hmK88V+wJEA2t26AKWWW3jDJjWRuMrLEFzxLp+Vc2VnieLLiM3LxjrGNhE+ZvHt5
-         haRvH8BRV92Qrb/CJKgMFZ7oPiZs98jb6BqZYYRtiGJw34JIEwEQnQYVqpu1EFri1v5W
-         JECQ==
+        b=HIuMkOW+5PLPAhA0rilE1lDYpyXXk/2pnFSeFrHcg7gyE2xtxs2hCjJbXN69WuRYQO
+         pZwIzeXWePx57IDYDWWnwaSkskHKjv9dgTfjaDUR7g3LC5jhn54umX1haLRKXw9VGb6E
+         GQ6oVr7njGfQysj+UKqTmXaxyV4oaDyYdMc4Te6bJ0hb2WyE+s2Te224oxFdRpzZFHtA
+         xU3CaYhp3MEVuv3cQH/RZuHoVa63GO33F+abWBBJUIb44SZOlDpWsdPYnj3YeJ7Se4l2
+         SUfuUCBxWv0gS2E7f/CxaxUw7NTe6CNz14B20vd2HsxRJsCi5dxHOVPiqKfc8GeFq5uh
+         UmZg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
         h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
          :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
          :dkim-signature;
-        bh=G5JHiqC8nuGGAFdhM9dbNTg4N0ojTvWjE5J9aRZZ32Q=;
+        bh=1B8jmRgIcorTaGGgv1EqB60ZFLQ69omLjzCJ1Y76UOw=;
         fh=Gl0xcCE2dclMB2Ryz6H+lWeG7Rn7rUJHLaSQLXr9WsA=;
-        b=l+7ouJs6KDUdxb/grjBM3SgbskSkeTu7O6UhggyPd+TtVJ4vVNnnHcHtmHAruNBmjL
-         7qxfXFESRneIREu5FDTocKMdTnKqs/CKq3kzI1vJFI+WQq92IidKrGd4SACMnvbZaS0I
-         HZPESzH2kQ2gstYyhjElk1yw35am4stxuLP+OnKUEhWdZ1KrkRIvx82RQVwJ9fFa1kuZ
-         xPaSUqCFmxhHl4WaM5l0saJBIV2H9jEpjThKWHLk3BIJi6vMX63jXxBpEUDWyTYAQ6an
-         SIQ5yEe+a9bA9wlBZX3veFMG1LTkqSiOHbFImKhj5kvQqaOYH+L9Lmt67jWfy6+nRmBm
-         715g==
+        b=o+sSCLB7XKn8BPB9fGzvCorfu36BW/cbKZ4+Yu71xY5XD2XRn98t4hx6jaPlOJmLl7
+         WM2UGbuA8AyEeHWBLtTMP50uwROJhevlbU+IhXA4SCKsjJw+Sq67wYilVdtINKBstUoO
+         AgnORgmHDcDyO9wPM4gir6H3D/IMZEbotcKH1mkJKBy/BbD+q1I3azN8c8Z0rSAwGDao
+         OEpmIfNX79Dfj0w/iNq9iLAOoCPJlrJEhlYpqIqM9Dt1z2qSGKwlk7LpybMA/1LJWzhM
+         oK6X+/FjK+HeBF2mJ2FzKB7agAYWnzdST14CLgXa/Mx29q8y+cMCOSDKf2q9Yp+RJVEK
+         ZGRA==;
+        dara=google.com
 ARC-Authentication-Results: i=1; mx.google.com;
-       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=v3Mm0meb;
-       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=MsKbNCMt;
-       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570000-04403ab0ff@mail25.sea31.mcsv.net designates 148.105.11.25 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570000-04403ab0ff@mail25.sea31.mcsv.net
-Return-Path: <bounce-mc.us19_104347118.6570000-04403ab0ff@mail25.sea31.mcsv.net>
-Received: from mail25.sea31.mcsv.net (mail25.sea31.mcsv.net. [148.105.11.25])
-        by mx.google.com with ESMTPS id s3-20020a632c03000000b0055b0f40083dsi1839435pgs.560.2023.08.31.14.31.26
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=QBX1nVFF;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=dPrQI6PM;
+       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570022-04403ab0ff@mail82.suw111.mcdlv.net designates 198.2.185.82 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570022-04403ab0ff@mail82.suw111.mcdlv.net
+Return-Path: <bounce-mc.us19_104347118.6570022-04403ab0ff@mail82.suw111.mcdlv.net>
+Received: from mail82.suw111.mcdlv.net (mail82.suw111.mcdlv.net. [198.2.185.82])
+        by mx.google.com with ESMTPS id dg6-20020a05690c0fc600b00609fdeb07casi1578048ywb.375.2024.03.15.00.20.51
         for <rylorin@gmail.com>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 31 Aug 2023 14:31:26 -0700 (PDT)
-Received-SPF: pass (google.com: domain of bounce-mc.us19_104347118.6570000-04403ab0ff@mail25.sea31.mcsv.net designates 148.105.11.25 as permitted sender) client-ip=148.105.11.25;
+        Fri, 15 Mar 2024 00:20:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-mc.us19_104347118.6570022-04403ab0ff@mail82.suw111.mcdlv.net designates 198.2.185.82 as permitted sender) client-ip=198.2.185.82;
 Authentication-Results: mx.google.com;
-       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=v3Mm0meb;
-       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=MsKbNCMt;
-       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570000-04403ab0ff@mail25.sea31.mcsv.net designates 148.105.11.25 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570000-04403ab0ff@mail25.sea31.mcsv.net
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=QBX1nVFF;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=dPrQI6PM;
+       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570022-04403ab0ff@mail82.suw111.mcdlv.net designates 198.2.185.82 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570022-04403ab0ff@mail82.suw111.mcdlv.net
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mcsv.net;
-	s=k1; t=1693517136; x=1693603536;
-	bh=G5JHiqC8nuGGAFdhM9dbNTg4N0ojTvWjE5J9aRZZ32Q=;
+	s=k1; t=1710487103; x=1710573503;
+	bh=1B8jmRgIcorTaGGgv1EqB60ZFLQ69omLjzCJ1Y76UOw=;
 	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
 	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
 	 MIME-Version:CC:Date:Subject:From;
-	b=v3Mm0mebjI4OrRcFGreW7KBLJfcgOPfXRnNBX7Fnw9VW9ZY8aXeknMZyhjhNF5CWF
-	 tQjCvJtTfp4PLfmGFDMcrM9fO+WPag54kNSIJi4HqcO9u+BtlHw7kGtL0KLyZrIEDB
-	 zRX0LIeDlKOkFoE4zGFsFRrORFu8OhITbp1T/998GRNZpMuFk+Gte0GTyw0bzXElS6
-	 2tTVkzHO2QYpMCL+78P23hnaONILTdcq7MVkP9S0iirMlzkl/JfERvFas9iSCx5voA
-	 7jTlH0Z+uoQ+GkZvtQpYHLarWCPqPNbPe69y6/rTkot2D7CHIdvSBw9pBNheP0TIIC
-	 Op1EkqinRJsTg==
+	b=QBX1nVFFkJ+3cHBgHdX5yq60HcbHXtJTsHe9iMEmokYjl429ih29B2uSWAFNpn8Fn
+	 bVx8ecLhtHhpAunA+Z21ls4RsLVmYm4NODX9Vu01Q3sX/w8v4LOfqtQGcgmQcX0pMg
+	 75R/3gH4tCfsYGYadyk3KbwQiJ9fsz/fW4AFkv7H0t4O+J6eclxKm4SA5AYBnHVqM4
+	 h5ePmB82Sg3nnNqTtqvDkIMRdqHFJy+/n3dCz+FWxc3ekCOBptnDYJt2RW4L6SlgIK
+	 UdMLULtSpXnD3Br0sVqbfVamjbEFCvvmRghpvUtytZ5D/KxUGBn2tX1fCCgotccSrA
+	 6yowX2t1H697w==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimpapp.net;
-	s=k2; t=1693517136; x=1693777636;
+	s=k2; t=1710487103; x=1710747603;
 	i=info=3Dhindenburgresearch.com@mailchimpapp.net;
-	bh=G5JHiqC8nuGGAFdhM9dbNTg4N0ojTvWjE5J9aRZZ32Q=;
+	bh=1B8jmRgIcorTaGGgv1EqB60ZFLQ69omLjzCJ1Y76UOw=;
 	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
 	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
 	 MIME-Version:CC:Date:Subject:From;
-	b=MsKbNCMtl6lOOFy4o7ZS5MuO1pu6+7xMwba1WIGyPqJlgUMJsk/QFe50P/NMsQhNq
-	 Esrb7Q19TObLt8k+f7y9ETSiOkWnSEHoM0nUkmf989rYWh59Jv2PjO88GH99Bb2qvR
-	 d/iAsR41razf2c5pch3rk7r4GaYoaGh/JB/JQkZoYc6qcDp9uN+cvoz9tQp+3yuegA
-	 dMilXqxolFC8Igk7z9yQ4w9yeZswHuV+9xPB1onHxbxFqu6iEgzPOPnOTTSyj7qM/z
-	 DstBl0G3mq4tt1yw2JmLFHEgCtCPZj92m192Yct9HhJ2N7hoKAdnXt8eZMKRGshMQQ
-	 XAQm4VJhTikrw==
+	b=dPrQI6PMbmRlINytDlUaBKYTGauT7hustt03WXC/aPtumUh8sI4luHTKRGnkULGGB
+	 dZqU8FYgKiBPBhWjAfHPyuUt1Kn00QD2OR/1whTrS5475qcz/aC8ooiIbbYFmCjMDD
+	 l9k1vrMVIwsJrx75tuD28eS76h5PTB8OzsPQ+DZErh9qj9YD1Zw3Xts3DKYtC3EWl/
+	 sVo0Tj9jLw0lMYVcilTkEvW34ORprFZMzwowEmD2LzUZ2TGX/oM7PGQQFnqd8Unw5s
+	 DW8UYFyj34dw8hYCL+Ky4npesvPT2NIoUKlzWMBhNkprOonWIfd4iljhpmK32w/2EB
+	 DT7tpqtWwYp7w==
 Received: from localhost (localhost [127.0.0.1])
-	by mail25.sea31.mcsv.net (Mailchimp) with ESMTP id 4RcDjD2fSQzS6SYrL
-	for <rylorin@gmail.com>; Thu, 31 Aug 2023 21:25:36 +0000 (GMT)
-Subject: =?utf-8?Q?Tingo=20Forges=20Ahead=20With=20Its=20Brazen=20Scam=20As=20$730=20Million=20In=20Claimed=20Cash=20Disappears=20From=20Its=20Balance=20Sheet=20In=20One=20Quarter?=
+	by mail82.suw111.mcdlv.net (Mailchimp) with ESMTP id 4TwwZl3GpWz5pxKGZ
+	for <rylorin@gmail.com>; Fri, 15 Mar 2024 07:18:23 +0000 (GMT)
+Subject: =?utf-8?Q?Operating=20Behind=20Enemy=20Lines=3A=20How=20Fashion=20Powerhouse=20LPP=20S.A.=20Masked=20A=20Fake=20Russia=20=E2=80=98Sell=2DOff=E2=80=99=20Using=20Front=20Entities=20And=20Encrypted=20Barcodes=20=28LPP.WSE=29?=
 From: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
 Reply-To: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
 To: <rylorin@gmail.com>
-Date: Thu, 31 Aug 2023 21:25:21 +0000
-Message-ID: <ffb3753afd4493d4fbd300492.04403ab0ff.20230831212507.d73dfb9dd4.c2f12339@mail25.sea31.mcsv.net>
-X-Mailer: Mailchimp Mailer - **CIDd73dfb9dd404403ab0ff**
-X-Campaign: mailchimpffb3753afd4493d4fbd300492.d73dfb9dd4
-X-campaignid: mailchimpffb3753afd4493d4fbd300492.d73dfb9dd4
-X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=ffb3753afd4493d4fbd300492&id=d73dfb9dd4&e=04403ab0ff
+Date: Fri, 15 Mar 2024 07:18:06 +0000
+Message-ID: <ffb3753afd4493d4fbd300492.04403ab0ff.20240315071751.f477d99506.1b909ddc@mail82.suw111.mcdlv.net>
+X-Mailer: Mailchimp Mailer - **CIDf477d9950604403ab0ff**
+X-Campaign: mailchimpffb3753afd4493d4fbd300492.f477d99506
+X-campaignid: mailchimpffb3753afd4493d4fbd300492.f477d99506
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=ffb3753afd4493d4fbd300492&id=f477d99506&e=04403ab0ff
 X-MC-User: ffb3753afd4493d4fbd300492
-Feedback-ID: 104347118:104347118.6570000:us19:mc
+Feedback-ID: 104347118:104347118.6570022:us19:mc
 List-ID: ffb3753afd4493d4fbd300492mc list <ffb3753afd4493d4fbd300492.63691.list-id.mcsv.net>
 X-Accounttype: pr
-List-Unsubscribe: <https://hindenburgresearch.us19.list-manage.com/unsubscribe?u=ffb3753afd4493d4fbd300492&id=5b17860351&e=04403ab0ff&c=d73dfb9dd4>, <mailto:unsubscribe-mc.us19_ffb3753afd4493d4fbd300492.d73dfb9dd4-04403ab0ff@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe: <https://hindenburgresearch.us19.list-manage.com/unsubscribe?u=ffb3753afd4493d4fbd300492&id=5b17860351&t=h&e=04403ab0ff&c=f477d99506>, <mailto:unsubscribe-mc.us19_ffb3753afd4493d4fbd300492.f477d99506-04403ab0ff@unsubscribe.mailchimpapp.net?subject=unsubscribe>
 List-Unsubscribe-Post: List-Unsubscribe=One-Click
-Content-Type: multipart/alternative; boundary="_----------=_MCPart_1380879445"
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_858717045"
 MIME-Version: 1.0
 
 This is a multi-part message in MIME format
 
---_----------=_MCPart_1380879445
+--_----------=_MCPart_858717045
 Content-Type: text/plain; charset="utf-8"; format="fixed"
 Content-Transfer-Encoding: quoted-printable
 
 
 
 
-** Tingo Forges Ahead With Its Brazen Scam As $725 Million In Claimed Cash=
- Disappears From Its Balance Sheet In One Quarter
+** Operating Behind Enemy Lines: How Fashion Powerhouse LPP S.A. Masked A=
+ Fake Russia =E2=80=98Sell-Off=E2=80=99 Using Front Entities And Encrypted=
+ Barcodes
 ------------------------------------------------------------
+(WSE:LPP)
+* LPP S.A. is an $8.4 billion fashion retailer based in Poland that lays c=
+laim to being the largest fashion company in Central and Eastern Europe.
+* Until Russia invaded Ukraine in February 2022=2C Russia was LPP=E2=80=99=
+s biggest international market=2C generating ~19.2% of revenue from 553 st=
+ores. LPP had major expansion plans for Russia according to company disclo=
+sures and a former executive who told us: =E2=80=9C[LPP] had plans to ope=
+n hundreds of more stores [in Russia] =E2=80=A6 that was the biggest mark=
+et that we wanted to grow=E2=80=9D.
+* Russia=E2=80=99s invasion of Ukraine in February 2022 triggered a mass e=
+xodus of foreign companies from Russia. This resulted in a 46.6% drop in L=
+PP=E2=80=99s share price as investors feared the loss of key growth prospe=
+cts.
+* Trade relations with Russia pose a serious risk for Polish companies lik=
+e LPP due to both sanction and reputational risks=E2=80=9497% of Polish ci=
+tizens have an unfavourable view of Russia post-invasion=2C according to a=
+ survey conducted by the Pew Research Center in spring 2022.
+* As recently as November 2023=2C former Russian president and close ally=
+ of Vladimir Putin=2C Dmitry Medvedev=2C labelled Poland a =E2=80=9Cdanger=
+ous enemy=E2=80=9D and insinuated that it could be a candidate for invasio=
+n.
+* On April 28^th=2C 2022=2C LPP announced plans to distance itself from Ru=
+ssia by divesting its Russia division. A deal progressed rapidly: Weeks la=
+ter=2C on May 19^th=2C 2022=2C it announced it had concluded negotiations=
+ with an unnamed buyer=2C finalizing a sale on June 30^th=2C 2022.
+* Despite saying it lost ~20% of revenues from divesting its Russian opera=
+tions=2C LPPs total revenue still remarkably grew 13% overall in FY 2022/2=
+3. Reported revenue across markets excluding Russia was up 40.5% year-on-y=
+ear.
+* The market has rewarded LPP=E2=80=99s reported 40.5% core revenue growth=
+=E2=80=94virtually unheard of in the retail apparel industry=E2=80=94by se=
+nding the stock back toward all-time highs.
+* We believe LPP was able to post these remarkable results because its div=
+estment of its Russia business has been a complete sham.
+* LPP says it sold its Russian assets (called =E2=80=9CRe Trading=E2=80=9D=
+) to a vague =E2=80=9CChinese consortium=E2=80=9D in a ~$382 million deal.=
+ We found that the buyer was a Dubai-based shell called =E2=80=9CFar East=
+ Services=E2=80=9D with no disclosure of its owners or directors.
+* Far East Services was incorporated just one day before LPP announced it=
+ had reached an agreement to sell its Russian subsidiary. It has no extern=
+ally verifiable presence=2C track record in the fashion industry=2C or app=
+arent associations with China.
+* A former senior LPP employee told us the deal was "a fa=C3=A7ade to hide=
+ [the] truth of not selling Russian operations"=2C adding that LPP's Russ=
+ian operations are still "directly controlled by LPP HQ and board".
+* A former manager described LPP CEO and founder Marek Piechocki=E2=80=99s=
+ approach: He didn=E2=80=99t =E2=80=9Cgive a f*ck about some war between R=
+ussia and Ukraine. This [war] is just temporary.=E2=80=9D
+* Operational details offer other clues that LPP retained control of the R=
+ussia business. For example=2C LPP=E2=80=99s Russian stores re-opened the=
+ day after its sale contract was agreed; 37 days before the deal even clos=
+ed.
+* =E2=80=98Big Four=E2=80=99 auditor Ernst & Young issued a qualified opin=
+ion on LPP=C2=B4s 2021/22 audited financial statements over accounting iss=
+ues relating to its Russian assets. 5 days after LPP=E2=80=99s claimed Rus=
+sian divesture=2C LPP switched auditors to Grant Thornton=2C a second-tier=
+ audit firm with a history of missing signs of accounting malfeasance.
+* LPP said it would only support the new buyer for a =E2=80=9Ctransitory p=
+eriod=E2=80=9D=2C but evidence suggests LPP continues to sell=2C and can t=
+rack and control inventory being sold=2C in Russia.
+* We dispatched secret shoppers to =E2=80=9CFar East Services=E2=80=9D fla=
+gship stores in Moscow and St. Petersburg in December 2023. Almost all gar=
+ments we photographed were identical designs and colors to fall/winter col=
+lections in LPP=C2=B4s online catalogues in Poland=2C indicating that LPP=
+=E2=80=99s products are still somehow making their way into Russia at leas=
+t 18 months after the claimed divestiture.
+* Further=2C Russian in-house product codes were an exact match for the pr=
+oduct codes in LPP=C2=B4s Polish catalogue.
+* Barcodes found on Russian merchandise at first seemed mostly out-of-date=
+=2C issued to random Chinese companies=2C or counterfeited to mask the pro=
+ducts=E2=80=99 true origin.
+* However=2C LPP presentations shown to us detail how LPP planned to modif=
+y barcodes to covertly track Russia merchandise via its own IT systems=E2=
+=80=93 concealing its continued control of the inventory.
+* Additional documents show how LPP senior management can encrypt valid ba=
+rcodes registered to LPP in Poland and disguise them as unrelated Chinese=
+ barcodes.
+* We reverse-engineered 65 barcodes at =E2=80=9CFar East Services=E2=80=9D=
+ retail stores in Russia using LPP=E2=80=99s secret methodology. Once deco=
+ded=2C they were a precise match to LPP barcodes registered in Poland. We=
+ view this as dead-on evidence of LPP=E2=80=99s elaborate steps to conceal=
+ its sham Russia divestiture.
+* =E2=80=9CFor me the shock is=E2=80=A6that this is LPP because they are r=
+eally=2C this is the biggest Polish clothing brand owner. So it's hard to=
+ imagine that=2C that they can do something like that=2C=E2=80=9D a manage=
+r at GS1 Global=2C the Polish branch of the barcodes standards organizatio=
+n=2C told us.
+* LPP also set out plans in internal documents to hide exports of its merc=
+handise to Russia =E2=80=93 cloaking the true ownership of the goods via t=
+wo front companies set up by key LPP insiders. LPP=E2=80=99s export scheme=
+ was put into practice from mid-2022=2C according to our analysis of over=
+ 335=2C000 thousand import-export records.
+* The first front company - Singapore-based 'Asia Fashion Import Export' -=
+ was set up the day Russia invaded Ukraine by a key member of Semper Simul=
+ Foundation=2C LPP=E2=80=99s controlling shareholder affiliated with CEO M=
+arek Piechocki.
+* The second front company - Fashion Group Tekstil =E2=80=93 was a dormant=
+ Turkish company until an LPP employee acquired it 7 months after Russia=
+=E2=80=99s invasion of Ukraine. =E2=80=9CFar East Services=E2=80=9D=2C the=
+ buyer of LPP=E2=80=99s Russian assets=2C later took control of 95% of Fas=
+hion Group Tekstil.
+* LPP stepped back and handed a lead supply-chain role to the related-part=
+y front companies=2C based on our analysis of barcodes and import-export r=
+ecords.
+* LPP also appears to be using Kazakhstan as a backdoor to help supply Rus=
+sia stores. Import-export records show that LPP shipped ~$755 million of m=
+erchandise to its Kazakh subsidiary in 2023=2C despite Kazakhstan only acc=
+ounting for 1% of LPP=E2=80=99s brick-and-mortar stores.
+* If found to still be operating in Russia=2C LPP may be in breach of loan=
+ and finance agreements with its main creditor=2C PKO BP Bank=2C which pro=
+vided ~62% of its loans and borrowings as of its latest year-end. PKO wrot=
+e us: =E2=80=9CIn principle the bank does not finance entities operating i=
+n Russia or in cooperation with Russian contractors.=E2=80=9D
+* We suspect LPP has further masked its sham Russia divestment through acc=
+ounting manipulation. We found that more than two-thirds of the revenue gr=
+owth in 2022/23=2C representing $732 million or 20% of total revenue=2C ca=
+me from an unexplained =E2=80=9COther=E2=80=9D segment=2C according to the=
+ English version of LPP=E2=80=99s annual report. In the previous 3 years=
+=2C this =E2=80=9COther=E2=80=9D segment never represented more than 2% of=
+ LPP=E2=80=99s total revenue.
+* Meanwhile=2C management has extracted cash from their LPP stake through=
+ margin loans=2C a risky form of financing. On December 5^th=2C 2023=2C LP=
+P=C2=B4s controlling shareholder=2C an affiliate of LPP=E2=80=99s CEO Mare=
+k Piechocki=2C pledged 20% of its stake in LPP=2C worth $490 million at th=
+e time.
+* Overall=2C we believe LPP devised an elaborate sham =E2=80=98divestment=
+=E2=80=99 to continue making money in Russia despite the devastating war=
+=2C while trying to deceive investors and consumers in Poland=2C Ukraine=
+=2C and its other key markets.
 
 Initial Disclosure: After extensive research=2C we have taken a short posi=
-tion in shares of Tingo Group Inc (NASDAQ:TIO). This report represents our=
- opinion=2C and we encourage every reader to do their own due diligence. P=
-lease see our full disclaimer at the bottom of the report.
-Read The Full Report Here (https://hindenburgresearch.com/tingo-scam-forge=
-s-ahead/)
+tion in shares of LPP S.A. (WSE:LPP). This report represents our opinion=
+=2C and we encourage every reader to do their own due diligence. Please se=
+e our full disclaimer at the bottom of the report.
+Read The Full Report Here (https://hindenburgresearch.com/lpp/)
 https://twitter.com/HindenburgRes
 Follow Us On Twitter (https://twitter.com/HindenburgRes)
 
@@ -115,11 +245,12 @@ Copyright =C2=A9 2022 *Hindenburg Research=2C All rights reserved.
 
 Want to change how you receive these emails?
 You can ** update your preferences (https://hindenburgresearch.us19.list-m=
-anage.com/profile?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3Dd73dfb9dd4)
+anage.com/profile?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3Df477d99506)
 or ** unsubscribe from this list (https://hindenburgresearch.us19.list-man=
-age.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3Dd73dfb9dd4)
+age.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&t=3Db&e=
+=3D04403ab0ff&c=3Df477d99506)
 =2E
---_----------=_MCPart_1380879445
+--_----------=_MCPart_858717045
 Content-Type: text/html; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
@@ -140,8 +271,9 @@ oft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
         <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
         <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial=
 -scale=3D1">
-        <title>Tingo Forges Ahead With Its Brazen Scam As $730 Million In=
- Claimed Cash Disappears From Its Balance Sheet In One Quarter</title>
+        <title>Operating Behind Enemy Lines: How Fashion Powerhouse LPP S.=
+A. Masked A Fake Russia =E2=80=98Sell-Off=E2=80=99 Using Front Entities An=
+d Encrypted Barcodes (LPP.WSE)</title>
 
     <style type=3D"text/css">
 =09=09p{
@@ -641,8 +773,9 @@ tica;font-size: 16px;line-height: 150%;text-align: left;">
                             <h1 style=3D"display: block;margin: 0;padding:=
  0;color: #222222;font-family: Helvetica;font-size: 40px;font-style: norma=
 l;font-weight: bold;line-height: 150%;letter-spacing: normal;text-align: c=
-enter;">Tingo Forges Ahead With Its Brazen Scam As $725 Million In Claimed=
- Cash Disappears From Its Balance Sheet In One Quarter</h1>
+enter;"><strong>Operating Behind Enemy Lines: How Fashion Powerhouse LPP S=
+=2EA. Masked A Fake Russia =E2=80=98Sell-Off=E2=80=99 Using Front Entities A=
+nd Encrypted Barcodes</strong></h1>
 
                         </td>
                     </tr>
@@ -720,15 +853,224 @@ Container">
 size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
 tica;font-size: 16px;line-height: 150%;text-align: left;">
 
-                            <p style=3D"margin: 10px 0;padding: 0;mso-line=
--height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
- 100%;color: #757575;font-family: Helvetica;font-size: 16px;line-height: 1=
-50%;text-align: left;"><em>Initial Disclosure: After extensive research=2C=
- we have taken a short position in shares of </em><em data-rich-text-forma=
-t-boundary=3D"true">Tingo Group Inc (NASDAQ:TIO)</em><em>. This report rep=
-resents our opinion=2C and we encourage every reader to do their own due d=
-iligence. Please see our full disclaimer at the bottom of the report.</em>=
-</p>
+                            <!-- wp:list --><span style=3D"font-size:20px"=
+><strong>(WSE:LPP)</strong></span>
+
+<ul>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LPP S.A. is an $8.4 billion fashion retail=
+er based in Poland that lays claim to being the largest fashion company in=
+ Central and Eastern Europe.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Until Russia invaded Ukraine in February 2=
+022=2C Russia was LPP=E2=80=99s biggest international market=2C generating=
+ ~19.2% of revenue from 553 stores. LPP had major expansion plans for Russ=
+ia according to company disclosures and a former executive who told us:=
+ =E2=80=9C[LPP] had plans to open hundreds of more stores [in Russia]=
+ =E2=80=A6 that was the biggest market that we wanted to grow=E2=80=9D.</l=
+i>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Russia=E2=80=99s invasion of Ukraine in Fe=
+bruary 2022 triggered a mass exodus of foreign companies from Russia. This=
+ resulted in a 46.6% drop in LPP=E2=80=99s share price as investors feared=
+ the loss of key growth prospects.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Trade relations with Russia pose a serious=
+ risk for Polish companies like LPP due to both sanction and reputational=
+ risks=E2=80=9497% of Polish citizens have an unfavourable view of Russia=
+ post-invasion=2C according to a survey conducted by the Pew Research Cent=
+er in spring 2022.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">As recently as November 2023=2C former Rus=
+sian president and close ally of Vladimir Putin=2C Dmitry Medvedev=2C labe=
+lled Poland a =E2=80=9Cdangerous enemy=E2=80=9D and insinuated that it cou=
+ld be a candidate for invasion.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">On April 28<sup>th</sup>=2C 2022=2C LPP an=
+nounced plans to distance itself from Russia by divesting its Russia divis=
+ion. A deal progressed rapidly: Weeks later=2C on May 19<sup>th</sup>=2C 2=
+022=2C it announced it had concluded negotiations with an unnamed buyer=2C=
+ finalizing a sale on June 30<sup>th</sup>=2C 2022.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Despite saying it lost ~20% of revenues fr=
+om divesting its Russian operations=2C LPPs total revenue still remarkably=
+ grew 13% overall in FY 2022/23. Reported revenue across markets excluding=
+ Russia was up 40.5% year-on-year.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">The market has rewarded LPP=E2=80=99s repo=
+rted 40.5% core revenue growth=E2=80=94virtually unheard of in the retail=
+ apparel industry=E2=80=94by sending the stock back toward all-time highs.=
+</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">We believe LPP was able to post these rema=
+rkable results because its divestment of its Russia business has been a co=
+mplete sham.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LPP says it sold its Russian assets (calle=
+d =E2=80=9CRe Trading=E2=80=9D) to a vague =E2=80=9CChinese consortium=E2=
+=80=9D in a ~$382 million deal. We found that the buyer was a Dubai-based=
+ shell called =E2=80=9CFar East Services=E2=80=9D with no disclosure of it=
+s owners or directors.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Far East Services was incorporated just on=
+e day before LPP announced it had reached an agreement to sell its Russian=
+ subsidiary. It has no externally verifiable presence=2C track record in t=
+he fashion industry=2C or apparent associations with China.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former senior LPP employee told us the d=
+eal was "a fa=C3=A7ade to hide [the] truth of not selling Russian operati=
+ons"=2C adding that LPP's Russian operations are still "directly controlle=
+d by LPP HQ and board".</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former manager described LPP CEO and fou=
+nder Marek Piechocki=E2=80=99s approach: He didn=E2=80=99t =E2=80=9Cgive a=
+ f*ck about some war between Russia and Ukraine. This [war] is just tempo=
+rary.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Operational details offer other clues that=
+ LPP retained control of the Russia business. For example=2C LPP=E2=80=99s=
+ Russian stores re-opened the day after its sale contract was agreed; 37 d=
+ays before the deal even closed.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">=E2=80=98Big Four=E2=80=99 auditor Ernst &=
+amp; Young issued a qualified opinion on LPP=C2=B4s 2021/22 audited financ=
+ial statements over accounting issues relating to its Russian assets. 5 da=
+ys after LPP=E2=80=99s claimed Russian divesture=2C LPP switched auditors=
+ to Grant Thornton=2C a second-tier audit firm with a history of missing s=
+igns of accounting malfeasance.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LPP said it would only support the new buy=
+er for a =E2=80=9Ctransitory period=E2=80=9D=2C but evidence suggests LPP=
+ continues to sell=2C and can track and control inventory being sold=2C in=
+ Russia.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">We dispatched secret shoppers to =E2=80=9C=
+Far East Services=E2=80=9D flagship stores in Moscow and St. Petersburg in=
+ December 2023. Almost all garments we photographed were identical designs=
+ and colors to fall/winter collections in LPP=C2=B4s online catalogues in=
+ Poland=2C indicating that LPP=E2=80=99s products are still somehow making=
+ their way into Russia at least 18 months after the claimed divestiture.</=
+li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Further=2C Russian in-house product codes=
+ were an <u>exact match</u> for the product codes in LPP=C2=B4s Polish cat=
+alogue.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Barcodes found on Russian merchandise at f=
+irst seemed mostly out-of-date=2C issued to random Chinese companies=2C or=
+ counterfeited to mask the products=E2=80=99 true origin.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">However=2C LPP presentations shown to us d=
+etail how LPP planned to modify barcodes to covertly track Russia merchand=
+ise via its own IT systems=E2=80=93 concealing its continued control of th=
+e inventory.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Additional documents show how LPP senior m=
+anagement can encrypt valid barcodes registered to LPP in Poland and disgu=
+ise them as unrelated Chinese barcodes.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">We reverse-engineered 65 barcodes at =E2=
+=80=9CFar East Services=E2=80=9D retail stores in Russia using LPP=E2=80=
+=99s secret methodology. Once decoded=2C they were a <u>precise match</u>=
+ to LPP barcodes registered in Poland. We view this as dead-on evidence of=
+ LPP=E2=80=99s elaborate steps to conceal its sham Russia divestiture.</li=
+>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">=E2=80=9CFor me the shock is=E2=80=A6that=
+ this is LPP because they are really=2C this is the biggest Polish clothin=
+g brand owner. So it's hard to imagine that=2C that they can do something=
+ like that=2C=E2=80=9D a manager at GS1 Global=2C the Polish branch of the=
+ barcodes standards organization=2C told us.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LPP also set out plans in internal documen=
+ts to hide exports of its merchandise to Russia =E2=80=93 cloaking the tru=
+e ownership of the goods via two front companies set up by key LPP insider=
+s. LPP=E2=80=99s export scheme was put into practice from mid-2022=2C acco=
+rding to our analysis of over 335=2C000 thousand import-export records.</l=
+i>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">The first front company - Singapore-based=
+ 'Asia Fashion Import Export' - was set up the day Russia invaded Ukraine=
+ by a key member of Semper Simul Foundation=2C LPP=E2=80=99s controlling s=
+hareholder affiliated with CEO Marek Piechocki.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">The second front company - Fashion Group T=
+ekstil =E2=80=93 was a dormant Turkish company until an LPP employee acqui=
+red it 7 months after Russia=E2=80=99s invasion of Ukraine. =E2=80=9CFar E=
+ast Services=E2=80=9D=2C the buyer of LPP=E2=80=99s Russian assets=2C late=
+r took control of 95% of Fashion Group Tekstil.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LPP stepped back and handed a lead supply-=
+chain role to the related-party front companies=2C based on our analysis o=
+f barcodes and import-export records.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">LPP also appears to be using Kazakhstan as=
+ a backdoor to help supply Russia stores. Import-export records show that=
+ LPP shipped ~$755 million of merchandise to its Kazakh subsidiary in 2023=
+=2C despite Kazakhstan only accounting for 1% of LPP=E2=80=99s brick-and-m=
+ortar stores.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">If found to still be operating in Russia=
+=2C LPP may be in breach of loan and finance agreements with its main cred=
+itor=2C PKO BP Bank=2C which provided ~62% of its loans and borrowings as=
+ of its latest year-end. PKO wrote us: =E2=80=9CIn principle the bank does=
+ not finance entities operating in Russia or in cooperation with Russian c=
+ontractors.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">We suspect LPP has further masked its sham=
+ Russia divestment through accounting manipulation. We found that more tha=
+n two-thirds of the revenue growth in 2022/23=2C representing $732 million=
+ or 20% of total revenue=2C came from an unexplained =E2=80=9COther=E2=80=
+=9D segment=2C according to the English version of LPP=E2=80=99s annual re=
+port. In the previous 3 years=2C this =E2=80=9COther=E2=80=9D segment neve=
+r represented more than 2% of LPP=E2=80=99s total revenue.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Meanwhile=2C management has extracted cash=
+ from their LPP stake through margin loans=2C a risky form of financing. O=
+n December 5<sup>th</sup>=2C 2023=2C LPP=C2=B4s controlling shareholder=2C=
+ an affiliate of LPP=E2=80=99s CEO Marek Piechocki=2C pledged 20% of its s=
+take in LPP=2C worth $490 million at the time.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Overall=2C we believe LPP devised an elabo=
+rate sham =E2=80=98divestment=E2=80=99 to continue making money in Russia=
+ despite the devastating war=2C while trying to deceive investors and cons=
+umers in Poland=2C Ukraine=2C and its other key markets.<!-- /wp:list-item=
+ --><!-- /wp:list --></li>
+</ul>
+<em>Initial Disclosure: After extensive research=2C we have taken a short=
+ position in shares of LPP S.A. (WSE:LPP). This report represents our opin=
+ion=2C and we encourage every reader to do their own due diligence. Please=
+ see our full disclaimer at the bottom of the report.</em><br>
 <!-- /wp:paragraph -->
                         </td>
                     </tr>
@@ -798,7 +1140,7 @@ ing: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
 -text-size-adjust: 100%;">
                                 <a class=3D"mcnButton " title=3D"Read The=
  Full Report Here" href=3D"https://hindenburgresearch.us19.list-manage.com=
-/track/click?u=3Dffb3753afd4493d4fbd300492&id=3D49ae716c49&e=3D04403ab0ff=
+/track/click?u=3Dffb3753afd4493d4fbd300492&id=3D9418ef4231&e=3D04403ab0ff=
 " target=3D"_blank" style=3D"font-weight: bold;letter-spacing: -0.5px;line=
 -height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-=
 line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
@@ -898,7 +1240,7 @@ ding-bottom: 5px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
 -webkit-text-size-adjust: 100%;">
                                                         <a href=3D"https:/=
 /hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
-bd300492&id=3D849a590dfe&e=3D04403ab0ff" target=3D"_blank" style=3D"mso-l=
+bd300492&id=3De47ffb1b38&e=3D04403ab0ff" target=3D"_blank" style=3D"mso-l=
 ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
 st: 100%;"><img src=3D"https://cdn-images.mailchimp.com/icons/social-block=
 -v2/color-twitter-96.png" alt=3D"Follow Us On Twitter" class=3D"mcnFollowB=
@@ -916,7 +1258,7 @@ ding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
 -webkit-text-size-adjust: 100%;">
                                                         <a href=3D"https:/=
 /hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
-bd300492&id=3Dfcbada531d&e=3D04403ab0ff" target=3D"_blank" style=3D"color=
+bd300492&id=3D8431c6f722&e=3D04403ab0ff" target=3D"_blank" style=3D"color=
 : #202020;font-family: Arial;font-size: 18px;font-weight: bold;text-decora=
 tion: none;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
 t-text-size-adjust: 100%;">Follow Us On Twitter</a>
@@ -1052,15 +1394,15 @@ tica;font-size: 12px;line-height: 150%;text-align: center;">
 <br>
 Want to change how you receive these emails?<br>
 You can <a href=3D"https://hindenburgresearch.us19.list-manage.com/profile=
-?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3Dd73dfb9dd4=
+?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3Df477d99506=
 " style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
 t-text-size-adjust: 100%;color: #FFFFFF;font-weight: normal;text-decoratio=
 n: underline;">update your preferences</a> or <a href=3D"https://hindenbur=
 gresearch.us19.list-manage.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&i=
-d=3D5b17860351&e=3D04403ab0ff&c=3Dd73dfb9dd4" style=3D"mso-line-height-rule:=
- exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color:=
- #FFFFFF;font-weight: normal;text-decoration: underline;">unsubscribe from=
- this list</a>.
+d=3D5b17860351&t=3Db&e=3D04403ab0ff&c=3Df477d99506" style=3D"mso-line-height=
+-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;c=
+olor: #FFFFFF;font-weight: normal;text-decoration: underline;">unsubscribe=
+ from this list</a>.
                         </td>
                     </tr>
                 </tbody></table>
@@ -1092,7 +1434,7 @@ d=3D5b17860351&e=3D04403ab0ff&c=3Dd73dfb9dd4" style=3D"mso-line-height-rule:=
             </table>
         </center>
     <img src=3D"https://hindenburgresearch.us19.list-manage.com/track/open=
-=2Ephp?u=3Dffb3753afd4493d4fbd300492&id=3Dd73dfb9dd4&e=3D04403ab0ff" height=
+=2Ephp?u=3Dffb3753afd4493d4fbd300492&id=3Df477d99506&e=3D04403ab0ff" height=
 =3D"1" width=3D"1" alt=3D""></body>
 </html>
---_----------=_MCPart_1380879445--
+--_----------=_MCPart_858717045--
