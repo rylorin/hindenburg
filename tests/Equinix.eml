@@ -1,0 +1,1569 @@
+Delivered-To: rylorin@gmail.com
+Received: by 2002:a05:7110:3723:b0:22d:5a9f:a159 with SMTP id bs35csp2542053geb;
+        Wed, 20 Mar 2024 05:53:18 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEhG/PlfUObE67PuFMDAZC21ts76Z4RDT5UFJo4cWGl0Ag71fEgQ4uV6YE6ZG8e5rSErYTm
+X-Received: by 2002:a0d:fac3:0:b0:60c:c993:7871 with SMTP id k186-20020a0dfac3000000b0060cc9937871mr6517028ywf.8.1710939198123;
+        Wed, 20 Mar 2024 05:53:18 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1710939198; cv=none;
+        d=google.com; s=arc-20160816;
+        b=DMgexuy9oSEpKESWjCCvhohdQjSwZ7D/9Bb67wZNd+Uji8KzhBnm8LGAUJLMomvK4q
+         LfpmmisFTfF8u21Zz8tmB9QN0kO8J9eI3OJj+i4TV3x+C02hDGONGtmZHGaKY/59bhJA
+         deIb07WxBLD8sYsSur+HSdaLsTxFxRxpK2jgdY9GsoglLm4B7zJ2eEvSuWLe18EqZe4a
+         qvoaXh5zdYg4264H5U/oUaHDWWKHu/TjOevPV3O0z5nASrcWObB7oAIcPxRzWbgY8JOe
+         U88lepE5p0Zvvvk2fUN6MgM5M1hPBDbsriwp4/PZkfdPre1xyuqaVhyM38lHGa205hUR
+         D4Zg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :dkim-signature;
+        bh=IbrmAJ0irGJZmH+JDEQZY/GGcBeQfS9YPydPJYOAKaI=;
+        fh=Gl0xcCE2dclMB2Ryz6H+lWeG7Rn7rUJHLaSQLXr9WsA=;
+        b=N4mkjaOfEhWKJiSp+gsZQDqRPWJ5nXQNCIJN2zks9l3HCAmCyRFNkGAM2T+rHjXBKH
+         /0AxtHG95023qTOKO2b6InboCQ/wiIzgR6gevaoBItOIBjGtYoArg7bn4386qC8zbmbK
+         HBV/rZXWJj3CiYG1N8wmO+QAOCP/NILsV4sEFVgtLGIn8tKfesvI1Jz5EMia660KzLug
+         o90FpDJc28qnjOs/ui3p6iMoFlwhqOUNbwwq7LSUgpKz5YeNRYAcNCKdaIQKSw2K66mN
+         n1KVIWTGMLDpFJBUMaEY+tdiVi5isCaUfnbNkiXKZP47M5Z2SU2qOpoAeBABSETqnayd
+         sfjA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=Y+61dfK4;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=QXZAGQ06;
+       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570030-04403ab0ff@mail175.atl221.rsgsv.net designates 198.2.139.175 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570030-04403ab0ff@mail175.atl221.rsgsv.net
+Return-Path: <bounce-mc.us19_104347118.6570030-04403ab0ff@mail175.atl221.rsgsv.net>
+Received: from mail175.atl221.rsgsv.net (mail175.atl221.rsgsv.net. [198.2.139.175])
+        by mx.google.com with ESMTPS id k9-20020a81c849000000b006079744dabdsi5729611ywl.575.2024.03.20.05.53.18
+        for <rylorin@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 20 Mar 2024 05:53:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-mc.us19_104347118.6570030-04403ab0ff@mail175.atl221.rsgsv.net designates 198.2.139.175 as permitted sender) client-ip=198.2.139.175;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=Y+61dfK4;
+       dkim=pass header.i=@mailchimpapp.net header.s=k2 header.b=QXZAGQ06;
+       spf=pass (google.com: domain of bounce-mc.us19_104347118.6570030-04403ab0ff@mail175.atl221.rsgsv.net designates 198.2.139.175 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570030-04403ab0ff@mail175.atl221.rsgsv.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mcsv.net;
+	s=k1; t=1710938326; x=1711024726;
+	bh=IbrmAJ0irGJZmH+JDEQZY/GGcBeQfS9YPydPJYOAKaI=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=Y+61dfK4FN01yI4vekO4zxbj7JxbHoAqfnxf8CdBfDnIPUK9ImY47dcjnYpNJ29GH
+	 +xZM6silnMTjlGeexTnris9sBNguqgAqiyaI36p7jl7h2YlcNVJ/wsIYeqhmaDC5h4
+	 Y5Qir3tztyuhSNojBVOszg6satiNc8rmNQKXxYMTuykaFIcONRnIYigjjvunlzq5GY
+	 AVTn4MT85t1NgCZOGSbfscsyd5V6WyiQFN26AbGRawzTrIQBuiCYyBLcxLFUGZryBZ
+	 zQSGvBwSkGsKAjOzP5hqm8ypV+BhRfk0aUxWSDClJn8SvLlRmsgykihsobqAHP0mfD
+	 nWh0Ht6z8f1fA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimpapp.net;
+	s=k2; t=1710938326; x=1711198826;
+	i=info=3Dhindenburgresearch.com@mailchimpapp.net;
+	bh=IbrmAJ0irGJZmH+JDEQZY/GGcBeQfS9YPydPJYOAKaI=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=QXZAGQ06WIydWo6c3pwq5h1xdhamsPDK0nmfwq0lbpF31DSKouMpaywhZzdQKXyqg
+	 0cfKTExZpAjafoxOW6B7MJhVUA22B1qdeZp1KCUFxU+9QCZ1gQ+rPSQqcGauC3+PeU
+	 33F0d3MbNEjoBoGk8p+epfC4via6zfpJMz31Jdi6rjmkg4Bf6wEuYJZ3CbWsu7JaKv
+	 e2xT6xaAAjyHG5klaSlASfW8lNgbtdkvvp+B/XWQY9opp5sutDBG5bDAthlgaS0ZFo
+	 nqtSUg8eRXyJh0YJlm1ClqEYtaR5ggJQ15U7VVtVCY66S3HtX/57PVS8sMwpPpSaqW
+	 4lLIlVNzvMARw==
+Received: from localhost (localhost [127.0.0.1])
+	by mail175.atl221.rsgsv.net (Mailchimp) with ESMTP id 4V07S65rFJz2rTVT
+	for <rylorin@gmail.com>; Wed, 20 Mar 2024 12:38:46 +0000 (GMT)
+Subject: =?utf-8?Q?Equinix=20Exposed=3A=20Major=20Accounting=20Manipulation=2C=20Core=20Business=20Decay=20And=20Selling=20An=20AI=20Pipe=20Dream=20As=20Insiders=20Cashed=20Out=20Hundreds=20of=20Millions?=
+From: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+Reply-To: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+To: <rylorin@gmail.com>
+Date: Wed, 20 Mar 2024 12:37:40 +0000
+Message-ID: <ffb3753afd4493d4fbd300492.04403ab0ff.20240320123729.d7bfe079e0.735b7bb8@mail175.atl221.rsgsv.net>
+X-Mailer: Mailchimp Mailer - **CIDd7bfe079e004403ab0ff**
+X-Campaign: mailchimpffb3753afd4493d4fbd300492.d7bfe079e0
+X-campaignid: mailchimpffb3753afd4493d4fbd300492.d7bfe079e0
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=ffb3753afd4493d4fbd300492&id=d7bfe079e0&e=04403ab0ff
+X-MC-User: ffb3753afd4493d4fbd300492
+Feedback-ID: 104347118:104347118.6570030:us19:mc
+List-ID: ffb3753afd4493d4fbd300492mc list <ffb3753afd4493d4fbd300492.63691.list-id.mcsv.net>
+X-Accounttype: pr
+List-Unsubscribe: <https://hindenburgresearch.us19.list-manage.com/unsubscribe?u=ffb3753afd4493d4fbd300492&id=5b17860351&t=h&e=04403ab0ff&c=d7bfe079e0>, <mailto:unsubscribe-mc.us19_ffb3753afd4493d4fbd300492.d7bfe079e0-04403ab0ff@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_887817781"
+MIME-Version: 1.0
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_887817781
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+** Equinix Exposed: Major Accounting Manipulation=2C Core Business Decay A=
+nd Selling An AI Pipe Dream As Insiders Cashed Out Hundreds of Millions
+------------------------------------------------------------
+(NASDAQ:EQIX)
+* Equinix is an $80 billion market cap data center REIT with over 260 faci=
+lities globally. It has 10=2C000+ customers=2C ranging from small business=
+es to large cloud =E2=80=9Chyperscaler=E2=80=9D providers like Amazon=2C M=
+icrosoft and Google.
+* Even if you ignore the findings of our investigation and take the financ=
+ials of Equinix at face value=2C the company trades at elevated levels; an=
+ ~86% premium to its peers on a price to forward adjusted funds from opera=
+tions (=E2=80=9CAFFO=E2=80=9D) basis and a ~59% premium on a price to forw=
+ard funds from operations (=E2=80=9CFFO=E2=80=9D) basis.
+* Our investigation=2C which included a review of financial and litigation=
+ records and interviews with 37 former Equinix employees=2C industry exper=
+ts and competitors=2C revealed that Equinix manipulates its accounting for=
+ AFFO=2C the key profitability metric for REITs. We estimate this metric w=
+as overstated by at least 22% in 2023 alone.
+* A key accounting trick to boost AFFO is to misclassify =E2=80=98maintena=
+nce CapEx=E2=80=99 as =E2=80=98growth CapEx=E2=80=99=2C giving the appeara=
+nce that the company=E2=80=99s cost to maintain its revenue base is lower=
+ than it actually is=2C making the company appear more profitable.
+* When Equinix transitioned to become a REIT in 2015=2C it began using AFF=
+O as a key metric in determining executive bonuses. That same year=2C Equi=
+nix reported a sudden 47% drop in maintenance CapEx=2C leading to an estim=
+ated 19% boost to reported AFFO.
+* The company also reported a sudden spike in growth CapEx on its balance=
+ sheet=2C a dynamic that has continued for almost 10 years. This shift has=
+ fueled Equinix=E2=80=99s stellar non-GAAP reported AFFO metrics and enric=
+hed its top executives.
+* During our investigation=2C former employees and executives provided an=
+ array of examples of obvious maintenance CapEx being classified as growth=
+ CapEx in order to boost reported AFFO metrics.
+* This manipulative practice stems from top management=2C according to for=
+mer employees. In December 2023=2C Equinix=E2=80=99s Chief Accounting Offi=
+cer Simon Miller alluded to =E2=80=9Cpressure=E2=80=9D the company put =E2=
+=80=9Con design and constructions teams to release capacity=E2=80=9D and=
+ =E2=80=9Cpush that into expansion [growth] capex=E2=80=9D.
+* In one example=2C a former director explained how Equinix would seek new=
+ serial numbers for refurbished equipment in order to recognize the old re=
+paired item as new and book it as growth CapEx. =E2=80=9CThat=E2=80=99s re=
+ally on the edge=E2=80=9D=2C they explained.
+* Batteries represent one of the largest data center replacement costs. A=
+ former operations director explained how Equinix would classify routine b=
+attery replacements as growth CapEx by characterizing it as =E2=80=9Crepla=
+cing a battery system=E2=80=9D.
+* Equinix=E2=80=99s accounting even went as far as classifying light bulb=
+ replacements as growth CapEx=2C per former employees. =E2=80=9CSay you ch=
+anged out fluorescents to LED light bulbs=2C that=E2=80=99s a capital impr=
+ovement. You=E2=80=99re not replacing lightbulbs=2C you=E2=80=99re enhanci=
+ng=E2=80=9D.
+* These accounting manipulations have manifested in what look like obvious=
+ly distorted company metrics. For example=2C management has guided that ma=
+intenance CapEx in Q1 2024 may be less than it was 14 years ago in Q1 2010=
+=2C despite Equinix now having 5x the number of data centers and 8.6x the=
+ revenue.
+* Another widely watched metric that should have some relation to growth C=
+apEx is the growth of cabinets=2C the physical enclosed areas that data ce=
+nters offer to clients. Despite growth CapEx at all-time highs=2C billed c=
+abinet growth slowed to 1.7% in 2023.
+* We estimate that Equinix=E2=80=99s manipulation of maintenance CapEx has=
+ resulted in a cumulative $3 billion boost to reported AFFO since 2015.
+* Equinix=E2=80=99s questionable AFFO accounting has contributed to an est=
+imated $295.8 million in stock award grants to top executives who have per=
+sonally benefited from these accounting games.
+* In 2023=2C Equinix reported a 17.6% operating margin=2C almost double th=
+e 9.5% margin reported by its closest peer=2C Digital Reality. The margins=
+ imply that Equinix provides a vastly higher quality and more profitable o=
+ffering.
+* Our findings indicate that Equinix=E2=80=99s operating margins are drive=
+n by more financial engineering. Equinix manipulates its accounting for op=
+erating expenses (=E2=80=9COpEx=E2=80=9D)=2C a key GAAP metric=2C resultin=
+g in inflated profitability and AFFO=2C based on our analysis and intervie=
+ws with former employees.
+* =E2=80=9CThey want to capitalize as much as possible and expense as litt=
+le as possible so that the numbers are looking nice=E2=80=9D=2C a former f=
+inance director told us.
+* Former employees described pressure from different teams within Equinix=
+ to push operating expenses into CapEx. A data center manager told us the=
+ accounting team viewed OpEx as =E2=80=9Cdirty spend=E2=80=9D.
+* One technique used by Equinix is to change the wording of projects to ma=
+ke them sound like capital improvements=2C according to a former director:=
+ =E2=80=9Cwhat happens is basically wording in such a way that it sounds l=
+ike it's a capital improvement. You can get very creative with language.=
+=E2=80=9D
+* Former employees described how Equinix would lump smaller expenses toget=
+her in order to inappropriately book them as CapEx. A former director told=
+ us that if you buy one item like a tool set=2C it wouldn=E2=80=99t qualif=
+y as CapEx=2C but =E2=80=9Cif you go over [a] certain threshold and you b=
+uy a set of them=E2=80=A6maybe five of them=E2=80=A6that=E2=80=99ll count=
+ towards your CapEx=E2=80=9D.
+* A former Equinix employee explained how vendors would be pressed to crea=
+te unique SKUs to lump basic operating costs into larger purchases=2C then=
+ Equinix would record the bulk purchase as CapEx. =E2=80=9C=E2=80=A6it's v=
+ery easy to talk to your vendors and say=2C =E2=80=98hey=2C can you create=
+ a new SKU?=E2=80=99 Who's going to turn down business for that?=E2=80=9D
+* By comparison=2C Digital Realty=2C a key competitor=2C specifically stop=
+ped using an expense/capitalization threshold 13 years ago to =E2=80=9Cbe=
+ more in line with GAAP accounting practices=E2=80=9D=2C per its CFO.
+* We believe these OpEx games have resulted in an overstatement of 2023 AF=
+FO beyond the estimated 22% boost from maintenance CapEx to growth CapEx m=
+anipulation.
+* Beyond accounting=2C Equinix has relied on a risky approach to growing r=
+evenue: overselling power capacity in the hope that customers won=E2=80=99=
+t use all the power they=E2=80=99ve contracted for. A former executive tol=
+d us it is =E2=80=9Cthe dirty secret=E2=80=9D=2C stretching Equinix=E2=80=
+=99s infrastructure to the limit.
+* Equinix reports 79% =E2=80=9Cutilization=E2=80=9D across its data center=
+s=2C implying that it has significant growth runway with its existing infr=
+astructure. However=2C this metric is based on utilization of cabinet spac=
+e=2C not power=2C the critical constraint at many of Equinix=E2=80=99s fac=
+ilities.
+* Equinix does not disclose its power utilization across data centers to i=
+nvestors. On its Q4 2023 conference call=2C Equinix=E2=80=99s CFO specific=
+ally said power =E2=80=9Cdoesn=E2=80=99t feel like the right metric to be=
+ sharing given the nature of our business model=E2=80=A6=E2=80=9D
+* =E2=80=9CThe whole thing is like a little bit of a shell game=2C=E2=80=
+=9D a former executive told us=2C with another saying that data centers co=
+uld be oversold by up to 175% of power.
+* A former executive confirmed the risks of overselling power include faci=
+lity outages and a failure to fulfil contractual obligations=2C representi=
+ng =E2=80=9Ca very significant reputational challenge=E2=80=9D.
+* Investors have rewarded Equinix as though it is a key AI (artificial int=
+elligence) beneficiary. However=2C the growth of AI is projected to double=
+ the power demands of data centers within 2 years=2C according to industry=
+ research=2C posing a threat to Equinix=E2=80=99s power-constrained facili=
+ties.
+* Former employees expressed doubt that Equinix could meaningfully upgrade=
+ its older facilities to meet these new power requirements. A former execu=
+tive told us: =E2=80=9CThat's a big problem because every single site in t=
+he estate is oversold by 25% and there's no easy way of fixing that.=E2=80=
+=9D
+* Equinix=E2=80=99s two main revenue sources are 1) colocation=E2=80=93 th=
+e leasing of rack space and 2) interconnection =E2=80=93 fast direct conne=
+ction between customers or providers=2C comprising 70.4% and 17% of total=
+ revenue=2C respectively.
+* These two core businesses=2C comprising ~87.4% of total revenue=2C are b=
+eing disrupted by large cloud providers like Amazon=2C Google & Microsoft=
+=2C collectively called =E2=80=9Chyperscalers=E2=80=9D.
+* Equinix is losing colocation business to hyperscalers=2C who are =E2=80=
+=9Cessentially controlling the relationship with the customer=E2=80=9D=2C=
+ per a former Equinix executive. The changing industry dynamic has slashed=
+ margins=2C with further commoditization expected to continue.
+* Underscoring this risk=2C 4 of the world=E2=80=99s largest financial exc=
+hanges=2C which are existing Equinix customers=2C have announced plans to=
+ move to the cloud: Nasdaq=2C CME Group=2C Deutsche Boerse and the London=
+ Stock Exchange.
+* Equinix=E2=80=99s attempt to target hyperscalers with an offering called=
+ =E2=80=9CxScale=E2=80=9D has been ineffective due to its cost disadvantag=
+es. It generates only ~1% of Equinix=E2=80=99s revenue=2C with former empl=
+oyees describing it as an option of last resort for customers due to cost.
+* On interconnection (17% of revenue)=2C as more customers move to the clo=
+ud=2C providers have developed options that bypass Equinix=E2=80=99s inter=
+connection.
+* New cloud =E2=80=9Caggregators=E2=80=9D are also emerging=2C called =E2=
+=80=9Ccloud-native WANs=E2=80=9D offering cost effective and easy to deplo=
+y interconnection solutions. An S&P Global market intelligence report note=
+s the threat these providers pose to data centers=E2=80=99 interconnection=
+ business.
+* Like in colocation=2C hyperscalers are also driving down the price of in=
+terconnection=2C with some customers even paying nothing. =E2=80=9CBoard l=
+evel=E2=80=A6this is a serious concern because hyperscale is paying nothin=
+g for cross-connects=E2=80=9D=2C a former executive told us.
+* In short=2C Equinix now faces unprecedented competition and commoditizat=
+ion risk in its core product offering. Unable to address these challenges=
+ with product innovation=2C management has instead resorted to financial e=
+ngineering.
+* None of these issues seem lost on management and insiders=2C who have be=
+en awarded compensation based on manipulated AFFO metrics and have cashed=
+ out $476 million since the company=E2=80=99s conversion to REIT status=2C=
+ including over $100 million since 2023.
+* Last week=2C on March 12=2C Equinix announced that current president and=
+ CEO Charles Meyers =E2=80=93 who =E2=80=9Cshaped the company=E2=80=99s su=
+ccessful strategy=E2=80=9D =E2=80=94 would be transitioning to the role of=
+ Executive Chairman.
+* In the same release=2C the company also announced that Chairman=2C Peter=
+ Van Camp=2C would =E2=80=9Cstep away from formal responsibilities as a Bo=
+ard member=E2=80=9D to act as Special Advisor to the Board.
+* Overall=2C as management tiptoes into the background after cashing out=
+=2C we believe Equinix=E2=80=99s hefty valuation premium=2C claimed market=
+ leadership=2C and growth prospects will soon reverse course.
+
+Initial Disclosure: After extensive research=2C we have taken a short posi=
+tion in shares of Equinix=2C Inc. (NASDAQ:EQIX). This report represents ou=
+r opinion=2C and we encourage every reader to do their own due diligence.=
+ Please see our full disclaimer at the bottom of the report.
+Read The Full Report Here (https://hindenburgresearch.com/equinix/)
+https://twitter.com/HindenburgRes
+Follow Us On Twitter (https://twitter.com/HindenburgRes)
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Copyright =C2=A9 2024 *Hindenburg Research=2C All rights reserved.
+
+Want to change how you receive these emails?
+You can ** update your preferences (https://hindenburgresearch.us19.list-m=
+anage.com/profile?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3Dd7bfe079e0)
+or ** unsubscribe from this list (https://hindenburgresearch.us19.list-man=
+age.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&t=3Db&e=
+=3D04403ab0ff&c=3Dd7bfe079e0)
+=2E
+--_----------=_MCPart_887817781
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-micros=
+oft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    <head>
+        <!-- NAME: FOLLOW UP -->
+        <!--[if gte mso 15]>
+        <xml>
+            <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]-->
+        <meta charset=3D"UTF-8">
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial=
+-scale=3D1">
+        <title>Equinix Exposed: Major Accounting Manipulation=2C Core Busi=
+ness Decay And Selling An AI Pipe Dream As Insiders Cashed Out Hundreds of=
+ Millions</title>
+
+    <style type=3D"text/css">
+=09=09p{
+=09=09=09margin:10px 0;
+=09=09=09padding:0;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09h1=2Ch2=2Ch3=2Ch4=2Ch5=2Ch6{
+=09=09=09display:block;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img=2Ca img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body=2C#bodyTable=2C#bodyCell{
+=09=09=09height:100%;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09table{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cblockquote{
+=09=09=09mso-line-height-rule:exactly;
+=09=09}
+=09=09a[href^=3Dtel]=2Ca[href^=3Dsms]{
+=09=09=09color:inherit;
+=09=09=09cursor:default;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cbody=2Ctable=2Cblockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09.ExternalClass=2C.ExternalClass p=2C.ExternalClass td=2C.ExternalCla=
+ss div=2C.ExternalClass span=2C.ExternalClass font{
+=09=09=09line-height:100%;
+=09=09}
+=09=09a[x-apple-data-detectors]{
+=09=09=09color:inherit !important;
+=09=09=09text-decoration:none !important;
+=09=09=09font-size:inherit !important;
+=09=09=09font-family:inherit !important;
+=09=09=09font-weight:inherit !important;
+=09=09=09line-height:inherit !important;
+=09=09}
+=09=09.templateContainer{
+=09=09=09max-width:600px !important;
+=09=09}
+=09=09a.mcnButton{
+=09=09=09display:block;
+=09=09}
+=09=09.mcnImage=2C.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent{
+=09=09=09word-break:break-word;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09.mcnDividerBlock{
+=09=09=09table-layout:fixed !important;
+=09=09}
+=09=09h1{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:40px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h2{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:34px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h3{
+=09=09=09color:#444444;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:22px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h4{
+=09=09=09color:#949494;
+=09=09=09font-family:Georgia;
+=09=09=09font-size:20px;
+=09=09=09font-style:italic;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templateHeader{
+=09=09=09background-color:#f7f7f7;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0px;
+=09=09=09padding-bottom:0px;
+=09=09}
+=09=09.headerContainer{
+=09=09=09background-color:#transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.headerContainer .mcnTextContent a=2C.headerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateBody{
+=09=09=09background-color:#FFFFFF;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:27px;
+=09=09=09padding-bottom:54px;
+=09=09}
+=09=09.bodyContainer{
+=09=09=09background-color:transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.bodyContainer .mcnTextContent a=2C.bodyContainer .mcnTextContent p=
+ a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateFooter{
+=09=09=09background-color:#333333;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:45px;
+=09=09=09padding-bottom:63px;
+=09=09}
+=09=09.footerContainer{
+=09=09=09background-color:transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09color:#FFFFFF;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:12px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09.footerContainer .mcnTextContent a=2C.footerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#FFFFFF;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09@media only screen and (min-width:768px){
+=09=09.templateContainer{
+=09=09=09width:600px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body=2Ctable=2Ctd=2Cp=2Ca=2Cli=2Cblockquote{
+=09=09=09-webkit-text-size-adjust:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImage{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCartContainer=2C.mcnCaptionTopContent=2C.mcnRecContentContainer=
+=2C.mcnCaptionBottomContent=2C.mcnTextContentContainer=2C.mcnBoxedTextCont=
+entContainer=2C.mcnImageGroupContentContainer=2C.mcnCaptionLeftTextContent=
+Container=2C.mcnCaptionRightTextContentContainer=2C.mcnCaptionLeftImageCon=
+tentContainer=2C.mcnCaptionRightImageContentContainer=2C.mcnImageCardLeftT=
+extContentContainer=2C.mcnImageCardRightTextContentContainer=2C.mcnImageCa=
+rdLeftImageContentContainer=2C.mcnImageCardRightImageContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupContent{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCaptionLeftContentOuter .mcnTextContent=2C.mcnCaptionRightConten=
+tOuter .mcnTextContent{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardTopImageContent=2C.mcnCaptionBottomContent:last-child .=
+mcnCaptionBottomImageContent=2C.mcnCaptionBlockInner .mcnCaptionTopContent=
+:last-child .mcnTextContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardBottomImageContent{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockInner{
+=09=09=09padding-top:0 !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockOuter{
+=09=09=09padding-top:9px !important;
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnTextContent=2C.mcnBoxedTextContentColumn{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardLeftImageContent=2C.mcnImageCardRightImageContent{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcpreview-image-uploader{
+=09=09=09display:none !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h1{
+=09=09=09font-size:30px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h2{
+=09=09=09font-size:26px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h3{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h4{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer .mcnTextContent=2C.mcnBoxedTextContent=
+Container .mcnTextContent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}</style></head>
+    <body style=3D"height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-=
+size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+        <!--
+-->
+        <center>
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;pad=
+ding: 0;width: 100%;">
+                <tr>
+                    <td align=3D"center" valign=3D"top" id=3D"bodyCell" st=
+yle=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"border-collapse: collapse;mso-table-lspace:=
+ 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;">
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateHeader" data-template-container=3D"" style=3D"background:#f7f7f7 n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #f7f7f7;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padd=
+ing-bottom: 0px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"he=
+aderContainer" style=3D"background:#transparent none no-repeat center/cove=
+r;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;background-color: #transparent;background-image: none;back=
+ground-repeat: no-repeat;background-position: center;background-size: cove=
+r;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateBody" data-template-container=3D"" style=3D"background:#FFFFFF non=
+e no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;backgroun=
+d-image: none;background-repeat: no-repeat;background-position: center;bac=
+kground-size: cover;border-top: 0;border-bottom: 0;padding-top: 27px;paddi=
+ng-bottom: 54px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"bo=
+dyContainer" style=3D"background:transparent none no-repeat center/cover;m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;background-color: transparent;background-image: none;backgrou=
+nd-repeat: no-repeat;background-position: center;background-size: cover;bo=
+rder-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnT=
+extBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <h1 style=3D"display: block;margin: 0;padding:=
+ 0;color: #222222;font-family: Helvetica;font-size: 40px;font-style: norma=
+l;font-weight: bold;line-height: 150%;letter-spacing: normal;text-align: c=
+enter;">Equinix Exposed: Major Accounting Manipulation=2C Core Business De=
+cay And Selling An AI Pipe Dream As Insiders Cashed Out Hundreds of Millio=
+ns</h1>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <!-- wp:list --><span style=3D"font-size:20px"=
+><strong>(NASDAQ:EQIX)</strong></span><br>
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Equinix is an $80 billion market cap data=
+ center REIT with over 260 facilities globally. It has 10=2C000+ customers=
+=2C ranging from small businesses to large cloud =E2=80=9Chyperscaler=E2=
+=80=9D providers like Amazon=2C Microsoft and Google.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Even if you ignore the findings of our inv=
+estigation and take the financials of Equinix at face value=2C the company=
+ trades at elevated levels; an ~86% premium to its peers on a price to for=
+ward adjusted funds from operations (=E2=80=9CAFFO=E2=80=9D) basis and a ~=
+59% premium on a price to forward funds from operations (=E2=80=9CFFO=E2=
+=80=9D) basis.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Our investigation=2C which included a revi=
+ew of financial and litigation records and interviews with 37 former Equin=
+ix employees=2C industry experts and competitors=2C revealed that Equinix=
+ manipulates its accounting for AFFO=2C the key profitability metric for R=
+EITs. We estimate this metric was overstated by at least 22% in 2023 alone=
+=2E</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A key accounting trick to boost AFFO is to=
+ misclassify =E2=80=98maintenance CapEx=E2=80=99 as =E2=80=98growth CapEx=
+=E2=80=99=2C giving the appearance that the company=E2=80=99s cost to main=
+tain its revenue base is lower than it actually is=2C making the company a=
+ppear more profitable.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">When Equinix transitioned to become a REIT=
+ in 2015=2C it began using AFFO as a key metric in determining executive b=
+onuses. That same year=2C Equinix reported a sudden 47% drop in maintenanc=
+e CapEx=2C leading to an estimated 19% boost to reported AFFO.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">The company also reported a sudden spike i=
+n growth CapEx on its balance sheet=2C a dynamic that has continued for al=
+most 10 years. This shift has fueled Equinix=E2=80=99s stellar non-GAAP re=
+ported AFFO metrics and enriched its top executives.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">During our investigation=2C former employe=
+es and executives provided an array of examples of obvious maintenance Cap=
+Ex being classified as growth CapEx in order to boost reported AFFO metric=
+s.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">This manipulative practice stems from top=
+ management=2C according to former employees. In December 2023=2C Equinix=
+=E2=80=99s Chief Accounting Officer Simon Miller alluded to =E2=80=9Cpress=
+ure=E2=80=9D the company put =E2=80=9Con design and constructions teams to=
+ release capacity=E2=80=9D and =E2=80=9Cpush that into expansion [growth]=
+ capex=E2=80=9D.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In one example=2C a former director explai=
+ned how Equinix would seek new serial numbers for refurbished equipment in=
+ order to recognize the old repaired item as new and book it as growth Cap=
+Ex. =E2=80=9CThat=E2=80=99s really on the edge=E2=80=9D=2C they explained.=
+</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Batteries represent one of the largest dat=
+a center replacement costs. A former operations director explained how Equ=
+inix would classify routine battery replacements as growth CapEx by charac=
+terizing it as =E2=80=9Creplacing a battery <em>system</em>=E2=80=9D.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Equinix=E2=80=99s accounting even went as=
+ far as classifying light bulb replacements as growth CapEx=2C per former=
+ employees. =E2=80=9CSay you changed out fluorescents to LED light bulbs=
+=2C that=E2=80=99s a capital improvement. You=E2=80=99re not replacing lig=
+htbulbs=2C you=E2=80=99re <em>enhancing</em>=E2=80=9D.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">These accounting manipulations have manife=
+sted in what look like obviously distorted company metrics. For example=2C=
+ management has guided that maintenance CapEx in Q1 2024 may be less than=
+ it was 14 years ago in Q1 2010=2C despite Equinix now having 5x the numbe=
+r of data centers and 8.6x the revenue.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Another widely watched metric that <em>sho=
+uld</em> have some relation to growth CapEx is the growth of cabinets=2C t=
+he physical enclosed areas that data centers offer to clients. Despite gro=
+wth CapEx at all-time highs=2C billed cabinet growth slowed to 1.7% in 202=
+3.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">We estimate that Equinix=E2=80=99s manipul=
+ation of maintenance CapEx has resulted in a cumulative $3 billion boost t=
+o reported AFFO since 2015.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Equinix=E2=80=99s questionable AFFO accoun=
+ting has contributed to an estimated $295.8 million in stock award grants=
+ to top executives who have personally benefited from these accounting gam=
+es.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In 2023=2C Equinix reported a 17.6% operat=
+ing margin=2C almost double the 9.5% margin reported by its closest peer=
+=2C Digital Reality. The margins imply that Equinix provides a vastly high=
+er quality and more profitable offering.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Our findings indicate that Equinix=E2=80=
+=99s operating margins are driven by more financial engineering. Equinix m=
+anipulates its accounting for operating expenses (=E2=80=9COpEx=E2=80=9D)=
+=2C a key GAAP metric=2C resulting in inflated profitability and AFFO=2C b=
+ased on our analysis and interviews with former employees.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">=E2=80=9CThey want to capitalize as much a=
+s possible and expense as little as possible so that the numbers are looki=
+ng nice=E2=80=9D=2C a former finance director told us.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Former employees described pressure from d=
+ifferent teams within Equinix to push operating expenses into CapEx. A dat=
+a center manager told us the accounting team viewed OpEx as =E2=80=9Cdirty=
+ spend=E2=80=9D.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">One technique used by Equinix is to change=
+ the wording of projects to make them sound like capital improvements=2C a=
+ccording to a former director: =E2=80=9Cwhat happens is basically wording=
+ in such a way that it sounds like it's a capital improvement. You can get=
+ very creative with language.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Former employees described how Equinix wou=
+ld lump smaller expenses together in order to inappropriately book them as=
+ CapEx. A former director told us that if you buy one item like a tool set=
+=2C it wouldn=E2=80=99t qualify as CapEx=2C but =E2=80=9Cif you go over [=
+a] certain threshold and you buy a <em>set</em> of them=E2=80=A6maybe five=
+ of them=E2=80=A6that=E2=80=99ll count towards your CapEx=E2=80=9D.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former Equinix employee explained how ve=
+ndors would be pressed to create unique SKUs to lump basic operating costs=
+ into larger purchases=2C then Equinix would record the bulk purchase as C=
+apEx. =E2=80=9C=E2=80=A6it's very easy to talk to your vendors and say=2C=
+ =E2=80=98hey=2C can you create a new SKU?=E2=80=99 Who's going to turn do=
+wn business for that?=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">By comparison=2C Digital Realty=2C a key c=
+ompetitor=2C specifically stopped using an expense/capitalization threshol=
+d 13 years ago to =E2=80=9Cbe more in line with GAAP accounting practices=
+=E2=80=9D=2C per its CFO.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">We believe these OpEx games have resulted=
+ in an overstatement of 2023 AFFO beyond the estimated 22% boost from main=
+tenance CapEx to growth CapEx manipulation.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Beyond accounting=2C Equinix has relied on=
+ a risky approach to growing revenue: overselling power capacity in the ho=
+pe that customers won=E2=80=99t use all the power they=E2=80=99ve contract=
+ed for. A former executive told us it is =E2=80=9Cthe dirty secret=E2=80=
+=9D=2C stretching Equinix=E2=80=99s infrastructure to the limit.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Equinix reports 79% =E2=80=9Cutilization=
+=E2=80=9D across its data centers=2C implying that it has significant grow=
+th runway with its existing infrastructure. However=2C this metric is base=
+d on utilization of cabinet space=2C not power=2C the critical constraint=
+ at many of Equinix=E2=80=99s facilities.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Equinix does not disclose its power utiliz=
+ation across data centers to investors. On its Q4 2023 conference call=2C=
+ Equinix=E2=80=99s CFO specifically said power =E2=80=9Cdoesn=E2=80=99t fe=
+el like the right metric to be sharing given the nature of our business mo=
+del=E2=80=A6=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">=E2=80=9CThe whole thing is like a little=
+ bit of a shell game=2C=E2=80=9D a former executive told us=2C with anothe=
+r saying that data centers could be oversold by up to 175% of power.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former executive confirmed the risks of=
+ overselling power include facility outages and a failure to fulfil contra=
+ctual obligations=2C representing =E2=80=9Ca very significant reputational=
+ challenge=E2=80=9D.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Investors have rewarded Equinix as though=
+ it is a key AI (artificial intelligence) beneficiary. However=2C the grow=
+th of AI is projected to double the power demands of data centers within 2=
+ years=2C according to industry research=2C posing a threat to Equinix=E2=
+=80=99s power-constrained facilities.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Former employees expressed doubt that Equi=
+nix could meaningfully upgrade its older facilities to meet these new powe=
+r requirements. A former executive told us: =E2=80=9CThat's a big problem=
+ because every single site in the estate is oversold by 25% and there's no=
+ easy way of fixing that.=E2=80=9D</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Equinix=E2=80=99s two main revenue sources=
+ are 1) colocation=E2=80=93 the leasing of rack space and 2) interconnecti=
+on =E2=80=93 fast direct connection between customers or providers=2C comp=
+rising 70.4% and 17% of total revenue=2C respectively.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">These two core businesses=2C comprising ~8=
+7.4% of total revenue=2C are being disrupted by large cloud providers like=
+ Amazon=2C Google &amp; Microsoft=2C collectively called =E2=80=9Chypersca=
+lers=E2=80=9D.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Equinix is losing colocation business to h=
+yperscalers=2C who are =E2=80=9Cessentially controlling the relationship w=
+ith the customer=E2=80=9D=2C per a former Equinix executive. The changing=
+ industry dynamic has slashed margins=2C with further commoditization expe=
+cted to continue.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Underscoring this risk=2C 4 of the world=
+=E2=80=99s largest financial exchanges=2C which are existing Equinix custo=
+mers=2C have announced plans to move to the cloud: Nasdaq=2C CME Group=2C=
+ Deutsche Boerse and the London Stock Exchange.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Equinix=E2=80=99s attempt to target hypers=
+calers with an offering called =E2=80=9CxScale=E2=80=9D has been ineffecti=
+ve due to its cost disadvantages. It generates only ~1% of Equinix=E2=80=
+=99s revenue=2C with former employees describing it as an option of last r=
+esort for customers due to cost.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">On interconnection (17% of revenue)=2C as=
+ more customers move to the cloud=2C providers have developed options that=
+ bypass Equinix=E2=80=99s interconnection.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">New cloud =E2=80=9Caggregators=E2=80=9D ar=
+e also emerging=2C called =E2=80=9Ccloud-native WANs=E2=80=9D offering cos=
+t effective and easy to deploy interconnection solutions. An S&amp;P Globa=
+l market intelligence report notes the threat these providers pose to data=
+ centers=E2=80=99 interconnection business.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Like in colocation=2C hyperscalers are als=
+o driving down the price of interconnection=2C with some customers even pa=
+ying nothing. =E2=80=9CBoard level=E2=80=A6this is a serious concern becau=
+se hyperscale is paying nothing for cross-connects=E2=80=9D=2C a former ex=
+ecutive told us.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In short=2C Equinix now faces unprecedente=
+d competition and commoditization risk in its core product offering. Unabl=
+e to address these challenges with product innovation=2C management has in=
+stead resorted to financial engineering.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">None of these issues seem lost on manageme=
+nt and insiders=2C who have been awarded compensation based on manipulated=
+ AFFO metrics and have cashed out $476 million since the company=E2=80=99s=
+ conversion to REIT status=2C including over $100 million since 2023.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Last week=2C on March 12=2C Equinix announ=
+ced that current president and CEO Charles Meyers =E2=80=93 who =E2=80=9Cs=
+haped the company=E2=80=99s successful strategy=E2=80=9D =E2=80=94 would b=
+e transitioning to the role of Executive Chairman.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In the same release=2C the company also an=
+nounced that Chairman=2C Peter Van Camp=2C would =E2=80=9Cstep away from f=
+ormal responsibilities as a Board member=E2=80=9D to act as Special Adviso=
+r to the Board.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Overall=2C as management tiptoes into the=
+ background after cashing out=2C we believe Equinix=E2=80=99s hefty valuat=
+ion premium=2C claimed market leadership=2C and growth prospects will soon=
+ reverse course.</li>
+=09<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+
+<p style=3D"margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #757575;font-fa=
+mily: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><em>I=
+nitial Disclosure: After extensive research=2C we have taken a short posit=
+ion in shares of Equinix=2C Inc. (NASDAQ:EQIX). This report represents our=
+ opinion=2C and we encourage every reader to do their own due diligence. P=
+lease see our full disclaimer at the bottom of the report.</em></p>
+<!-- /wp:paragraph -->
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 9px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" align=3D"center"=
+ class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mcnButtonContentContainer" style=3D"border-collapse: separate !impo=
+rtant;border-radius: 3px;background-color: #00ADD8;mso-table-lspace: 0pt;m=
+so-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
+ 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Helvetica;font-size: 18px;padd=
+ing: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"Read The=
+ Full Report Here" href=3D"https://hindenburgresearch.us19.list-manage.com=
+/track/click?u=3Dffb3753afd4493d4fbd300492&id=3D0e011fdcbd&e=3D04403ab0ff=
+" target=3D"_blank" style=3D"font-weight: bold;letter-spacing: -0.5px;line=
+-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;display: block;">Read The Full Report Here</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnFollowBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnFollowBlockOuter">
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"padding: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" class=3D"mcnFollowBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnFollowContentContainer" style=3D"min-width: 100%;=
+border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td align=3D"center" style=3D"padding-left: 9px;padding-right: 9px=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;" class=3D"mcnFollowContent">
+                <tbody><tr>
+                    <td align=3D"center" valign=3D"top" style=3D"padding-t=
+op: 9px;padding-right: 9px;padding-left: 9px;mso-line-height-rule: exactly=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                        <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse;mso-table-lspa=
+ce: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;">
+                            <tbody><tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+                                    <!--[if mso]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0">
+                                    <tr>
+                                    <![endif]-->
+
+                                        <!--[if mso]>
+                                        <td align=3D"center" valign=3D"top=
+">
+                                        <![endif]-->
+
+                                            <table align=3D"left" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnFollowStacked" styl=
+e=3D"display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;">
+
+                                                <tbody><tr>
+                                                    <td align=3D"center" v=
+align=3D"top" class=3D"mcnFollowIconContent" style=3D"padding-right: 0;pad=
+ding-bottom: 5px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">
+                                                        <a href=3D"https:/=
+/hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
+bd300492&id=3Dfd6356eebd&e=3D04403ab0ff" target=3D"_blank" style=3D"mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;"><img src=3D"https://cdn-images.mailchimp.com/icons/social-block=
+-v2/color-twitter-96.png" alt=3D"Follow Us On Twitter" class=3D"mcnFollowB=
+lockIcon" width=3D"48" style=3D"width: 48px;max-width: 48px;display: block=
+;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolat=
+ion-mode: bicubic;"></a>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td align=3D"center" v=
+align=3D"top" class=3D"mcnFollowTextContent" style=3D"padding-right: 0;pad=
+ding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">
+                                                        <a href=3D"https:/=
+/hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
+bd300492&id=3D483d747619&e=3D04403ab0ff" target=3D"_blank" style=3D"color=
+: #202020;font-family: Arial;font-size: 18px;font-weight: bold;text-decora=
+tion: none;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">Follow Us On Twitter</a>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody></table>
+
+
+                                        <!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+                                    <!--[if mso]>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateFooter" data-template-container=3D"" style=3D"background:#333333 n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #333333;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 45px;pad=
+ding-bottom: 63px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"fo=
+oterContainer" style=3D"background:transparent none no-repeat center/cover=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;background-color: transparent;background-image: none;backgr=
+ound-repeat: no-repeat;background-position: center;background-size: cover;=
+border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mc=
+nDividerBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px solid #505050;border-collapse: collapse;mso-table-lspace: 0pt;mso-=
+table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;" width=3D"100%" class=3D"mcnTextContent=
+Container">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #FFFFFF;font-family: Helve=
+tica;font-size: 12px;line-height: 150%;text-align: center;">
+
+                            <em>Copyright =C2=A9 2024 *Hindenburg Research=
+=2C All rights reserved.</em><br>
+<br>
+Want to change how you receive these emails?<br>
+You can <a href=3D"https://hindenburgresearch.us19.list-manage.com/profile=
+?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D04403ab0ff&c=3Dd7bfe079e0=
+" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;color: #FFFFFF;font-weight: normal;text-decoratio=
+n: underline;">update your preferences</a> or <a href=3D"https://hindenbur=
+gresearch.us19.list-manage.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&i=
+d=3D5b17860351&t=3Db&e=3D04403ab0ff&c=3Dd7bfe079e0" style=3D"mso-line-height=
+-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;c=
+olor: #FFFFFF;font-weight: normal;text-decoration: underline;">unsubscribe=
+ from this list</a>.
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://hindenburgresearch.us19.list-manage.com/track/open=
+=2Ephp?u=3Dffb3753afd4493d4fbd300492&id=3Dd7bfe079e0&e=3D04403ab0ff" height=
+=3D"1" width=3D"1" alt=3D""></body>
+</html>
+--_----------=_MCPart_887817781--

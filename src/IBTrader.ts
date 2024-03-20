@@ -83,7 +83,7 @@ export class IBTrader {
         if (detailstab.length >= 1) {
           contract = detailstab[0]?.contract;
         }
-        // contract.exchange = "SMART";
+        if (contract.currency == "USD") contract.exchange = "SMART";
         return contract;
       })
       .finally(() => console.log("getContractDetails done:", contract));
