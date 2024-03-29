@@ -15,12 +15,19 @@ import {
 import { IConfig } from "config";
 import { Subscription } from "rxjs";
 
-const primaryExchMap: Record<string, string> = {
+/**
+ * Convert listing exchange (Hindenburg) to primary exchange (IB)
+ * Non existent entries are unchanged
+ */
+const listingExchangeMap: Record<string, string> = {
   ["SWX"]: "EBS",
-  ["WSE"]: "WSE",
   ["NASDAQ"]: "SMART",
 };
 
+/**
+ * Convert primary exchange to exchange
+ * Non existing entries are converted to SMART
+ */
 const exchangeMap: Record<string, string> = {
   ["WSE"]: "WSE",
 };
@@ -79,7 +86,7 @@ export class IBTrader {
   private getContract(exchange: string, symbol: string): Promise<Contract> {
     let contract: Contract = {
       secType: SecType.STK,
-      primaryExch: primaryExchMap[exchange] || exchange,
+      primaryExch: listingExchangeMap[exchange] || exchange,
       symbol,
     };
     return this.api
