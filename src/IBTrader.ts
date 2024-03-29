@@ -15,9 +15,14 @@ import {
 import { IConfig } from "config";
 import { Subscription } from "rxjs";
 
-const exchangeMap: Record<string, string> = {
+const primaryExchMap: Record<string, string> = {
   ["SWX"]: "EBS",
-  ["NASDAQ"]: "NYSE",
+  ["WSE"]: "WSE",
+  ["NASDAQ"]: "SMART",
+};
+
+const exchangeMap: Record<string, string> = {
+  ["WSE"]: "WSE",
 };
 
 export class IBTrader {
@@ -74,7 +79,7 @@ export class IBTrader {
   private getContract(exchange: string, symbol: string): Promise<Contract> {
     let contract: Contract = {
       secType: SecType.STK,
-      primaryExch: exchangeMap[exchange] || exchange,
+      primaryExch: primaryExchMap[exchange] || exchange,
       symbol,
     };
     return this.api
@@ -83,7 +88,7 @@ export class IBTrader {
         if (detailstab.length >= 1) {
           contract = detailstab[0]?.contract;
         }
-        if (contract.currency == "USD") contract.exchange = "SMART";
+        contract.exchange = exchangeMap[contract.primaryExch!] || "SMART";
         return contract;
       })
       .finally(() => console.log("getContractDetails done:", contract));
