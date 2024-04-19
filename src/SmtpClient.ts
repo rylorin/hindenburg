@@ -30,15 +30,25 @@ export class SmtpClient {
   }
 
   public forwardEmail(email: Record<string, any>): Promise<void> {
-    console.log("from:", email.headers.get("from")?.text);
-    console.log("to:", email.headers.get("to")?.text);
-    console.log("subject:", email.subject);
+    console.log("from:", email.from?.text);
+    console.log("to:", email.to?.text);
+    console.log("replyTo:", email.replyTo?.text);
+    console.log("subject:", email.subject?.text);
     return this.transporter
       .sendMail({
-        from: this.config.get("SmtpClient.relay_username") || email.from,
-        to:
-          this.config.get("SmtpClient.rcpt_to") ||
-          this.config.get("SmtpClient.relay_username"),
+        from: {
+          address:
+            this.config.get("SmtpClient.relay_username") ||
+            email.from.value[0].address,
+          name: email.from.value[0].name,
+        },
+        to: {
+          address:
+            this.config.get("SmtpClient.rcpt_to") ||
+            this.config.get("SmtpClient.relay_username"),
+          name: email.to?.value[0].name,
+        },
+        replyTo: email.replyTo?.value[0] || email.from?.value[0],
         subject: email.subject,
         text: email.text,
         html: email.html,
