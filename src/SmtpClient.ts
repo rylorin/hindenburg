@@ -36,7 +36,6 @@ export class SmtpClient {
     console.log("To:", email.to?.text);
     console.log("Subject:", email.subject);
     console.log("Headers:", email.headers);
-    // console.log("List-Unsubscribe:", email.headers.get("List-Unsubscribe"));
     const mailOptions: Mail.Options = {
       from: {
         address:
@@ -59,11 +58,11 @@ export class SmtpClient {
       if (email.headers.get("list")["unsubscribe"]) {
         const valuesIn = email.headers.get("list")["unsubscribe"];
         const values = Object.keys(
-          email.headers.get("list")["unsubscribe"],
-        ).map((key) => {
+          email.headers.get("list")["unsubscribe"], // eslint-disable-line @typescript-eslint/no-unsafe-argument
+        ).map((key): string => {
           if (key == "url") return `<${valuesIn[key]}>`;
           else if (key == "mail") return `<mailto:${valuesIn[key]}>`;
-          else return valuesIn[key];
+          else return valuesIn[key] as string;
         });
         values
           .map((value) => ({ key: "List-Unsubscribe", value }))
