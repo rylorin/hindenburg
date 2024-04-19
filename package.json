@@ -17,7 +17,7 @@
     "test": "yarn qc"
   },
   "dependencies": {
-    "@stoqey/ib": "^1.3.18",
+    "@stoqey/ib": "^1.3.19",
     "config": "^3.3.11",
     "dotenv": "^16.3.1",
     "mailparser": "^3.7.0",
