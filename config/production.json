@@ -1,6 +1,7 @@
 {
   "IBtrader": {
-    "ibgw_port": 4001,
+    "ibgw_host": "ibgw",
+    "ibgw_port": 4002,
     "order_amount": 0,
     "order_quantity": 100
   },

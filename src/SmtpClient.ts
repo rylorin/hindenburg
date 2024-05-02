@@ -32,10 +32,10 @@ export class SmtpClient {
 
   public forwardEmail(email: Record<string, any>): Promise<void> {
     console.log("From:", email.from?.text);
-    console.log("Reply-To:", email.replyTo?.text);
+    // console.log("Reply-To:", email.replyTo?.text);
     console.log("To:", email.to?.text);
     console.log("Subject:", email.subject);
-    console.log("Headers:", email.headers);
+    // console.log("Headers:", email.headers);
     const mailOptions: Mail.Options = {
       from: {
         address:
@@ -51,7 +51,6 @@ export class SmtpClient {
       },
       replyTo: email.replyTo?.value[0] || email.from?.value[0],
       subject: email.subject,
-      headers: [],
     };
     const headers: Mail.Headers = [];
     if (email.headers.get("list")) {
