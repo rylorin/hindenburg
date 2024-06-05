@@ -11,6 +11,7 @@ import {
   SecType,
   TickType,
   TimeInForce,
+  WhatToShow,
 } from "@stoqey/ib";
 import { IConfig } from "config";
 import { Subscription } from "rxjs";
@@ -30,6 +31,34 @@ const listingExchangeMap: Record<string, string> = {
  */
 const exchangeMap: Record<string, string> = {
   ["WSE"]: "WSE",
+};
+
+/**
+ * Convert Date to string format YYYYMMDD HH:MM:SS
+ * @param date Date to convert
+ * @returns Date converted as a string
+ */
+const dateToString = (date: Date): string => {
+  const offset = date.getTimezoneOffset();
+  const value = new Date(date.valueOf() + offset * 60 * 1_000);
+  // convert Date to YYYYMMDD HH:MM:SS
+  const day: number = value.getDate();
+  const month: number = value.getMonth() + 1;
+  const year: number = value.getFullYear();
+  const hours: number = value.getHours();
+  const minutes: number = value.getMinutes();
+  const seconds: number = value.getSeconds();
+  const result: string =
+    year.toString() +
+    (month < 10 ? "0" + month : month) +
+    (day < 10 ? "0" + day : day);
+  const time: string =
+    (hours < 10 ? "0" + hours : hours) +
+    ":" +
+    (minutes < 10 ? "0" + minutes : minutes) +
+    ":" +
+    (seconds < 10 ? "0" + seconds : seconds);
+  return result + " " + time;
 };
 
 export class IBTrader {
@@ -83,7 +112,10 @@ export class IBTrader {
     this.api.setMarketDataType(MarketDataType.DELAYED_FROZEN);
   }
 
-  private getContract(exchange: string, symbol: string): Promise<Contract> {
+  private async getContract(
+    exchange: string,
+    symbol: string,
+  ): Promise<Contract> {
     let contract: Contract = {
       secType: SecType.STK,
       primaryExch: listingExchangeMap[exchange] || exchange,
@@ -101,16 +133,17 @@ export class IBTrader {
       .finally(() => console.log("getContractDetails done:", contract));
   }
 
-  private getBarPrice(
+  private async getBarPrice(
     contract: Contract,
   ): Promise<{ contract: Contract; price: number | undefined }> {
+    const date_to = Date.now() - 30 * 60_000;
     return this.api
       .getHistoricalData(
         contract,
-        undefined,
+        dateToString(new Date(date_to)),
         "30 S",
         BarSizeSetting.SECONDS_ONE,
-        "TRADES",
+        WhatToShow.MIDPOINT,
         0,
         2,
       )
@@ -118,10 +151,15 @@ export class IBTrader {
         const price: number | undefined = bars.at(-1)?.close;
         console.log("price", price);
         return { contract, price };
-      });
+      })
+      .catch((err: IBApiNextError) => {
+        console.error("IBTrader.getBarPrice failed", err.error.message);
+        return { contract, price: undefined };
+      })
+      .finally(() => console.log("getBarPrice done"));
   }
 
-  private getSnapshotPrice(
+  private async getSnapshotPrice(
     contract: Contract,
   ): Promise<{ contract: Contract; price: number | undefined }> {
     return this.api
@@ -171,7 +209,7 @@ export class IBTrader {
       .finally(() => console.log("getMarketDataSnapshot done"));
   }
 
-  private placeNewOrder(
+  private async placeNewOrder(
     contract: Contract,
     price: number | undefined,
   ): Promise<number> {
@@ -180,21 +218,27 @@ export class IBTrader {
     if (totalAmount && price) totalQuantity = Math.round(totalAmount / price);
     const order: Order = {
       action: OrderAction.SELL,
-      orderType: OrderType.MKT,
+      orderType: price ? OrderType.STP_LMT : OrderType.MKT,
+      auxPrice: price ? Math.round(price * 100) / 100 : undefined,
+      lmtPrice: price ? Math.round(price * 93) / 100 : undefined,
       totalQuantity,
       tif: TimeInForce.DAY,
       outsideRth: true,
+      overridePercentageConstraints: true,
       transmit: true,
     };
     return this.api.placeNewOrder(contract, order);
   }
 
-  public placeOrder(ticker: string): Promise<void> {
+  public async placeOrder(ticker: string): Promise<void> {
     console.log("IBTrader.placeOrder", ticker);
     const [exchange, symbol] = ticker.split(":");
     return this.getContract(exchange, symbol)
-      .then((contract) => this.getSnapshotPrice(contract))
-      .then(({ contract, price }) => this.placeNewOrder(contract, price))
+      .then(async (contract) => this.getSnapshotPrice(contract))
+      .then(async ({ contract, price }) =>
+        price ? { contract, price } : this.getBarPrice(contract),
+      )
+      .then(async ({ contract, price }) => this.placeNewOrder(contract, price))
       .then((orderId: number) => {
         console.log("Order placed, id:", orderId, "for", ticker);
       })

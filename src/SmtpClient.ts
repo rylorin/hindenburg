@@ -30,7 +30,7 @@ export class SmtpClient {
     });
   }
 
-  public forwardEmail(email: Record<string, any>): Promise<void> {
+  public async forwardEmail(email: Record<string, any>): Promise<void> {
     console.log("From:", email.from?.text);
     // console.log("Reply-To:", email.replyTo?.text);
     console.log("To:", email.to?.text);

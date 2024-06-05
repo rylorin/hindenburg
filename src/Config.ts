@@ -2,7 +2,7 @@
    Unused at the moment
 */
 import dotenv from "dotenv";
-dotenv.config(); // eslint-disable-line @typescript-eslint/no-var-requires,@typescript-eslint/no-unsafe-call
+dotenv.config();  
 
 export class Config {
   public readonly rcpt_to: string;

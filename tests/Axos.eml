@@ -1,0 +1,1469 @@
+Return-path: <bounce-mc.us19_104347118.6570037-2586506fcb@mail212.sea71.mcsv.net>
+Original-recipient: rfc822;hindenburg@lorin.top
+Received: from mr55p00im-qukt02072101.me.com by p121-mailgateway-smtp-76c8cb9dd6-l8hwl (mailgateway 2417B106)
+	with SMTP id 7b9ac56d-ac40-4642-9ec9-c1893d1449a5 
+	for <hindenburg@lorin.top>; Tue, 4 Jun 2024 12:16:07 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: 7b9ac56d-ac40-4642-9ec9-c1893d1449a5
+Received: from mail212.sea71.mcsv.net (mail212.sea71.mcsv.net [148.105.11.212])
+	by mr55p00im-qukt02072101.me.com (Postfix) with ESMTPS id D41714E401A7
+	for <hindenburg@lorin.top>; Tue,  4 Jun 2024 12:16:02 +0000 (UTC)
+X-ICL-SCORE: 3.332033030041
+X-ICL-INFO: GAtbVUseBVFHSVVESAMGUkFIRFcUWUIPAApbVRYSFhEAREQZF15TQFUcAkpaUlkXGxoDWhVTGBcG
+ SF8oSQACUUFOV0ZAHgBXQklWRE8dBFdNT1NHTlZVADUUBx4UAgdQWwoDFk8BGA8WChBZFlVCQFUf
+ AkpaWF8MERwIFQ1CURAQCgMWClNeTBYWC1VYQ18SSFtXQ0AeB1JAV1dGVgIHUFdZDhIUXwtAGBgP
+ G0oBBEwGHAdASR5bAQYPSBkdRBRCBQ0USlpdVwsZS1dFVkNTA0JISBobQ0BMGxwSVVhUUl9XFAce
+ FFNeCxgJBwcIHlgHAVtGGhFUC0BJHwAVSwcDURQfAkNMCQUGQR8EE0sABlZMS0hFTQgAV0VPABQa
+ HgRSR01WQUgEB1BETVJFVgYBBEJNVBNJCFJMRxoDFElWBwY1FAceFAIHUFsKAxZPARgPFgoQWRZV
+ QlxXWRQURRJeCxsdAxkaRUQFNRUJBRFeGBYaCUQ=
+Authentication-Results: bimi.icloud.com; bimi=skipped reason="insufficient dmarc"
+X-ARC-Info: policy=fail; arc=none
+Authentication-Results: arc.icloud.com; arc=none
+Authentication-Results: dmarc.icloud.com; dmarc=none header.from=hindenburgresearch.com
+X-DMARC-Info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0; pdomain=hindenburgresearch.com
+X-DMARC-Policy: none
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=pass (2048-bit key) header.d=mailchimpapp.net header.i=info=hindenburgresearch.com@mailchimpapp.net header.b=MKPva0VZ
+Authentication-Results: spf.icloud.com; spf=pass (spf.icloud.com: domain of bounce-mc.us19_104347118.6570037-2586506fcb@mail212.sea71.mcsv.net designates 148.105.11.212 as permitted sender) smtp.mailfrom=bounce-mc.us19_104347118.6570037-2586506fcb@mail212.sea71.mcsv.net
+Received-SPF: pass (spf.icloud.com: domain of bounce-mc.us19_104347118.6570037-2586506fcb@mail212.sea71.mcsv.net designates 148.105.11.212 as permitted sender) receiver=spf.icloud.com; client-ip=148.105.11.212; helo=mail212.sea71.mcsv.net; envelope-from=bounce-mc.us19_104347118.6570037-2586506fcb@mail212.sea71.mcsv.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimpapp.net;
+	s=k2; t=1717503328; x=1717763828;
+	i=info=3Dhindenburgresearch.com@mailchimpapp.net;
+	bh=Xfv5Rh13ylnM3asiYdxBVmrVY3i/ykdpm/Uc9KkFfTg=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=MKPva0VZftxDcwe+XebG/mgnMky+BMKOnmOzuis7Pt9MuINGzmln6fqHIp3pqXyEt
+	 vU4HwVfa1eK9scxtp+lwK47xoBibamf+ip3NL7bw2gYbgc9pSe0PdQz8hqu5WV3aIM
+	 r/ziT4VBs5R5PQSZbcZNz1vsOPObvyQXCELyuORHD/mfPNJcYxM+VZzt4+CNf7LzkV
+	 /uikt6+QqD610su34dXLTUgu6SAABc5PANQosZ4yvzZoAtf2acgr2oK7GwMLT8fK8n
+	 pVXtWSN0F1zGbeJJ9/jbaLues0JpdIgfpYCCp4R3EbG8gkSQWnUrxviGPDVYgl0nQa
+	 feKmOPiJY3A9A==
+Received: from localhost (localhost [127.0.0.1])
+	by mail212.sea71.mcsv.net (Mailchimp) with ESMTP id 4VtqL82mctzJL4YPs
+	for <hindenburg@lorin.top>; Tue,  4 Jun 2024 12:15:28 +0000 (GMT)
+Subject: =?utf-8?Q?Axos=3A=20Glaring=20Commercial=20Real=20Estate=20Loan=20Problems=20and=20Lax=20Underwriting=20Beneath=20This=20Priced=2DFor=2DPerfection=20Bank=20=28NYSE=3AAX=29?=
+From: Hindenburg Research <info@hindenburgresearch.com>
+Reply-To: =?utf-8?Q?Hindenburg=20Research?= <info@hindenburgresearch.com>
+To: <hindenburg@lorin.top>
+Date: Tue,  4 Jun 2024 12:14:53 +0000
+Message-ID: <ffb3753afd4493d4fbd300492.2586506fcb.20240604121442.67f742d18d.2cec1f1d@mail212.sea71.mcsv.net>
+X-Mailer: Mailchimp Mailer - **CID67f742d18d2586506fcb**
+X-Campaign: mailchimpffb3753afd4493d4fbd300492.67f742d18d
+X-campaignid: mailchimpffb3753afd4493d4fbd300492.67f742d18d
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=ffb3753afd4493d4fbd300492&id=67f742d18d&e=2586506fcb
+X-MC-User: ffb3753afd4493d4fbd300492
+Feedback-ID: 104347118:104347118.6570037:us19:mc
+List-ID: ffb3753afd4493d4fbd300492mc list <ffb3753afd4493d4fbd300492.63691.list-id.mcsv.net>
+X-Accounttype: pr
+List-Unsubscribe: <https://hindenburgresearch.us19.list-manage.com/unsubscribe?u=ffb3753afd4493d4fbd300492&id=5b17860351&t=h&e=2586506fcb&c=67f742d18d>, <mailto:unsubscribe-mc.us19_ffb3753afd4493d4fbd300492.67f742d18d-2586506fcb@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_1122483345"
+MIME-Version: 1.0
+X-CLX-Shades: Grey
+X-MANTSH: 1TFkXBxscEQpZRBdhfGFfGkRcHBJpRBEKWU0XbVhPUxEKWUkXGnEaEBp3BgcZHHE
+ bExAeH3cGGBoGGhEKWV4XY25mEQpDThccchxhB0lscl16UF4bZGx+bxNcSR8dGUlPfRpOQBNve
+ xEKWFwXGQQaBB8aBRsaGgQSGAQbHxIEGB0QGx4aHxoRCl5ZF05GYUVMEQpNXBcYHx8RCkxaF2l
+ CYk1NXREKTEYXTWsRCkNaFxseEgQbGh8EGxsEGBsYEQpCXhcbEQpCRhdhfGFfGkRcHBJpRBEKQ
+ kcXbltITEVoEhNJQn4RCkJFF21IEkUbHkcdWhhoEQpCThdobF9mY0ZCWXtiSxEKQkwXemhLU3p
+ pZnBBZmkRCkJsF2V4RnJ7f0YZZF5LEQpCQBdiSGJBQhsSHmNaThEKQlgXYGlvTmJpT3kdZWARC
+ lpYFxsbEQpwaBdlemATGxxZRExSYBAHHBgRCnBoF2FlU2FNYWl8WX0fEAcdHREKcGgXYX0SemN
+ IelsSexsQBxMaEQpwaBdmGkZfHxlObFhJcxAHGRoRCnBoF2JeEh9EXHJrTkIFEAcSHxEKcGgXZ
+ 1sfHGVIfAFwAVwQBxMbEQpwaBdjeEZbGXhfRRtTWhAHEhsRCnBoF2RDZmFaRUdtRltzEAcSExE
+ KcH8XY3lMW35+bHp6ExkQBxkaEQpwXxdtXWxaX2FZYUdJQRAHGRoRCnB9F2l7ehtNaHxwXFAFE
+ AcZGhEKcH8XbxtBaHpjZh5IZhMQBxIdEQpwXxdoRwVDRh9yXnJ9UBAHGRoRCnB9F2hDaBNLbV1
+ Gf15ZEAcZGhEKcH0XZAF+RltAGEFDRksQBxkaEQpwfxdvcF16XGhEU2xlGBAHEh4RCnBfF2ETa
+ W5OU25Lb1tAEAcZGhEKcH0XY0BrW2VgHmEBWhsQGhEKcF8XY2NZZ397AVxJGhMQBxkaEQpwfRd
+ jexkZWXpwcwFBTBAaEQpwbBdhT15LUnNLX1JkXhAHGRoRCm1+FxoRClhNF0sR
+X-Proofpoint-GUID: 6X6K-cFXwPzt1NFTE9vc573ceW0dj9EQ
+X-Proofpoint-ORIG-GUID: 6X6K-cFXwPzt1NFTE9vc573ceW0dj9EQ
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_1122483345
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+** Axos: Glaring Commercial Real Estate Loan Problems and Lax Underwriting=
+ Beneath This Priced-For-Perfection Bank
+------------------------------------------------------------
+(NYSE:AX)
+* Axos Financial is a $3.1 billion market cap regional bank headquartered=
+ in San Diego=2C California that was incorporated in 1999 and went public=
+ in March 2005.
+* Axos trades at a 35% P/TBV premium compared to similarly sized community=
+ and regional banks=2C pricing in investor expectations of outsized growth=
+=2C a low-risk loan book and multiple years of runway ahead.
+* Its aggressive valuation premium implies that=2C despite operating in an=
+ environment that has devastated many peers=2C Axos has navigated it by (1=
+) allocating to the lowest-risk asset classes (2) with superior underwriti=
+ng standards=2C that have resulted in (3) a portfolio of high-performing p=
+rojects.
+* Our research=2C including industry analysis=2C interviews with 21 former=
+ employees=2C lease agents and industry experts=2C combined with an examin=
+ation of Axos=E2=80=99 loan book derived through local property records=2C=
+ indicates a company exposed to the riskiest asset classes with lax underw=
+riting standards and a loan book filled with multiple glaring problems.
+* Contrary to many peers who backed away from the deteriorating commercial=
+ real estate market post-covid pandemic=2C Axos doubled down=2C increasing=
+ its total exposure from $5.5 billion in March 2021 to $9.9 billion in Mar=
+ch 2024. Now=2C 53% of Axos' total loan book is exposed to these segments.
+* By comparison=2C a 2023 Moody=E2=80=99s study found that regional banks'=
+ exposure to direct commercial real estate made up only 16.5% of their res=
+pective loan books=2C on average.
+* The industry has begun to plummet: distressed U.S. commercial properties=
+ rose from $56.9 billion in 2022 to $85.8 billion in 2023. $2.2 trillion i=
+n commercial mortgages are set to mature before the end of 2027.
+* Even AAA-rated bonds backed by CRE debt are now taking losses=2C and mul=
+tifamily investments have plunged to four-year lows.
+* =E2=80=9CIt=E2=80=99s a sh*t show=2C=E2=80=9D one Axos deal partner told=
+ us about the office market in New York. 37.5% of Axos' commercial real es=
+tate loans were in New York=2C where a CRE =E2=80=9Cbloodbath=E2=80=9D has=
+ resulted in commercial realty foreclosures increasing 65% year over year.
+* Beyond its dangerous allocation choices=2C Axos' lax underwriting standa=
+rds expose it to major added risk. A former regional leader told us Axos'=
+ customer base in commercial and multifamily revolved around "borrowers wh=
+o couldn't get loans from other banks".
+* In New York alone=2C with over 125 competing mortgage lenders including=
+ top tier banks=2C Axos faces stiff competition. A former loan originator=
+ told us that Axos had to stretch its underwriting criteria to compete:=
+ =E2=80=9CThere had to be a problem for us to even have a shot at it=E2=80=
+=9D.
+* Per one former employee on Axos=E2=80=99 embrace of borrowers with crimi=
+nal histories: =E2=80=9CIf the felony was explainable=2C we'll bank them=
+=E2=80=9D. A second added that bad "credit scores...didn't kill a deal". A=
+ third said "I don't recall there ever really being a...minimum net worth=
+ or minimum liquidity requirement".
+* A former Axos credit review officer detailed the practice of loan "everg=
+reening=2C" or providing loans to non-performing or doubtful borrowers to=
+ avoid recognizing problems=2C per litigation records. Similar schemes=2C=
+ also known as =E2=80=9Cextend and pretend=E2=80=9D=2C were described by f=
+ormer employees during our investigation.
+* These underwriting standards have resulted in a portfolio filled with cl=
+ear problem loans=2C based on our review of a cross-section of Axos=E2=80=
+=99 loan book. On March 31=2C 2024=2C Axos reported it had provisions for=
+ credit losses in its CRE category of just $83 million=2C a metric that se=
+ems vastly understated.
+* For example=2C Axos lent up to $97.5 million (4.8% of tangible book valu=
+e)=2C for an apartment construction project in Queens. The underlying borr=
+ower has been criminally indicted twice personally=2C including a case inv=
+olving a construction kickback scheme with a mafia captain. His company wa=
+s indicted in a third case.
+* One reason most banks don=E2=80=99t lend up to $97.5 million to individu=
+als with multiple indictments and documented mob ties is that even if thin=
+gs go well=2C it can be difficult to get your money back. This is made eve=
+n more challenging when things go poorly=2C as seems to be the case with t=
+his property.
+* The project was scheduled for completion in May 2024=2C but contrary to=
+ many buildings that pre-lease significant portions of a project=2C the le=
+asing agent told us it has leased zero units=2C indicating it may already=
+ be in distress.
+* In December 2020=2C Axos lent up to $48.2 million (2.4% of tangible book=
+ value) to build an apartment block in Brooklyn=2C according to local prop=
+erty records. Four years later=2C amidst zoning issues with the Department=
+ of City Planning in New York=2C there are no signs of construction activi=
+ty and weeds are growing on the land=2C per our visit to the site last mon=
+th.
+* In 2021=2C Axos lent up to $34.7 million (1.7% of tangible book value) f=
+or the construction of a medical office building in Harlem at 2226 Third A=
+venue=2C according to local property records.
+* By 2023=2C the borrower faced multiple foreclosures after allegations em=
+erged that he had embezzled money from real estate projects and lost much=
+ of it to extravagant personal spending and gambling on stocks. The borrow=
+er is now under investigation by the DoJ and SEC over allegations of embez=
+zling real estate funds=2C per local media.
+* Construction on the medical office building was completed in February 20=
+24. The whole building is vacant=2C and the owners are attempting to remar=
+ket it with a change in use=2C per our interview with the leasing agent.
+* In 2022=2C Axos lent up to $35 million (1.7% of tangible book value) to=
+ a developer to construct a 12-story apartment building in Manhattan. Two=
+ years later=2C we found a seemingly derelict property with graffiti tags=
+ and little signs of construction.
+* In November 2023=2C Axos took over a $105 million loan (5.2% of tangible=
+ book value) on an office building in Manhattan called "The Six." Its owne=
+r=2C Savanna=2C has been "defaulting on debt=2C repeatedly extending loans=
+=2C and reducing its ownership stake within individual properties=2C" per=
+ media reports. The building is currently less than 50% occupied=2C per Co=
+Star.
+* Axos has $1.4 billion of multifamily loans originated during or prior to=
+ 2020=2C when interest rates were close to zero. Former employees told us=
+ that=2C given a typical fixed period of around 5-6 years=2C many of these=
+ come due within the next year and risk being underwater.
+* Axos has been extending loans or attempting to offer slight discounts to=
+ keep them afloat=2C but =E2=80=9Cin a lot of cases the loans=2C the prope=
+rties didn't cover=E2=80=9D=2C per a former employee.
+* Axos' rosy-looking credit metrics show signs of manipulation or distorti=
+on. Disclosed loan to value (LTV) ratios in commercial real estate are 17%=
+ less than the median average of 9 of its peers.
+* "the Bank routinely misrepresented the average loan to value ratio=E2=80=
+=99s of its loans to investors=2C" per allegations by a former credit revi=
+ew officer documented in litigation records.
+* Non-performing loans as a percent of its key commercial real estate cate=
+gory have stayed almost flat in the last 2 years=2C from 0.4% in 2021 to 0=
+=2E43% in 2023. By contrast=2C large national banks like Wells Fargo and Ban=
+k of America have seen this ratio increase by 1.9%-2.0% in the same period=
+=2E
+* Provisions for future stress as a percent of the commercial real estate=
+ category (called "allowances") have inexplicably decreased 0.5% since Jun=
+e 2021=2C from 1.8% to 1.3% at the end of December 2023.
+* We estimate that at least $1.1 billion of CRE loans originated at lower=
+ interest rates will face renewal in the coming year=2C testing the suffic=
+iency of Axos' abnormally low provisions. Axos=E2=80=99 auditors identifie=
+d this as a critical audit matter given "the judgmental and subjective nat=
+ure" of the company=E2=80=99s forecasts.
+* Banking is an industry as old as Mesopotamia. Over the last 4=2C000 year=
+s=2C the industry=E2=80=99s participants have evolved in tandem. All U.S.=
+ banks are subject to the same federal funds rate and interest rate dynami=
+cs=2C and similar regulations and requirements. Competitive edges=2C along=
+ with comparable ratios and margins=2C are generally razor thin.
+* For as long as banks have been around=2C there have also been 'too good=
+ to be true=E2=80=99 outliers that claim to have discovered a magical lend=
+ing formula.
+* In this case=2C we are meant to believe that Axos=E2=80=99 has selected=
+ only the best felons and troubled borrowers and properties to lend to=2C=
+ allowing it to waltz gracefully through the imploding commercial real est=
+ate market. We think otherwise.
+* While we do not to call into question Axos=E2=80=99 liquidity position o=
+r its depositor base=2C history shows that these =E2=80=98outliers=E2=80=
+=99 often take on undisclosed risk to fuel their optimistic numbers.
+* Overall=2C Axos=E2=80=99 exposure to the riskiest asset classes=2C its l=
+ax underwriting standards=2C and glaring issues with its portfolio indicat=
+e that the company faces significant stress ahead.
+
+Initial Disclosure: After extensive research=2C we have taken a short posi=
+tion in shares of Axos Financial=2C Inc. (NYSE:AX). This report represents=
+ our opinion=2C and we encourage every reader to do their own due diligenc=
+e. Please see our full disclaimer at the bottom of the report.
+Read The Full Report Here (https://hindenburgresearch.com/axos/)
+https://twitter.com/HindenburgRes
+Follow Us On Twitter (https://twitter.com/HindenburgRes)
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Copyright =C2=A9 2024 *Hindenburg Research=2C All rights reserved.
+
+Want to change how you receive these emails?
+You can ** update your preferences (https://hindenburgresearch.us19.list-m=
+anage.com/profile?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D2586506fcb&c=3D67f742d18d)
+or ** unsubscribe from this list (https://hindenburgresearch.us19.list-man=
+age.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&t=3Db&e=
+=3D2586506fcb&c=3D67f742d18d)
+=2E
+--_----------=_MCPart_1122483345
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-micros=
+oft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    <head>
+        <!-- NAME: FOLLOW UP -->
+        <!--[if gte mso 15]>
+        <xml>
+            <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]-->
+        <meta charset=3D"UTF-8">
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial=
+-scale=3D1">
+        <title>Axos: Glaring Commercial Real Estate Loan Problems and Lax=
+ Underwriting Beneath This Priced-For-Perfection Bank (NYSE:AX)</title>
+
+    <style type=3D"text/css">
+=09=09p{
+=09=09=09margin:10px 0;
+=09=09=09padding:0;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09h1=2Ch2=2Ch3=2Ch4=2Ch5=2Ch6{
+=09=09=09display:block;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img=2Ca img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body=2C#bodyTable=2C#bodyCell{
+=09=09=09height:100%;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09table{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cblockquote{
+=09=09=09mso-line-height-rule:exactly;
+=09=09}
+=09=09a[href^=3Dtel]=2Ca[href^=3Dsms]{
+=09=09=09color:inherit;
+=09=09=09cursor:default;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cbody=2Ctable=2Cblockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09.ExternalClass=2C.ExternalClass p=2C.ExternalClass td=2C.ExternalCla=
+ss div=2C.ExternalClass span=2C.ExternalClass font{
+=09=09=09line-height:100%;
+=09=09}
+=09=09a[x-apple-data-detectors]{
+=09=09=09color:inherit !important;
+=09=09=09text-decoration:none !important;
+=09=09=09font-size:inherit !important;
+=09=09=09font-family:inherit !important;
+=09=09=09font-weight:inherit !important;
+=09=09=09line-height:inherit !important;
+=09=09}
+=09=09table[align=3Dleft]{
+=09=09=09float:left;
+=09=09}
+=09=09table[align=3Dright]{
+=09=09=09float:right;
+=09=09}
+=09=09.templateContainer{
+=09=09=09max-width:600px !important;
+=09=09}
+=09=09a.mcnButton{
+=09=09=09display:block;
+=09=09}
+=09=09.mcnImage=2C.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent{
+=09=09=09word-break:break-word;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09.mcnDividerBlock{
+=09=09=09table-layout:fixed !important;
+=09=09}
+=09=09h1{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:40px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h2{
+=09=09=09color:#222222;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:34px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h3{
+=09=09=09color:#444444;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:22px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:bold;
+=09=09=09line-height:150%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:center;
+=09=09}
+=09=09h4{
+=09=09=09color:#949494;
+=09=09=09font-family:Georgia;
+=09=09=09font-size:20px;
+=09=09=09font-style:italic;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templateHeader{
+=09=09=09background-color:#f7f7f7;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0px;
+=09=09=09padding-bottom:0px;
+=09=09}
+=09=09.headerContainer{
+=09=09=09background-color:#transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.headerContainer .mcnTextContent a=2C.headerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateBody{
+=09=09=09background-color:#FFFFFF;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:27px;
+=09=09=09padding-bottom:54px;
+=09=09}
+=09=09.bodyContainer{
+=09=09=09background-color:transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09color:#757575;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:16px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09.bodyContainer .mcnTextContent a=2C.bodyContainer .mcnTextContent p=
+ a{
+=09=09=09color:#007C89;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateFooter{
+=09=09=09background-color:#333333;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:45px;
+=09=09=09padding-bottom:63px;
+=09=09}
+=09=09.footerContainer{
+=09=09=09background-color:transparent;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09color:#FFFFFF;
+=09=09=09font-family:Helvetica;
+=09=09=09font-size:12px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09.footerContainer .mcnTextContent a=2C.footerContainer .mcnTextConten=
+t p a{
+=09=09=09color:#FFFFFF;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09@media only screen and (min-width:768px){
+=09=09.templateContainer{
+=09=09=09width:600px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body=2Ctable=2Ctd=2Cp=2Ca=2Cli=2Cblockquote{
+=09=09=09-webkit-text-size-adjust:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImage{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCartContainer=2C.mcnCaptionTopContent=2C.mcnRecContentContainer=
+=2C.mcnCaptionBottomContent=2C.mcnTextContentContainer=2C.mcnBoxedTextCont=
+entContainer=2C.mcnImageGroupContentContainer=2C.mcnCaptionLeftTextContent=
+Container=2C.mcnCaptionRightTextContentContainer=2C.mcnCaptionLeftImageCon=
+tentContainer=2C.mcnCaptionRightImageContentContainer=2C.mcnImageCardLeftT=
+extContentContainer=2C.mcnImageCardRightTextContentContainer=2C.mcnImageCa=
+rdLeftImageContentContainer=2C.mcnImageCardRightImageContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupContent{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCaptionLeftContentOuter .mcnTextContent=2C.mcnCaptionRightConten=
+tOuter .mcnTextContent{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardTopImageContent=2C.mcnCaptionBottomContent:last-child .=
+mcnCaptionBottomImageContent=2C.mcnCaptionBlockInner .mcnCaptionTopContent=
+:last-child .mcnTextContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardBottomImageContent{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockInner{
+=09=09=09padding-top:0 !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockOuter{
+=09=09=09padding-top:9px !important;
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnTextContent=2C.mcnBoxedTextContentColumn{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardLeftImageContent=2C.mcnImageCardRightImageContent{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcpreview-image-uploader{
+=09=09=09display:none !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h1{
+=09=09=09font-size:30px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h2{
+=09=09=09font-size:26px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h3{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h4{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer .mcnTextContent=2C.mcnBoxedTextContent=
+Container .mcnTextContent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.headerContainer .mcnTextContent=2C.headerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.bodyContainer .mcnTextContent=2C.bodyContainer .mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.footerContainer .mcnTextContent=2C.footerContainer .mcnTextContent=
+ p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}</style></head>
+    <body style=3D"height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-=
+size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+        <!--
+-->
+        <center>
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;pad=
+ding: 0;width: 100%;">
+                <tr>
+                    <td align=3D"center" valign=3D"top" id=3D"bodyCell" st=
+yle=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"border-collapse: collapse;mso-table-lspace:=
+ 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;">
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateHeader" data-template-container=3D"" style=3D"background:#f7f7f7 n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #f7f7f7;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padd=
+ing-bottom: 0px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"he=
+aderContainer" style=3D"background:#transparent none no-repeat center/cove=
+r;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-si=
+ze-adjust: 100%;background-color: #transparent;background-image: none;back=
+ground-repeat: no-repeat;background-position: center;background-size: cove=
+r;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateBody" data-template-container=3D"" style=3D"background:#FFFFFF non=
+e no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;backgroun=
+d-image: none;background-repeat: no-repeat;background-position: center;bac=
+kground-size: cover;border-top: 0;border-bottom: 0;padding-top: 27px;paddi=
+ng-bottom: 54px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"bo=
+dyContainer" style=3D"background:transparent none no-repeat center/cover;m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;background-color: transparent;background-image: none;backgrou=
+nd-repeat: no-repeat;background-position: center;background-size: cover;bo=
+rder-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mcnT=
+extBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;float: left;" width=3D"100%" class=3D"mc=
+nTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <h1 style=3D"display: block;margin: 0;padding:=
+ 0;color: #222222;font-family: Helvetica;font-size: 40px;font-style: norma=
+l;font-weight: bold;line-height: 150%;letter-spacing: normal;text-align: c=
+enter;">Axos: Glaring Commercial Real Estate Loan Problems and Lax Underwr=
+iting Beneath This Priced-For-Perfection Bank</h1>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;float: left;" width=3D"100%" class=3D"mc=
+nTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helve=
+tica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <!-- wp:list --><span style=3D"font-size:20px"=
+><strong>(NYSE:AX)</strong></span>
+
+<ul>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Axos Financial is a $3.1 billion market ca=
+p regional bank headquartered in San Diego=2C California that was incorpor=
+ated in 1999 and went public in March 2005.&nbsp;</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Axos trades at a 35% P/TBV premium compare=
+d to similarly sized community and regional banks=2C pricing in investor e=
+xpectations of outsized growth=2C a low-risk loan book and multiple years=
+ of runway ahead.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Its aggressive valuation premium implies t=
+hat=2C despite operating in an environment that has devastated many peers=
+=2C Axos has navigated it by (1) allocating to the lowest-risk asset class=
+es (2) with superior underwriting standards=2C that have resulted in (3) a=
+ portfolio of high-performing projects.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Our research=2C including industry analysi=
+s=2C interviews with 21 former employees=2C lease agents and industry expe=
+rts=2C combined with an examination of Axos=E2=80=99 loan book derived thr=
+ough local property records=2C indicates a company exposed to the riskiest=
+ asset classes with lax underwriting standards and a loan book filled with=
+ multiple glaring problems.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Contrary to many peers who backed away fro=
+m the deteriorating commercial real estate market post-covid pandemic=2C A=
+xos doubled down=2C increasing its total exposure from $5.5 billion in Mar=
+ch 2021 to $9.9 billion in March 2024. Now=2C 53% of Axos' total loan book=
+ is exposed to these segments.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">By comparison=2C a 2023 Moody=E2=80=99s st=
+udy found that regional banks' exposure to direct commercial real estate m=
+ade up only 16.5% of their respective loan books=2C on average.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">The industry has begun to plummet: distres=
+sed U.S. commercial properties rose from $56.9 billion in 2022 to $85.8 bi=
+llion in 2023. $2.2 trillion in commercial mortgages are set to mature bef=
+ore the end of 2027.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Even AAA-rated bonds backed by CRE debt ar=
+e now taking losses=2C and multifamily investments have plunged to four-ye=
+ar lows.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">=E2=80=9CIt=E2=80=99s a sh*t show=2C=E2=80=
+=9D one Axos deal partner told us about the office market in New York. 37.=
+5% of Axos' commercial real estate loans were in New York=2C where a CRE=
+ =E2=80=9Cbloodbath=E2=80=9D has resulted in commercial realty foreclosure=
+s increasing 65% year over year.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Beyond its dangerous allocation choices=2C=
+ Axos' lax underwriting standards expose it to major added risk. A former=
+ regional leader told us Axos' customer base in commercial and multifamily=
+ revolved around "borrowers who couldn't get loans from other banks".</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In New York alone=2C with over 125 competi=
+ng mortgage lenders including top tier banks=2C Axos faces stiff competiti=
+on. A former loan originator told us that Axos had to stretch its underwri=
+ting criteria to compete: =E2=80=9CThere had to be a problem for us to eve=
+n have a shot at it=E2=80=9D.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Per one former employee on Axos=E2=80=99 e=
+mbrace of borrowers with criminal histories: =E2=80=9C<em>If the felony wa=
+s explainable=2C we'll bank them=E2=80=9D. </em>A second added that bad "c=
+redit scores...didn't kill a deal". A third said "I don't recall there eve=
+r really being a...minimum net worth or minimum liquidity requirement".</l=
+i>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">A former Axos credit review officer detail=
+ed the practice of loan "evergreening=2C" or providing loans to non-perfor=
+ming or doubtful borrowers to avoid recognizing problems=2C per litigation=
+ records. Similar schemes=2C also known as =E2=80=9Cextend and pretend=E2=
+=80=9D=2C were described by former employees during our investigation.</li=
+>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">These underwriting standards have resulted=
+ in a portfolio filled with clear problem loans=2C based on our review of=
+ a cross-section of Axos=E2=80=99 loan book. On March 31=2C 2024=2C Axos r=
+eported it had provisions for credit losses in its CRE category of just $8=
+3 million=2C a metric that seems vastly understated.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">For example=2C Axos lent up to $97.5 milli=
+on (4.8% of tangible book value)=2C for an apartment construction project=
+ in Queens. The underlying borrower has been criminally indicted twice per=
+sonally=2C including a case involving a construction kickback scheme with=
+ a mafia captain. His company was indicted in a third case.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">One reason most banks don=E2=80=99t lend u=
+p to $97.5 million to individuals with multiple indictments and documented=
+ mob ties is that even if things go well=2C it can be difficult to get you=
+r money back. This is made even more challenging when things go poorly=2C=
+ as seems to be the case with this property.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">The project was scheduled for completion i=
+n May 2024=2C but contrary to many buildings that pre-lease significant po=
+rtions of a project=2C the leasing agent told us it has leased zero units=
+=2C indicating it may already be in distress.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In December 2020=2C Axos lent up to $48.2=
+ million (2.4% of tangible book value) to build an apartment block in Broo=
+klyn=2C according to local property records. Four years later=2C amidst zo=
+ning issues with the Department of City Planning in New York=2C there are=
+ no signs of construction activity and weeds are growing on the land=2C pe=
+r our visit to the site last month.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In 2021=2C Axos lent up to $34.7 million (=
+1.7% of tangible book value) for the construction of a medical office buil=
+ding in Harlem at 2226 Third Avenue=2C according to local property records=
+=2E</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">By 2023=2C the borrower faced multiple for=
+eclosures after allegations emerged that he had embezzled money from real=
+ estate projects and lost much of it to extravagant personal spending and=
+ gambling on stocks. The borrower is now under investigation by the DoJ an=
+d SEC over allegations of embezzling real estate funds=2C per local media.=
+</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Construction on the medical office buildin=
+g was completed in February 2024. The whole building is vacant=2C and the=
+ owners are attempting to remarket it with a change in use=2C per our inte=
+rview with the leasing agent.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In 2022=2C Axos lent up to $35 million (1.=
+7% of tangible book value) to a developer to construct a 12-story apartmen=
+t building in Manhattan. Two years later=2C we found a seemingly derelict=
+ property with graffiti tags and little signs of construction.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In November 2023=2C Axos took over a $105=
+ million loan (5.2% of tangible book value) on an office building in Manha=
+ttan called "The Six." Its owner=2C Savanna=2C has been "defaulting on deb=
+t=2C repeatedly extending loans=2C and reducing its ownership stake within=
+ individual properties=2C" per media reports. The building is currently le=
+ss than 50% occupied=2C per CoStar.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Axos has $1.4 billion of multifamily loans=
+ originated during or prior to 2020=2C when interest rates were close to z=
+ero. Former employees told us that=2C given a typical fixed period of arou=
+nd 5-6 years=2C many of these come due within the next year and risk being=
+ underwater.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Axos has been extending loans or attemptin=
+g to offer slight discounts to keep them afloat=2C but =E2=80=9Cin a lot o=
+f cases the loans=2C the properties didn't cover=E2=80=9D=2C per a former=
+ employee.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Axos' rosy-looking credit metrics show sig=
+ns of manipulation or distortion. Disclosed loan to value (LTV) ratios in=
+ commercial real estate are 17% less than the median average of 9 of its p=
+eers.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">"the Bank routinely misrepresented the ave=
+rage loan to value ratio=E2=80=99s of its loans to investors=2C" per alleg=
+ations by a former credit review officer documented in litigation records.=
+</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Non-performing loans as a percent of its k=
+ey commercial real estate category have stayed almost flat in the last 2 y=
+ears=2C from 0.4% in 2021 to 0.43% in 2023. By contrast=2C large national=
+ banks like Wells Fargo and Bank of America have seen this ratio increase=
+ by 1.9%-2.0% in the same period.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Provisions for future stress as a percent=
+ of the commercial real estate category (called "allowances") have inexpli=
+cably decreased 0.5% since June 2021=2C from 1.8% to 1.3% at the end of De=
+cember 2023.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">We estimate that at least $1.1 billion of=
+ CRE loans originated at lower interest rates will face renewal in the com=
+ing year=2C testing the sufficiency of Axos' abnormally low provisions. Ax=
+os=E2=80=99 auditors identified this as a critical audit matter given "the=
+ judgmental and subjective nature" of the company=E2=80=99s forecasts.</li=
+>
+=09<!-- /wp:list-item --><!-- wp:list-item --><!-- /wp:list-item --><!-- w=
+p:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Banking is an industry as old as Mesopotam=
+ia. Over the last 4=2C000 years=2C the industry=E2=80=99s participants hav=
+e evolved in tandem. All U.S. banks are subject to the same federal funds=
+ rate and interest rate dynamics=2C and similar regulations and requiremen=
+ts. Competitive edges=2C along with comparable ratios and margins=2C are g=
+enerally razor thin.</li>
+=09<!-- /wp:list-item --><!-- wp:list-item -->
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">For as long as banks have been around=2C t=
+here have also been 'too good to be true=E2=80=99 outliers that claim to h=
+ave discovered a magical lending formula.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">In this case=2C we are meant to believe th=
+at Axos=E2=80=99 has selected only the best felons and troubled borrowers=
+ and properties to lend to=2C allowing it to waltz gracefully through the=
+ imploding commercial real estate market.&nbsp;We think otherwise. <!-- /w=
+p:list-item --><!-- /wp:list --></li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">While we do not to call into question Axos=
+=E2=80=99 liquidity position or its depositor base=2C history shows that t=
+hese =E2=80=98outliers=E2=80=99 often take on undisclosed risk to fuel the=
+ir optimistic numbers.</li>
+=09<li style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-=
+webkit-text-size-adjust: 100%;">Overall=2C Axos=E2=80=99 exposure to the r=
+iskiest asset classes=2C its lax underwriting standards=2C and glaring iss=
+ues with its portfolio indicate that the company faces significant stress=
+ ahead.<!-- /wp:list-item --><!-- wp:list-item --></li>
+</ul>
+<em>Initial Disclosure: After extensive research=2C we have taken a short=
+ position in shares of Axos Financial=2C Inc. (NYSE:AX). This report repre=
+sents our opinion=2C and we encourage every reader to do their own due dil=
+igence. Please see our full disclaimer at the bottom of the report.</em><b=
+r>
+<!-- /wp:paragraph -->
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 9px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnButtonBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnButtonBlockOuter">
+        <tr>
+            <td style=3D"padding-top: 0;padding-right: 18px;padding-bottom=
+: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%;-webkit-text-size-adjust: 100%;" valign=3D"top" align=3D"center"=
+ class=3D"mcnButtonBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mcnButtonContentContainer" style=3D"border-collapse: separate !impo=
+rtant;border-radius: 3px;background-color: #00ADD8;mso-table-lspace: 0pt;m=
+so-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
+ 100%;">
+                    <tbody>
+                        <tr>
+                            <td align=3D"center" valign=3D"middle" class=
+=3D"mcnButtonContent" style=3D"font-family: Helvetica;font-size: 18px;padd=
+ing: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+                                <a class=3D"mcnButton " title=3D"Read The=
+ Full Report Here" href=3D"https://hindenburgresearch.us19.list-manage.com=
+/track/click?u=3Dffb3753afd4493d4fbd300492&id=3D5cdab271d9&e=3D2586506fcb=
+" target=3D"_blank" style=3D"font-weight: bold;letter-spacing: -0.5px;line=
+-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;display: block;">Read The Full Report Here</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-collapse: c=
+ollapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnFollowBlock" style=3D"min-width: 100%;border-collapse: co=
+llapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnFollowBlockOuter">
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"padding: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" class=3D"mcnFollowBlockInner">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"mcnFollowContentContainer" style=3D"min-width: 100%;=
+border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td align=3D"center" style=3D"padding-left: 9px;padding-right: 9px=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"min-width: 100%;border-collapse: collapse;mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;" class=3D"mcnFollowContent">
+                <tbody><tr>
+                    <td align=3D"center" valign=3D"top" style=3D"padding-t=
+op: 9px;padding-right: 9px;padding-left: 9px;mso-line-height-rule: exactly=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                        <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse;mso-table-lspa=
+ce: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;">
+                            <tbody><tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;">
+                                    <!--[if mso]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0">
+                                    <tr>
+                                    <![endif]-->
+
+                                        <!--[if mso]>
+                                        <td align=3D"center" valign=3D"top=
+">
+                                        <![endif]-->
+
+                                            <table align=3D"left" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mcnFollowStacked" styl=
+e=3D"display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;float: left;">
+
+                                                <tbody><tr>
+                                                    <td align=3D"center" v=
+align=3D"top" class=3D"mcnFollowIconContent" style=3D"padding-right: 0;pad=
+ding-bottom: 5px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">
+                                                        <a href=3D"https:/=
+/hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
+bd300492&id=3Dc4f3b4a1c1&e=3D2586506fcb" target=3D"_blank" style=3D"mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;"><img src=3D"https://cdn-images.mailchimp.com/icons/social-block=
+-v2/color-twitter-96.png" alt=3D"Follow Us On Twitter" class=3D"mcnFollowB=
+lockIcon" width=3D"48" style=3D"width: 48px;max-width: 48px;display: block=
+;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolat=
+ion-mode: bicubic;"></a>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td align=3D"center" v=
+align=3D"top" class=3D"mcnFollowTextContent" style=3D"padding-right: 0;pad=
+ding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">
+                                                        <a href=3D"https:/=
+/hindenburgresearch.us19.list-manage.com/track/click?u=3Dffb3753afd4493d4f=
+bd300492&id=3D849a57e9f2&e=3D2586506fcb" target=3D"_blank" style=3D"color=
+: #202020;font-family: Arial;font-size: 18px;font-weight: bold;text-decora=
+tion: none;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">Follow Us On Twitter</a>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody></table>
+
+
+                                        <!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+                                    <!--[if mso]>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" id=3D"=
+templateFooter" data-template-container=3D"" style=3D"background:#333333 n=
+one no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;background-color: #333333;backgro=
+und-image: none;background-repeat: no-repeat;background-position: center;b=
+ackground-size: cover;border-top: 0;border-bottom: 0;padding-top: 45px;pad=
+ding-bottom: 63px;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wi=
+dth=3D"600" style=3D"width:600px;">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContain=
+er" style=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rsp=
+ace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-wid=
+th: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" class=3D"fo=
+oterContainer" style=3D"background:transparent none no-repeat center/cover=
+;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;background-color: transparent;background-image: none;backgr=
+ound-repeat: no-repeat;background-position: center;background-size: cover;=
+border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"mc=
+nDividerBlock" style=3D"min-width: 100%;border-collapse: collapse;mso-tabl=
+e-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"min-width: 100%;border-t=
+op: 2px solid #505050;border-collapse: collapse;mso-table-lspace: 0pt;mso-=
+table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"mcnTextBlock" style=3D"min-width: 100%;border-collapse: coll=
+apse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"paddin=
+g-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table align=3D"left" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"max-width: 100%;min-width: 100%;border-collapse: col=
+lapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;float: left;" width=3D"100%" class=3D"mc=
+nTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign=3D"top" class=3D"mcnTextContent" style=
+=3D"padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 1=
+8px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;word-break: break-word;color: #FFFFFF;font-family: Helve=
+tica;font-size: 12px;line-height: 150%;text-align: center;">
+
+                            <em>Copyright =C2=A9 2024 *Hindenburg Research=
+=2C All rights reserved.</em><br>
+<br>
+Want to change how you receive these emails?<br>
+You can <a href=3D"https://hindenburgresearch.us19.list-manage.com/profile=
+?u=3Dffb3753afd4493d4fbd300492&id=3D5b17860351&e=3D2586506fcb&c=3D67f742d18d=
+" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;color: #FFFFFF;font-weight: normal;text-decoratio=
+n: underline;">update your preferences</a> or <a href=3D"https://hindenbur=
+gresearch.us19.list-manage.com/unsubscribe?u=3Dffb3753afd4493d4fbd300492&i=
+d=3D5b17860351&t=3Db&e=3D2586506fcb&c=3D67f742d18d" style=3D"mso-line-height=
+-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;c=
+olor: #FFFFFF;font-weight: normal;text-decoration: underline;">unsubscribe=
+ from this list</a>.
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://hindenburgresearch.us19.list-manage.com/track/open=
+=2Ephp?u=3Dffb3753afd4493d4fbd300492&id=3D67f742d18d&e=3D2586506fcb" height=
+=3D"1" width=3D"1" alt=3D""></body>
+</html>
+--_----------=_MCPart_1122483345--

@@ -50,12 +50,12 @@ export class SmtpServer {
     // stream.on("end", callback);
     // stream.on("error", () => console.error("error"));
     simpleParser(stream)
-      .then((email: Record<string, any>) => this.processMail(session, email))
+      .then(async (email: Record<string, any>) => this.processMail(session, email))
       .then(() => callback())
       .catch((err: Error) => callback(err));
   }
 
-  protected processMail(
+  protected async processMail(
     session: SMTPServerSession,
     email: Record<string, any>,
   ): Promise<void> {

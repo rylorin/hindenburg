@@ -62,7 +62,7 @@ export class MyTradingBotApp extends SmtpServer {
     return true;
   }
 
-  protected processMail(
+  protected async processMail(
     _session: SMTPServerSession,
     email: Record<string, any>,
   ): Promise<void> {
@@ -99,7 +99,7 @@ export class MyTradingBotApp extends SmtpServer {
 import config from "config";
 import dotenv from "dotenv";
 import { SMTPServerSession } from "smtp-server";
-dotenv.config(); // eslint-disable-line @typescript-eslint/no-var-requires,@typescript-eslint/no-unsafe-call
+dotenv.config();  
 
 console.log("NODE_ENV", process.env["NODE_ENV"]);
 // const config = new Config();
